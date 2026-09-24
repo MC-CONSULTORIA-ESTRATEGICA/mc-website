@@ -6,11 +6,11 @@ import {
   FaIndustry,
   FaProjectDiagram,
 } from "react-icons/fa";
-import servicio1 from "../../assets/servicio1.png";
-import servicio2 from "../../assets/servicio2.png";
-import servicio3 from "../../assets/servicio3.png";
-import servicio4 from "../../assets/servicio4.png";
-import servicio5 from "../../assets/servicio5.png";
+import servicio1 from "../../assets/servicio1.webp";
+import servicio2 from "../../assets/servicio2.webp";
+import servicio3 from "../../assets/servicio3.webp";
+import servicio4 from "../../assets/servicio4.webp";
+import servicio5 from "../../assets/servicio5.webp";
 
 const services = [
   {
@@ -86,10 +86,9 @@ export default function ServicesPage() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Intro */}
         <div className="relative text-center mb-16">
-          <div className="absolute inset-0 bg-[url('/services/mining-bg.jpg')] bg-cover bg-center rounded-2xl opacity-20"></div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 relative z-10 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 relative z-10 mb-4">
             Conoce <span className="text-sky-600">Nuestros</span> Servicios
-          </h2>
+          </h1>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto relative z-10">
             Soluciones técnicas y estratégicas diseñadas para optimizar tus
             proyectos mineros y generar un impacto positivo.

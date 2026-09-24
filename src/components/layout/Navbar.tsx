@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../../assets/logo_mc.png";
+import logo from "../../assets/logo_mc.webp";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,10 +28,11 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center space-x-6 ml-auto mr-6">
-          <Link to="/inicio" className="text-gray-800 hover:text-blue-600">Inicio</Link>
-          <Link to="/nosotros" className="text-gray-800 hover:text-blue-600">Nosotros</Link>
-          <Link to="/servicios" className="text-gray-800 hover:text-blue-600">Servicios</Link>
-          <Link to="/contacto" className="text-gray-800 hover:text-blue-600">Contáctanos</Link>
+          <Link to="/inicio" className="text-gray-800 hover:text-[#3f9dc8] transition-colors">Inicio</Link>
+          <Link to="/nosotros" className="text-gray-800 hover:text-[#3f9dc8] transition-colors">Nosotros</Link>
+          <Link to="/servicios" className="text-gray-800 hover:text-[#3f9dc8] transition-colors">Servicios</Link>
+          <Link to="/blog" className="text-gray-800 hover:text-[#3f9dc8] transition-colors">Blog</Link>
+          <Link to="/contacto" className="text-gray-800 hover:text-[#3f9dc8] transition-colors">Contáctanos</Link>
         </div>
 
 
@@ -44,10 +45,11 @@ export default function Navbar() {
 
       {isOpen && (
         <div className="lg:hidden bg-white border-t px-4 py-3 space-y-2 shadow-md">
-          <Link to="/inicio" className="block text-gray-800 hover:text-blue-600" onClick={() => setIsOpen(false)}>Inicio</Link>
-          <Link to="/nosotros" className="block text-gray-800 hover:text-blue-600" onClick={() => setIsOpen(false)}>Nosotros</Link>
-          <Link to="/servicios" className="block text-gray-800 hover:text-blue-600" onClick={() => setIsOpen(false)}>Servicios</Link>
-          <Link to="/contacto" className="block text-gray-800 hover:text-blue-600" onClick={() => setIsOpen(false)}>Contáctanos</Link>
+          <Link to="/inicio" className="block text-gray-800 hover:text-[#3f9dc8] transition-colors" onClick={() => setIsOpen(false)}>Inicio</Link>
+          <Link to="/nosotros" className="block text-gray-800 hover:text-[#3f9dc8] transition-colors" onClick={() => setIsOpen(false)}>Nosotros</Link>
+          <Link to="/servicios" className="block text-gray-800 hover:text-[#3f9dc8] transition-colors" onClick={() => setIsOpen(false)}>Servicios</Link>
+          <Link to="/blog" className="block text-gray-800 hover:text-[#3f9dc8] transition-colors" onClick={() => setIsOpen(false)}>Blog</Link>
+          <Link to="/contacto" className="block text-gray-800 hover:text-[#3f9dc8] transition-colors" onClick={() => setIsOpen(false)}>Contáctanos</Link>
         </div>
       )}
     </nav>

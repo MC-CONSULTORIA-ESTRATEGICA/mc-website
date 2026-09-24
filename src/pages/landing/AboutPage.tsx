@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { FaHardHat, FaChartBar, FaLeaf } from "react-icons/fa";
-import heroImage from "../../assets/about-team.jpg";
-import team1 from "../../assets/team1.jpeg";
-import team2 from "../../assets/team2.jpg";
-import team3 from "../../assets/team3.jpg";
-import team4 from "../../assets/team4.jpg";
+import heroImage from "../../assets/about-team.webp";
+import team1 from "../../assets/team1.webp";
+import team2 from "../../assets/team2.webp";
+import team3 from "../../assets/team3.webp";
+import team4 from "../../assets/team4.webp";
 
 
 const carouselImages = [
@@ -82,15 +82,15 @@ export default function AboutPage() {
             </p>
             <ul className="space-y-3 text-black text-lg ">
               <li className="flex items-center">
-                <FaHardHat className="text-blue-600 text-2xl mr-2" />
+                <FaHardHat className="text-[#3f9dc8] text-2xl mr-2" />
                 Equipo multidisciplinario altamente calificado
               </li>
               <li className="flex items-center">
-                <FaChartBar className="text-blue-600 text-2xl mr-2" />
+                <FaChartBar className="text-[#3f9dc8] text-2xl mr-2" />
                 Enfoque en la automatización
               </li>
               <li className="flex items-center">
-                <FaLeaf className="text-blue-600 text-2xl mr-2" />
+                <FaLeaf className="text-[#3f9dc8] text-2xl mr-2" />
                 Comprometidos con la excelencia
               </li>
             </ul>
@@ -122,7 +122,7 @@ export default function AboutPage() {
                 <span
                   key={i}
                   className={`w-3 h-3 rounded-full ${
-                    i === current ? "bg-blue-600" : "bg-gray-300"
+                    i === current ? "bg-[#3f9dc8]" : "bg-gray-300"
                   }`}
                 ></span>
               ))}
@@ -141,9 +141,9 @@ export default function AboutPage() {
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 border-t-4 border-blue-600 hover:bg-blue-50"
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 border-t-4 border-[#3f9dc8] hover:bg-sky-50"
               >
-                <div className="text-blue-600 text-5xl font-bold mb-4">
+                <div className="text-[#3f9dc8] text-5xl font-bold mb-4">
                   {index + 1}
                 </div>
                 <h3 className="text-2xl font-semibold mb-3 text-gray-900">

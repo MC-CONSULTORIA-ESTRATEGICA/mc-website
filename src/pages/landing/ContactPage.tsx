@@ -1,5 +1,5 @@
 import { FaEnvelope, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
-import contactImage from "../../assets/service-1.jpg"; 
+import contactImage from "../../assets/service-1.webp"; 
 
 export default function ContactSection() {
   return (
@@ -7,12 +7,12 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* === Texto e Información === */}
         <div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl font-bold text-gray-900 mb-6">
             Contáctanos
-          </h2>
+          </h1>
           <p className="text-gray-600 mb-8 text-lg">
             Si tienes alguna consulta o quieres trabajar con nosotros, puedes
-            comunicarte a través de cualquiera de los siguientes medios. 
+            comunicarte a través de cualquiera de los siguientes medios.
             Estaremos encantados de ayudarte.
           </p>
 
@@ -20,12 +20,12 @@ export default function ContactSection() {
           <div className="space-y-4">
             {/* Email */}
             <div className="flex items-center bg-gray-100 p-4 rounded-lg shadow hover:shadow-md transition">
-              <FaEnvelope className="text-blue-600 text-2xl mr-4" />
+              <FaEnvelope className="text-[#3f9dc8] text-2xl mr-4" />
               <div>
                 <h4 className="font-semibold text-gray-800">Correo</h4>
                 <a
-                  href="mailto:contacto@mcsolutions.com"
-                  className="text-blue-600 hover:underline"
+                  href="mailto:ventas@mc-consultoria.com"
+                  className="text-[#01395c] hover:underline"
                 >
                   ventas@mc-consultoria.com
                 </a>
@@ -34,7 +34,7 @@ export default function ContactSection() {
 
             {/* Teléfono */}
             <div className="flex items-center bg-gray-100 p-4 rounded-lg shadow hover:shadow-md transition">
-              <FaPhoneAlt className="text-blue-600 text-2xl mr-4" />
+              <FaPhoneAlt className="text-[#3f9dc8] text-2xl mr-4" />
               <div>
                 <h4 className="font-semibold text-gray-800">Teléfono</h4>
                 <p className="text-gray-700">+51 932432031</p>

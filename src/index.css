@@ -1,4 +1,13 @@
 @import "tailwindcss";
+
+@theme {
+  /* Identidad de marca MC Consultores: usar siempre estos tokens
+     (bg-brand-navy, text-brand-cyan, etc.) en vez de hex sueltos. */
+  --color-brand-navy: #01395c;
+  --color-brand-navy-light: #02507f;
+  --color-brand-cyan: #3f9dc8;
+  --color-brand-cyan-light: #60d9ff;
+}
 /*
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
