@@ -227,6 +227,25 @@ components:
   article-other:
     textColor: "{colors.navy}"
     padding: "12px 0"
+  page-index-channel:
+    textColor: "{colors.on-navy-2}"
+    typography: "{typography.label}"
+  page-index-channel-name:
+    textColor: "{colors.on-navy}"
+  faq-item:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.navy}"
+    typography: "{typography.title}"
+    padding: "24px 0"
+  faq-answer:
+    textColor: "{colors.ink-2}"
+    typography: "{typography.body}"
+    width: "60ch"
+  contact-data-sheet:
+    backgroundColor: "{colors.sheet}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body-sm}"
+    padding: "12px 16px"
 ---
 
 # Design System: MC Consultores
@@ -237,9 +256,9 @@ components:
 
 El sitio se comporta como un afiche técnico impreso de una consultora geológica: roca real recortada sobre navy, papel cálido con grano y todo anotado como un plano de campo. La tecnología aparece como rigor dibujado (cotas, curvas de nivel, estratos, un bloque diagrama, un mapa con retícula), nunca como pantalla: ni neón, ni hologramas, ni paneles de datos de adorno. La seriedad viene del dibujo preciso; la cercanía, de las personas reales y del contacto a un paso.
 
-La página alterna superficies como pliegos de un mismo impreso: navy a sangre en la portada, la cabecera de las páginas interiores, Eventos, Contacto y pie; papel con grano donde se lee (Servicios, Quiénes somos, Clientes, Artículos, la leyenda de la página de Servicios, Sobre MC y las fotos de Nosotros, el registro de Noticias, la lista del Blog y la lámina de cada artículo); hoja limpia donde se dibuja o se ficha (Proyectos, el mapa, el proceso de trabajo, las personas de Nosotros). La densidad es la de una lámina técnica: retícula de 24 px, líneas de 1 px, tablas de ficha y rótulos cortos, con aire generoso entre bloques (96 px por sección). Bordes rectos, sin sombras, sin degradados de adorno.
+La página alterna superficies como pliegos de un mismo impreso: navy a sangre en la portada, la cabecera de las páginas interiores, Eventos, el cierre de Contacto y pie; papel con grano donde se lee (Servicios, Quiénes somos, Clientes, Artículos, la leyenda de la página de Servicios, Sobre MC y las fotos de Nosotros, el registro de Noticias, la lista del Blog, la lámina de cada artículo y el cuerpo de la página Contacto); hoja limpia donde se dibuja o se ficha (Proyectos, el mapa, el proceso de trabajo, las personas de Nosotros). La densidad es la de una lámina técnica: retícula de 24 px, líneas de 1 px, tablas de ficha y rótulos cortos, con aire generoso entre bloques (96 px por sección). Bordes rectos, sin sombras, sin degradados de adorno.
 
-El movimiento es trazado: las líneas se dibujan, no rebotan. Las cotas de la portada y la cota-índice de cada página interior se trazan al cargar, el contorno de Perú y Ecuador se dibuja al entrar en pantalla, igual que la línea del proceso de trabajo, el bloque 3D gira apenas y los estratos de Contacto se mecen muy despacio. Todo se apaga con `prefers-reduced-motion` y la página queda completa y legible sin él.
+El movimiento es trazado: las líneas se dibujan, no rebotan. Las cotas de la portada y la cota-índice de cada página interior se trazan al cargar, el contorno de Perú y Ecuador se dibuja al entrar en pantalla, igual que la línea del proceso de trabajo, el bloque 3D gira apenas y los estratos del cierre de Contacto se mecen muy despacio. Todo se apaga con `prefers-reduced-motion` y la página queda completa y legible sin él.
 
 **Key Characteristics:**
 - Navy de marca (#01395C, inmutable) como campo; cyan solo para actuar y para la línea técnica sobre navy.
@@ -254,7 +273,7 @@ El movimiento es trazado: las líneas se dibujan, no rebotan. Las cotas de la po
 Un navy profundo de marca con un solo acento frío (cyan) para actuar, papel cálido como neutro y una tierra oxidada que vive solo en las curvas de nivel.
 
 ### Primary
-- **Navy MC** (`--navy`, #01395C): el azul que identifica a MC; inmutable. Tinta de todos los títulos sobre papel, nombres, reglas de cabecera de 2 px, marco de la ficha de persona o de evento señalada, fecha de la ficha de evento y de la entrada del Blog, títulos de "Otros artículos" y trazos del mapa; superficie de Contacto y del riel de contacto.
+- **Navy MC** (`--navy`, #01395C): el azul que identifica a MC; inmutable. Tinta de todos los títulos sobre papel, nombres, reglas de cabecera de 2 px, marco de la ficha de persona o de evento señalada, fecha de la ficha de evento y de la entrada del Blog, títulos de "Otros artículos" y trazos del mapa; regla de cabecera de las preguntas frecuentes; superficie del cierre de Contacto y del riel de contacto.
 - **Navy Portada** (`--navy-hero`, #002D50): fondo de la portada, de la cabecera y de la cabecera interior de cada página; el tono en que se funde la roca.
 - **Navy Profundo** (`--navy-deep`, #00263F): superficie de Eventos y del pie; texto sobre el cyan del botón principal; fondo de la cartela de contacto.
 
@@ -276,13 +295,13 @@ Un navy profundo de marca con un solo acento frío (cyan) para actuar, papel cá
 - **Retícula** (`--grid`, #E8E3DB): retícula de fondo de Proyectos y separadores internos de fichas.
 - **Retícula Marcada** (`--grid-strong`, #D8D1C6): bordes de celdas, marcos de imagen, de retrato y de foto de evento, separadores de lista, retícula y países vecinos del mapa.
 - **Tinta** (`--ink`, #22211F): texto principal sobre papel; los párrafos de la lámina de lectura de un artículo.
-- **Tinta Media** (`--ink-2`, #4D4A45): bajadas y descripciones.
+- **Tinta Media** (`--ink-2`, #4D4A45): bajadas y descripciones; respuestas de las preguntas frecuentes.
 - **Tinta Tenue** (`--ink-3`, #6B665F): metadatos (tipo · ciudad de la ficha de evento, lectura de la entrada del Blog, fecha en "Otros artículos"), ejes de coordenadas, rótulos de ficha.
-- **Blanco sobre navy** (`--on-navy`, #FFFFFF): títulos y texto principal sobre navy; dato sobre el rótulo de la cota-índice (las fechas de Noticias y del Blog) y dato de la ficha en línea.
-- **Niebla** (`--on-navy-2`, #C9D6DF): texto secundario sobre navy (bajada de la cabecera interior, rótulos de la cota-índice y de la ficha en línea), enlaces del menú en reposo.
+- **Blanco sobre navy** (`--on-navy`, #FFFFFF): títulos y texto principal sobre navy; dato sobre el rótulo de la cota-índice (las fechas de Noticias y del Blog; en Contacto, el nombre de cada canal) y dato de la ficha en línea.
+- **Niebla** (`--on-navy-2`, #C9D6DF): texto secundario sobre navy (bajada de la cabecera interior, rótulos de la cota-índice y de la ficha en línea; en Contacto, el dato de cada canal y su ícono), enlaces del menú en reposo.
 
 ### Named Rules
-**The One Action Rule.** El cyan relleno (#3F9DC8) es solo para la acción de contacto: el botón de cotización y el botón de WhatsApp del riel. Ningún otro elemento lleva fondo cyan saturado; los demás cyan son trazo o tinta.
+**The One Action Rule.** El cyan relleno (#3F9DC8) es solo para la acción de contacto: el botón de cotización y el botón de WhatsApp del riel. Ningún otro elemento lleva fondo cyan saturado; los demás cyan son trazo o tinta. En Contacto, el canal de WhatsApp de la cota es un nodo más (hueco, en Cyan Trazo) y la cotización es el único relleno de la página.
 
 **The Earth-Only-in-Contours Rule.** El marrón tierra va únicamente en curvas de nivel generadas en código (y en el haz de reglas cortas de Eventos que las acompaña). Nunca en texto, rellenos, botones, íconos, bordes de interfaz ni fondos. Sobre papel se usan 900/700/600; sobre navy, solo 400 con opacidad baja (0,3 a 0,7).
 
@@ -299,37 +318,39 @@ Un navy profundo de marca con un solo acento frío (cyan) para actuar, papel cá
 - **Display** (560, clamp de 48 a 102 px, 0.96): solo el h1 de la portada, en blanco y en tres líneas como máximo (`max-width: 7.2em`).
 - **Page Title** (560, clamp de 44 a 72 px, 1): h1 de las páginas interiores, entre el h2 y el display, en blanco sobre la cabecera interior y a 14em como máximo.
 - **Headline** (560, clamp de 38 a 55 px, 1.05): títulos de sección (h2), en navy sobre papel y blanco sobre navy. Sin antetítulo.
-- **Title** (560, 23 px, 1.3, angosto): títulos de caso, de grupo de personas y de paso del proceso de trabajo. Los títulos de artículo suben a 27 px con interlínea 1.18; los de unidad de Servicios, a un clamp de 28 a 36 px con interlínea 1.1; los de la ficha de evento (h2 de Noticias), a un clamp de 22 a 28 px con interlínea 1.15; los de la entrada del Blog (h2), a un clamp de 24 a 32 px con interlínea 1.12. "Otros artículos", el título del aside de un artículo, va en Title tal cual. La fecha de la ficha de evento y la de la entrada del Blog usan el mismo corte angosto (560) a 36 px (28 px bajo 900 px), interlínea 1, en navy con cifras tabulares.
+- **Title** (560, 23 px, 1.3, angosto): títulos de caso, de grupo de personas y de paso del proceso de trabajo. Los títulos de artículo suben a 27 px con interlínea 1.18; los de unidad de Servicios, a un clamp de 28 a 36 px con interlínea 1.1; los de la ficha de evento (h2 de Noticias), a un clamp de 22 a 28 px con interlínea 1.15; los de la entrada del Blog (h2), a un clamp de 24 a 32 px con interlínea 1.12. "Otros artículos", el título del aside de un artículo, y cada pregunta frecuente de Contacto (h3) van en Title tal cual. La fecha de la ficha de evento y la de la entrada del Blog usan el mismo corte angosto (560) a 36 px (28 px bajo 900 px), interlínea 1, en navy con cifras tabulares.
 - **Title Small** (600, 17 px, 1.35, ancho normal): h3 de la leyenda de Servicios, título de la leyenda de especialidades y títulos de lista.
 - **Body Large** (400, 19 px, 30 px): bajada de la portada, de la cabecera interior (baja a Body bajo 900 px), texto de Quiénes somos y texto de Sobre MC (también baja a Body bajo 900 px), a 60 caracteres como máximo. En la lámina de lectura de un artículo los párrafos van a Body Large en Tinta con `max-width: 50ch`, que en Archivo a 19 px da unos 62 caracteres reales, y bajan a Body bajo 900 px.
-- **Body** (400, 17 px, 24 px): texto corrido; la interlínea es la celda de la retícula. Medida de 60 a 62 caracteres. También las filas de la leyenda de especialidades y el nombre de la ficha de persona (navy 650).
-- **Body Small** (400, 15 px, 22 px): descripciones de lista, metadatos, cartela, pie.
-- **Label** (600, 13 px, 20 px): rótulos de imagen, fichas, ejes de coordenadas, leyendas, rótulos y datos de la cota-índice y de la ficha en línea, tipo y ciudad de la ficha de evento, lectura y categoría de la entrada del Blog. En caja normal.
+- **Body** (400, 17 px, 24 px): texto corrido; la interlínea es la celda de la retícula. Medida de 60 a 62 caracteres (las respuestas de las preguntas frecuentes, a 60). También las filas de la leyenda de especialidades y el nombre de la ficha de persona (navy 650).
+- **Body Small** (400, 15 px, 22 px): descripciones de lista, metadatos, cartela, ficha de datos de Contacto, pie.
+- **Label** (600, 13 px, 20 px): rótulos de imagen, fichas, ejes de coordenadas, leyendas, rótulos y datos de la cota-índice y de la ficha en línea, tipo y ciudad de la ficha de evento, lectura y categoría de la entrada del Blog, nombre y dato de cada canal en la cota de Contacto. En caja normal.
 - **Annotation** (600, 11 px, 0.08em, MAYÚSCULAS): solo anotaciones puestas sobre una figura: el crédito "Imagen ilustrativa" de la portada y los nombres del mapa (países a 0.14em, océano a 0.16em).
 - **Nav** (500, 15 px, 0.01em, ancho 106): menú principal. El cromo del sitio se ensancha un poco: cabeceras del pie y título del asistente a 110, teléfono vertical del riel a 112.
 
 ### Named Rules
-**The Narrow-for-Titles Rule.** El ancho 68 es para títulos (display, h1 interior, h2, títulos de caso, de grupo, de artículo, de unidad, de paso, de evento y de entrada del Blog, y la fecha de la ficha de evento y de la entrada del Blog). El texto de lectura no se angosta nunca; los rótulos de interfaz pueden ensancharse (106 a 112), no angostarse.
+**The Narrow-for-Titles Rule.** El ancho 68 es para títulos (display, h1 interior, h2, títulos de caso, de grupo, de artículo, de unidad, de paso, de evento, de entrada del Blog y de pregunta frecuente, y la fecha de la ficha de evento y de la entrada del Blog). El texto de lectura no se angosta nunca; los rótulos de interfaz pueden ensancharse (106 a 112), no angostarse.
 
 **The Uppercase-Is-Annotation Rule.** La mayúscula espaciada se reserva a lo que anota un dibujo (crédito sobre la roca, nombres del mapa). Los rótulos de interfaz y los encabezados van en caja normal; no hay antetítulos sobre los h2.
 
-**The Tabular Figures Rule.** Fechas, teléfonos, horarios y cifras llevan cifras tabulares y de caja alta (`tabular-nums lining-nums`).
+**The Tabular Figures Rule.** Fechas, teléfonos, horarios y cifras llevan cifras tabulares y de caja alta (`tabular-nums lining-nums`); también cuando van dentro de un rótulo (los números de la cota de Contacto) o de un dato de ficha (el horario, cuyas horas no se cortan de línea).
 
 ## Layout
 
 Retícula de celda de 24 px: la interlínea del texto y los múltiplos de espaciado salen de ella (secciones de 4 celdas arriba y abajo, 3 en pantallas menores a 900 px; separaciones internas de 1, 1.25, 1.5, 2 y 2.5 celdas). Contenido a 1320 px como máximo, con margen lateral fluido de 16 a 48 px.
 
-Las secciones de dos columnas son asimétricas, nunca mitades: 7/5 (Servicios, Contacto, Sobre MC), 5/7 (Mapa, Eventos), 8/4 (Quiénes somos). En Servicios la figura queda fija (`sticky`) mientras se recorre la leyenda. Proyectos usa dos columnas de casos; Artículos, tres; personas en fila (Inicio), columnas automáticas de 290 px mínimo; fichas de persona (Nosotros), de 200 px mínimo con 1.5 celdas de separación (dos columnas bajo 600 px); clientes, una retícula de 6 columnas con ejes A–F y 1–n como hoja de plano (4 columnas bajo 1100 px, 2 bajo 600 px).
+Las secciones de dos columnas son asimétricas, nunca mitades: 7/5 (Servicios, el cierre de Contacto, Sobre MC, el cuerpo de la página Contacto), 5/7 (Mapa, Eventos), 8/4 (Quiénes somos). En Servicios la figura queda fija (`sticky`) mientras se recorre la leyenda. Proyectos usa dos columnas de casos; Artículos, tres; personas en fila (Inicio), columnas automáticas de 290 px mínimo; fichas de persona (Nosotros), de 200 px mínimo con 1.5 celdas de separación (dos columnas bajo 600 px); clientes, una retícula de 6 columnas con ejes A–F y 1–n como hoja de plano (4 columnas bajo 1100 px, 2 bajo 600 px).
 
 El riel de contacto ocupa 56 px fijos en el borde derecho desde 1024 px (el `body` reserva ese ancho); por debajo pasa a barra inferior de 64 px con rótulos visibles y el `body` reserva ese alto más el área segura. Bajo 900 px todo pasa a una columna, la figura de Servicios sube antes de la leyenda, el menú se pliega y la roca de la portada baja a la mitad inferior con el texto sobre navy limpio. Bajo 600 px la acción principal ocupa todo el ancho.
 
-Las páginas interiores abren con la cabecera interior: 3 celdas arriba y abajo (2 y 2.5 bajo 900 px), bajada a 1 celda del h1 y, a 3 celdas (2 bajo 900 px), el pie con la cota-índice de la página (o la ficha en línea, en un artículo). En Servicios la leyenda sigue directo a la cabecera, sin título propio y con 3 celdas arriba (2 bajo 900 px). Cada unidad es una fila de tres columnas: muestra de 96 px, texto 7 y ficha 4, separadas por 1.5 celdas y con 2 celdas arriba y abajo; bajo 1100 px la ficha baja bajo el texto y bajo 600 px todo va en una columna. La fila "También" y los pendientes se alinean con el texto de las unidades, no con la muestra. La cota-índice reparte una columna por destino (cinco en Servicios, cuatro en Nosotros, seis en Noticias, uno por artículo en el Blog) con 1.5 celdas entre ellas, y el proceso de trabajo cuatro; bajo 900 px las dos pasan a verticales, con la línea a la izquierda y los rótulos a 28 px de ella. En la cota-índice vertical los destinos van en filas de 24 px separadas 16 px, y quedan 16 px de aire antes del nodo de cierre.
+Las páginas interiores abren con la cabecera interior: 3 celdas arriba y abajo (2 y 2.5 bajo 900 px), bajada a 1 celda del h1 y, a 3 celdas (2 bajo 900 px), el pie con la cota-índice de la página (o la ficha en línea, en un artículo). En Servicios la leyenda sigue directo a la cabecera, sin título propio y con 3 celdas arriba (2 bajo 900 px). Cada unidad es una fila de tres columnas: muestra de 96 px, texto 7 y ficha 4, separadas por 1.5 celdas y con 2 celdas arriba y abajo; bajo 1100 px la ficha baja bajo el texto y bajo 600 px todo va en una columna. La fila "También" y los pendientes se alinean con el texto de las unidades, no con la muestra. La cota-índice reparte una columna por destino (cinco en Servicios, cuatro en Nosotros, seis en Noticias, uno por artículo en el Blog, cuatro canales en Contacto) con 1.5 celdas entre ellas, y el proceso de trabajo cuatro; bajo 900 px las dos pasan a verticales, con la línea a la izquierda y los rótulos a 28 px de ella. En la cota-índice vertical los destinos van en filas de 24 px separadas 16 px, y quedan 16 px de aire antes del nodo de cierre. En la variante de canales (Contacto) las filas son blancos táctiles de 44 px sin separación entre ellas, el nodo va centrado en la fila y la línea parte del centro del primer nodo.
 
 En Nosotros, Sobre MC pone el título arriba y debajo una fila 7/5 separada 2.5 celdas: el texto a la izquierda y la ficha de la empresa a la derecha; bajo las dos, a todo el ancho, la leyenda de especialidades, cuyas filas repiten el 7/5 para que los nombres caigan en la columna de la ficha. Bajo 900 px todo va en una columna (2 celdas entre bloques) y las filas de la leyenda pasan a dos mitades; bajo 600 px, a una. Las personas van en dos grupos (Equipo, Consultores asociados) separados 3 celdas (2.5 bajo 900 px). La hoja de fotos es una rejilla de 6 columnas con 12 px de separación: la primera foto ocupa 4 columnas en 3:2 y a su lado va la primera foto vertical, a su misma altura; el resto ocupa 2 columnas en 3:2. Bajo 900 px pasa a 2 columnas cuadradas, con la grande a todo el ancho en 3:2.
 
 En Noticias el registro sigue directo a la cabecera, sin título propio y con 3 celdas arriba (2 bajo 900 px), del evento más reciente al más antiguo. Cada ficha es una fila 2/4/6 (fecha, tipo y ciudad · título y resumen · fotos) separada por 1 celda y 1.5 celdas, con 2 celdas arriba y abajo; entre 900 y 1099 px pasa a 2/5 con las fotos bajo el texto, y bajo 900 px a una columna con 16 px entre bloques y la fecha, el tipo y la ciudad en una línea. El resumen va a 48 caracteres. Las fotos van en una rejilla de 3 columnas con 12 px de separación: la principal a todo el ancho y el resto en miniaturas de a tres.
 
 En el Blog el registro también sigue directo a la cabecera, sin título propio y con 3 celdas arriba (2 bajo 900 px), del artículo más reciente al más antiguo. Cada entrada es una fila 2/7/3 (fecha, lectura y categoría · título y resumen · enlace "Leer el artículo" alineado a la derecha) separada por 1 celda y 1.5 celdas, con 2 celdas arriba y abajo; el resumen va a 62 caracteres. Entre 900 y 1099 px pasa a 2/7 con el enlace bajo el texto, alineado con él. Bajo 900 px es una grilla con áreas: la fecha y la lectura en una fila (columna de fecha a su ancho, 16 px de separación), debajo el título y el resumen, luego la categoría al pie del resumen (nunca suelta sobre el título) y al final el enlace, con 12 px entre filas.
+
+En Contacto, bajo la cabecera interior y su cota de canales, el cuerpo va sobre papel con grano: arriba la acción principal sola, a 3 celdas (2 bajo 900 px) de una fila 7/5 separada 2.5 celdas, con las preguntas frecuentes a la izquierda y la ficha de datos a la derecha, fija (`sticky`, a 2 celdas del borde superior). Bajo 900 px todo va en una columna (2 celdas entre bloques) y la ficha sube antes de las preguntas, sin fijarse. Contacto no lleva el cierre de Contacto al pie, ni mapa ni formulario.
 
 La página de un artículo pone, bajo la cabecera interior, la lámina de lectura sobre papel con grano: columna de lectura y aside en 7/4, separados 2.5 celdas, con los párrafos separados una celda. El aside "Otros artículos" queda fijo (`sticky`, a 2 celdas del borde superior) mientras se lee; bajo 900 px todo va en una columna (2 celdas entre bloques) y el aside baja al final, sin fijarse.
 
@@ -344,11 +365,11 @@ Los degradados existen solo para fundir una imagen o una trama en su superficie:
 ### Named Rules
 **The Flat Plate Rule.** Las superficies son planas en reposo y en hover. El estado se muestra con color, borde o subrayado, nunca levantando un elemento.
 
-**The Grain Rule.** El grano (mosaico monocromo de 256 px, 7 % de opacidad, `src/assets/texturas/grano.png`, generado por `scripts/build-grain.mjs`) se superpone al color de la superficie con la clase de grano: va en papel y en navy (Servicios, Quiénes somos, Clientes, Artículos, Eventos, Contacto, pie; en Nosotros, Sobre MC y las fotos; en Noticias, el registro; en el Blog, la lista y la lámina de lectura). No va en la hoja limpia (Proyectos, mapa, personas de Nosotros), ni en la portada (ya es roca), ni en la cabecera ni en la cabecera interior, ni dentro de tarjetas, fichas o celdas. El color lo pone la superficie; el grano nunca se tiñe ni se sube de opacidad.
+**The Grain Rule.** El grano (mosaico monocromo de 256 px, 7 % de opacidad, `src/assets/texturas/grano.png`, generado por `scripts/build-grain.mjs`) se superpone al color de la superficie con la clase de grano: va en papel y en navy (Servicios, Quiénes somos, Clientes, Artículos, Eventos, el cierre de Contacto, pie; en Nosotros, Sobre MC y las fotos; en Noticias, el registro; en el Blog, la lista y la lámina de lectura; en Contacto, el cuerpo de la página). No va en la hoja limpia (Proyectos, mapa, personas de Nosotros), ni en la portada (ya es roca), ni en la cabecera ni en la cabecera interior, ni dentro de tarjetas, fichas o celdas. El color lo pone la superficie; el grano nunca se tiñe ni se sube de opacidad.
 
 ## Shapes
 
-Esquinas rectas. El único redondeo es de 2 px, en el botón de acción y en el anillo de foco; el enlace subrayado, las fichas, las celdas, los marcos de imagen y los paneles van a 0. Las formas recurrentes son de plano: líneas de 1 px que no escalan con el dibujo (`vector-effect: non-scaling-stroke`), nodos cuadrados huecos en los extremos y paradas de una cota (7 px en la portada, la cota-índice, el proceso de trabajo, la regla de cada entrada del registro reglado y los extremos de la ficha en línea; 10 px en el nodo de oficina del mapa y su leyenda), reglas de cabecera de 2 px en navy sobre cada lista (leyenda de Servicios, unidades de la página de Servicios, grupos de personas, leyenda de especialidades, artículos, registro de eventos y del Blog, "Otros artículos", clave del mapa), tramas de muestra (líneas, cruces, puntos, diagonales, uves) como en una carta geológica, en mosaico de 12 px con línea navy de 0.9 sobre Cyan Velo y marco de 1 px navy (las cruces tienen brazos de 6 px para no confundirse con los puntos), retícula punteada de meridianos y paralelos, y curvas de nivel ondulantes con una curva maestra cada tres o cuatro.
+Esquinas rectas. El único redondeo es de 2 px, en el botón de acción y en el anillo de foco; el enlace subrayado, las fichas, las celdas, los marcos de imagen y los paneles van a 0. Las formas recurrentes son de plano: líneas de 1 px que no escalan con el dibujo (`vector-effect: non-scaling-stroke`), nodos cuadrados huecos en los extremos y paradas de una cota (7 px en la portada, la cota-índice, el proceso de trabajo, la regla de cada entrada del registro reglado y los extremos de la ficha en línea; 10 px en el nodo de oficina del mapa y su leyenda), reglas de cabecera de 2 px en navy sobre cada lista (leyenda de Servicios, unidades de la página de Servicios, grupos de personas, leyenda de especialidades, artículos, registro de eventos y del Blog, "Otros artículos", preguntas frecuentes, clave del mapa), tramas de muestra (líneas, cruces, puntos, diagonales, uves) como en una carta geológica, en mosaico de 12 px con línea navy de 0.9 sobre Cyan Velo y marco de 1 px navy (las cruces tienen brazos de 6 px para no confundirse con los puntos), retícula punteada de meridianos y paralelos, y curvas de nivel ondulantes con una curva maestra cada tres o cuatro.
 
 Las imágenes van en recuadros rectos con borde de 1 px (Retícula Marcada), proporción 3:2 (16:9 la foto principal de Eventos y de cada ficha de evento; en la hoja de fotos, la vertical toma la altura de la grande y bajo 900 px las chicas van cuadradas), retratos en 4:5, y un leve ajuste de saturación y contraste para emparejarlas (el mismo en casos y fotos del equipo); los logos de clientes se muestran enteros, sin filtro ni recorte. Un afiche de evento es pieza gráfica, no foto: va entero (`contain`) sobre Navy MC, sin el ajuste de color.
 
@@ -356,6 +377,9 @@ Las imágenes van en recuadros rectos con borde de 1 px (Retícula Marcada), pro
 **The More-Pattern-Not-Bigger Rule.** Una muestra de trama más grande dibuja más trama con la misma línea; no se amplía el dibujo chico. Hay tres dibujos: 48 × 32 (leyenda del Inicio), 36 × 24 (cota-índice de Servicios) y 96 × 64 (unidades de Servicios). La única reducción permitida es la de la unidad bajo 600 px, a 72 × 48 (3/4), donde la línea queda en 0.7.
 
 ## Components
+
+### Named Rules
+**The Variant-Not-Override Rule.** El ajuste que una página necesita de una pieza compartida (cota-índice, ficha de datos, registro reglado) se escribe como variante de la pieza, en el CSS de la pieza; nunca como sobrescritura en el CSS de la página. El CSS de una ruta no se descarga al navegar dentro del sitio, así que el ajuste se perdería o se filtraría a otras páginas.
 
 ### Buttons
 Directos y planos; una sola acción fuerte por bloque.
@@ -372,7 +396,7 @@ Directos y planos; una sola acción fuerte por bloque.
 
 ### Cards / Containers
 No hay tarjetas con caja: los grupos se abren con una regla de cabecera de 2 px navy y se separan con líneas de 1 px.
-- **Ficha de datos:** tabla de dos columnas sobre Hoja, borde de 1 px Retícula Marcada, filas separadas por Retícula, rótulo en Tinta Tenue y dato en Tinta 500, a tamaño Label. Bajo un caso lleva Cliente / Servicio / Alcance; en una unidad de Servicios, Códigos (chips de norma) y Caso (título en navy 600 con subrayado Cyan Acción que pasa a navy en hover, cliente debajo en Tinta Tenue 400); como ficha de la empresa en Nosotros, Razón social / Oficina / Presencia / Códigos, con la columna de rótulo ensanchada a 7rem.
+- **Ficha de datos:** tabla de dos columnas sobre Hoja, borde de 1 px Retícula Marcada, filas separadas por Retícula, rótulo en Tinta Tenue y dato en Tinta 500, a tamaño Label. Bajo un caso lleva Cliente / Servicio / Alcance; en una unidad de Servicios, Códigos (chips de norma) y Caso (título en navy 600 con subrayado Cyan Acción que pasa a navy en hover, cliente debajo en Tinta Tenue 400); como ficha de la empresa en Nosotros, Razón social / Oficina / Presencia / Códigos, con la columna de rótulo ensanchada a 7rem; como ficha de Contacto, Horario / Oficina / Razón social, con más aire porque es la pieza principal del bloque: texto a Body Small, filas con 12 × 16 px de relleno y rótulo de 6rem.
 - **Caso:** imagen 3:2 con borde de 1 px, título angosto, texto a 62 caracteres y ficha de datos; dos por fila (una bajo 900 px). Caso, Persona y Artículo son piezas compartidas entre páginas.
 - **Cartela de contacto:** tabla sobre Navy Profundo con borde de 1 px Cyan Trazo; filas separadas por Cyan Trazo al 30 %; rótulo en Niebla, dato en blanco 600.
 - **Ficha en línea:** la ficha de datos de una página sin destinos, al pie de la cabecera interior sobre Navy Portada (en un artículo: Categoría / Fecha / Lectura). Una línea de 1 px Cyan Trazo de lado a lado con un nodo cuadrado hueco de 7 px (relleno Navy Portada) en cada extremo, como en toda cota; debajo, las celdas en fila separadas por 1 px Cyan Trazo al 30 %, 12 px bajo la línea y 1.5 celdas entre ellas; rótulo en Niebla y dato en blanco 600 con cifras tabulares, a tamaño Label. Bajo 600 px pasa a filas de rótulo (6rem) y dato separadas por 1 px Cyan Trazo al 30 %, como la ficha de datos.
@@ -404,6 +428,8 @@ Cada servicio es una unidad de carta geológica: muestra de 48 × 32 px con su t
 ### Cota-índice (signature)
 Pieza compartida de toda página interior: la cota de cada cabecera interior es el índice de su página. Una línea de 1 px Cyan Trazo de lado a lado con un nodo cuadrado hueco de 7 px por destino (relleno Navy Portada) y otro al final; bajo cada nodo, el rótulo del destino a tamaño Label en Niebla (20 caracteres como máximo por línea), y cada parada es un enlace a su sección. El ícono es opcional: en Servicios cada parada lleva la trama de su servicio en miniatura (36 × 24) sobre el rótulo; en Nosotros van solo los rótulos (Sobre MC, Equipo, Consultores asociados, Fotos del equipo). El dato también es opcional: un valor corto sobre el rótulo, en blanco y con cifras tabulares, a 2 px de él; en Noticias es la fecha de cada evento y la cota se lee como eje de tiempo, del más reciente al más antiguo. En hover el rótulo pasa a blanco con subrayado Cyan Trazo y el nodo se rellena de Cyan Trazo. Al cargar la línea se traza en 1.1 s desde 0.2 s con la curva de salida, las paradas aparecen en escalera de 0.16 s desde 0.3 s y el nodo final a 1.2 s. Bajo 900 px es vertical, a la izquierda, con el ícono (si lo hay) y el rótulo en fila a la derecha (el dato y el rótulo en una línea, separados 12 px), filas de 24 px separadas 16 px y 16 px de aire antes del nodo de cierre.
 
+El rótulo acepta nodos (para envolver cifras tabulares) y cada destino puede ser externo: abre en otra pestaña y avisa "(abre en otra pestaña)" de forma oculta. La variante de canales es la de Contacto, donde la cota son los canales mismos como acciones (WhatsApp, Teléfono, Correo, LinkedIn) y cada nodo lleva directo al canal: el nombre del canal en blanco arriba y el dato en Niebla debajo, entero (sin el tope de 20 caracteres), con un ícono de 18 px en línea con el nombre (columna de 18 px, 10 px de separación) del mismo color que el rótulo. Bajo 900 px cada fila es un blanco táctil de 44 px sin separación, con el nodo centrado y la línea desde el centro del primer nodo.
+
 ### Leyenda de especialidades (signature)
 La firma de Nosotros: une cada especialidad con las personas que la cubren, como la leyenda de una carta une la trama con la unidad. Va bajo el texto y la ficha de Sobre MC, a todo el ancho, con su título en Title Small; abre con la regla de 2 px navy y cada fila cierra con 1 px Retícula Marcada, con 12 px arriba y abajo. A la izquierda (7) la especialidad en navy 600; a la derecha (5, alineada con la ficha de la empresa) las personas en Tinta Media, separadas por comas, cada nombre enlazado a su ficha con subrayado de 1 px Cyan Acción que pasa a navy en hover. Las especialidades salen de los cargos; una sin nadie activo no se muestra.
 
@@ -429,7 +455,10 @@ Cada servicio es una unidad de carta geológica a página completa: muestra de t
 Cuatro pasos sobre Hoja, colgados de una línea navy de 1 px con un nodo cuadrado hueco de 7 px (relleno Hoja) por paso y otro al final; título de paso en Title, texto en Body Small a 34 caracteres. Sin numerales sobre los títulos: el orden lo da la línea. Con soporte de `animation-timeline`, la línea se dibuja al entrar en pantalla (de 10 % de entrada a 45 % de cobertura), los pasos aparecen escalonados y el nodo final al cerrar; sin soporte, se ve completo. Bajo 900 px es vertical, a la izquierda.
 
 ### Cierre de Contacto
-La misma sección al pie de cada página: Navy MC con grano y la banda de estratos abajo; a la izquierda el título, la acción principal y el enlace de línea "Llamar al …" (7), a la derecha la cartela de contacto (5); una columna bajo 900 px.
+La misma sección al pie de cada página, salvo Contacto (allí la página entera es el contacto): Navy MC con grano y la banda de estratos abajo; a la izquierda el título, la acción principal y el enlace de línea "Llamar al …" (7), a la derecha la cartela de contacto (5); una columna bajo 900 px.
+
+### Preguntas frecuentes
+La lista de Contacto, debajo de la acción principal y con su título en Headline: las preguntas fijas del asistente del sitio, como lista reglada. Abre con la regla de 2 px navy y cada pregunta cierra con 1 px Retícula Marcada, con una celda arriba y abajo y 8 px entre sus partes: la pregunta como h3 en Title angosto navy, la respuesta en Tinta Media a 60 caracteres y el enlace con flecha "Escribir por WhatsApp" (con el mensaje de cotización en la pregunta de cotización). Sin acordeón, ícono ni tarjeta.
 
 ### Curvas de nivel y estratos
 Curvas de nivel generadas en código (anillos ondulantes, curva maestra más gruesa, opacidad que cae hacia afuera) en Tierra, recortadas por el borde de la sección en una esquina. Estratos en líneas de 1 px Cyan (menores al 45 %, maestras en Cyan Trazo, un contacto discontinuo 6/5) en la banda inferior de Contacto, en tres grupos que se mecen entre −3 y +4 px con ciclos de 16, 19 y 23 s alternos.
@@ -447,6 +476,7 @@ Curvas de nivel generadas en código (anillos ondulantes, curva maestra más gru
 - **Do** medir el espacio en celdas de 24 px.
 - **Do** abrir cada página interior con la cabecera interior y poner al pie de la banda la cota-índice de la página (un nodo por destino, con enlace), dibujada con la línea y los nodos de la portada; si la página no tiene destinos (un artículo), la ficha en línea con sus datos, con la misma línea y nodos en los extremos.
 - **Do** dar a una muestra de trama más grande más trama con la misma línea, no ampliar la chica.
+- **Do** escribir el ajuste que una página necesita de una pieza compartida como variante de la pieza, en el CSS de la pieza, no en el CSS de la página.
 - **Do** señalar el destino de un enlace interno (`:target`) con un marco navy de 2 px separado 3 px y un subrayado de 2 px Cyan Acción, sin movimiento; si la ficha cuelga de un nodo, el nodo se rellena de navy.
 
 ### Don't:
