@@ -67,6 +67,17 @@
   max-width: 20ch;
 }
 
+/* Dato sobre el rótulo: la fecha de un evento, en blanco y con cifras tabulares */
+.page-index-text {
+  display: grid;
+  gap: 2px;
+}
+
+.page-index-meta {
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--on-navy);
+}
+
 .page-index a:hover {
   color: var(--on-navy);
 }
@@ -154,6 +165,13 @@
 
   .page-index-label {
     max-width: none;
+  }
+
+  /* En vertical, fecha y rótulo en una línea */
+  .page-index-text {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 12px;
   }
 
   .page-index-node {

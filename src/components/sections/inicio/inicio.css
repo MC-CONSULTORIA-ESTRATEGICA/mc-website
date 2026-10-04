@@ -515,6 +515,17 @@
   line-height: 1.35;
 }
 
+/* Enlace a la ficha del evento en Noticias: subrayado tenue en reposo (en táctil no hay hover) */
+a.events-title {
+  color: inherit;
+  text-decoration: underline 1px color-mix(in srgb, var(--cyan-light) 55%, transparent);
+  text-underline-offset: 0.22em;
+}
+
+a.events-title:hover {
+  text-decoration-color: var(--cyan-light);
+}
+
 .events-meta {
   font-size: var(--fs-small);
   color: var(--on-navy-2);

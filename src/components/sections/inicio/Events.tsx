@@ -40,7 +40,9 @@ export function Events() {
                   {event.date}
                 </time>
                 <span className="events-body">
-                  <span className="events-title">{event.title}</span>
+                  <Link className="events-title" href={`/noticias/#evento-${event.id}`}>
+                    {event.title}
+                  </Link>
                   <span className="events-meta">
                     {event.type} · {event.city}
                   </span>

@@ -1,0 +1,176 @@
+/* Noticias: el registro de campo de MC (contrato en .impeccable/surfaces/). */
+
+/* Sin título propio: el registro sigue directo a la cabecera */
+.event-log {
+  padding-top: calc(var(--cell) * 3);
+}
+
+.event-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--navy);
+}
+
+/* Ficha de evento: fecha y lugar · título y resumen · fotos */
+.event {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 4fr) minmax(0, 6fr);
+  gap: var(--cell) calc(var(--cell) * 1.5);
+  align-items: start;
+  padding-block: calc(var(--cell) * 2);
+  border-bottom: 1px solid var(--grid-strong);
+  scroll-margin-top: var(--cell);
+}
+
+/* El nodo de la cota sobre la regla de cada ficha: el registro es la cota de la cabecera, abierta */
+.event::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  box-sizing: border-box;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--navy);
+  background-color: var(--paper);
+}
+
+/* La primera ficha cuelga de la regla de 2 px */
+.event:first-child::before {
+  top: -4.5px;
+}
+
+/* Al llegar desde la cota o desde el Inicio, la ficha de destino queda marcada (sin movimiento) */
+.event:target::before {
+  background-color: var(--navy);
+}
+
+.event:target .event-title {
+  text-decoration: underline 2px var(--cyan);
+  text-underline-offset: 0.22em;
+}
+
+.event:target .event-photo.is-main {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
+
+.event-when {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+}
+
+.event-date {
+  font-size: 2.25rem;
+  line-height: 1;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+  color: var(--navy);
+}
+
+.event-meta {
+  font-size: var(--fs-label);
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--ink-3);
+}
+
+.event-body {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+
+.event-title {
+  margin: 0;
+  font-size: clamp(1.375rem, 1.1rem + 0.8vw, 1.75rem);
+  line-height: 1.15;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.event-summary {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--ink-2);
+}
+
+/* Fotos: la primera grande y el resto en una fila de miniaturas */
+.event-photos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.event-photo {
+  margin: 0;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: var(--sheet);
+  border: 1px solid var(--grid-strong);
+}
+
+/* La principal en 16:9: la ficha no crece de más y las fotos anchas pierden menos */
+.event-photo.is-main {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 9;
+}
+
+.event-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.03);
+}
+
+/* El afiche es una pieza gráfica, no una foto: se muestra entero sobre navy */
+.event-photo.is-poster {
+  background-color: var(--navy);
+}
+
+.event-photo.is-poster img {
+  object-fit: contain;
+  filter: none;
+}
+
+@media (max-width: 1099.98px) {
+  .event {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 5fr);
+  }
+
+  .event-photos {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 899.98px) {
+  .event {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .event-photos {
+    grid-column: 1;
+  }
+
+  /* Fecha y lugar en una línea */
+  .event-when {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 16px;
+  }
+
+  .event-date {
+    font-size: 1.75rem;
+  }
+
+  .event-log {
+    padding-top: calc(var(--cell) * 2);
+  }
+}

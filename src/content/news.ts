@@ -32,6 +32,8 @@ export type NewsItem = {
   dateTime: string;
   city: string;
   title: string;
+  /** Rótulo corto para la cota-índice de Noticias. */
+  shortTitle: string;
   summary: string;
   attendees: number;
   images: StaticImageData[];
@@ -41,7 +43,13 @@ export type NewsItem = {
   link?: string;
   highlight?: boolean;
   points?: string[];
+  /** Duda sobre el dato, visible solo en modo revisión. */
+  reviewNote?: string;
 };
+
+/** Bajada de la página de Noticias: describe los tipos de evento de la lista, sin afirmar más. */
+export const newsLead =
+  "Participación de MC Consultores en ferias, conferencias y universidades del sector minero.";
 
 export const newsItems: NewsItem[] = [
   {
@@ -52,6 +60,7 @@ export const newsItems: NewsItem[] = [
     dateTime: "2025-09",
     city: "Arequipa, PE",
     title: "Participación en PERUMIN 37",
+    shortTitle: "PERUMIN 37",
     summary: "Participación activa en actividades técnicas y networking.",
     attendees: 1200,
     images: [perumin37_1, perumin37_2, perumin37_3, perumin37_4],
@@ -71,7 +80,8 @@ export const newsItems: NewsItem[] = [
     date: "Nov 2025",
     dateTime: "2025-11",
     city: "Arequipa, PE",
-    title: "Ponencia en universidad Continental: CONTIMIN",
+    title: "Ponencia en Universidad Continental: CONTIMIN",
+    shortTitle: "CONTIMIN",
     summary: "Exposición de casos y buenas prácticas en reconciliación minera.",
     points: [
       "Desafíos actuales de la industria",
@@ -93,6 +103,10 @@ export const newsItems: NewsItem[] = [
     city: "Arequipa, PE",
     title:
       "Asistencia LXXIX Aniversario de la Facultad de Geología, Geofísica y Minas - UNSA",
+    shortTitle: "Aniversario UNSA",
+    // PENDIENTE(Camila o Sofía): el título dice "Asistencia", pero el tipo es "Ponencia" y las fotos
+    // muestran a Marcos exponiendo.
+    reviewNote: "Título por confirmar: ¿asistencia o ponencia?",
     summary:
       "Crecimiento Minero en el Perú, Arequipa como cluster de innovación y desarrollo territorial.",
     points: [
@@ -115,6 +129,9 @@ export const newsItems: NewsItem[] = [
     dateTime: "2026-02",
     city: "Lima, PE",
     title: "Ponencia en Centrum PUCP Business Consulting Club (CPBCC)",
+    shortTitle: "Centrum PUCP",
+    // PENDIENTE(Sofía o Camila): afiche completo de la ponencia; el archivo viene recortado por abajo.
+    reviewNote: "Afiche recortado en el original",
     summary:
       "Distinción por aporte en actividades técnicas y difusión de conocimiento aplicado al sector.",
     points: [
@@ -137,6 +154,7 @@ export const newsItems: NewsItem[] = [
     dateTime: "2026",
     city: "Perú",
     title: "Participación en AusIMM",
+    shortTitle: "AusIMM",
     summary:
       "Participación activa en eventos de la Asociación Australiana de Ingenieros de Minas y Metalurgia.",
     points: [
@@ -158,6 +176,7 @@ export const newsItems: NewsItem[] = [
     dateTime: "2026",
     city: "Perú",
     title: "Participación en ProExplo",
+    shortTitle: "ProExplo",
     summary:
       "Presencia en la conferencia y exposición de exploración minera más importante del Perú.",
     points: [
