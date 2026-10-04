@@ -21,6 +21,8 @@ export type Person = {
   photo?: StaticImageData;
   /** Posición vertical del recorte de la foto (object-position Y); los retratos son desparejos. */
   photoFocusY?: string;
+  /** Acercamiento de la foto dentro del marco, para sacar bordes del retrato de origen. */
+  photoScale?: number;
   linkedin?: string;
   /** `false`: ya no está en MC; se conserva el dato pero no se muestra. */
   active: boolean;
@@ -145,6 +147,9 @@ export const people: Person[] = [
     group: "associate",
     photo: luis,
     photoFocusY: "71%",
+    // La foto de origen trae un recorte circular: se acerca para que no se vea dentro del marco.
+    // PENDIENTE(Camila): retrato nuevo de Luis Maldonado.
+    photoScale: 1.3,
     linkedin: "https://www.linkedin.com/in/luis-maldonado-zorrilla-a7b34322/",
     active: true,
   },
@@ -172,6 +177,10 @@ export const people: Person[] = [
 ];
 
 export const activePeople = people.filter((person) => person.active);
+
+export function getPerson(slug: string): Person | undefined {
+  return people.find((person) => person.slug === slug);
+}
 
 /**
  * Grupos en el orden en que se muestran: equipo arriba y asociados abajo (Sofía).

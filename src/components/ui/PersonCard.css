@@ -77,6 +77,34 @@
   color: var(--navy);
 }
 
+/* Ficha vertical (Nosotros): retrato 4:5 de 144 px; los retratos de origen más chicos miden 179 px */
+.person-sheet {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: 12px;
+  scroll-margin-top: var(--cell);
+}
+
+.person-sheet .portrait {
+  width: 144px;
+}
+
+.person-sheet .person-name {
+  font-size: var(--fs-body);
+  line-height: var(--cell);
+}
+
+/* Al llegar desde la leyenda de especialidades, la ficha de la persona queda marcada */
+.person-sheet:target .portrait {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
+
+.person-sheet:target .person-name {
+  text-decoration: underline 2px var(--cyan);
+  text-underline-offset: 0.22em;
+}
+
 @media (max-width: 599.98px) {
   .person {
     grid-template-columns: 80px minmax(0, 1fr);
@@ -84,5 +112,13 @@
 
   .portrait {
     width: 80px;
+  }
+
+  .person-sheet {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .person-sheet .portrait {
+    width: min(144px, 100%);
   }
 }

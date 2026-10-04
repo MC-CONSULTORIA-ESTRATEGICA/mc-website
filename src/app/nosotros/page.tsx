@@ -1,7 +1,15 @@
-import { SkeletonList } from "@/components/sections/Skeleton";
-import { aboutHighlights } from "@/content/about";
-import { activePeople } from "@/content/people";
+import { Contact } from "@/components/sections/Contact";
+import { AboutMc } from "@/components/sections/nosotros/AboutMc";
+import { PhotoSheet } from "@/components/sections/nosotros/PhotoSheet";
+import { Roster } from "@/components/sections/nosotros/Roster";
+import { PageHead } from "@/components/ui/PageHead";
+import { PageIndex } from "@/components/ui/PageIndex";
+import { ReviewFlag } from "@/components/ui/Review";
+import { aboutLead } from "@/content/about";
+import { peopleGroups } from "@/content/people";
 import { pageMetadata } from "@/lib/metadata";
+
+import "@/components/sections/nosotros/nosotros.css";
 
 export const metadata = pageMetadata({
   title: "Nosotros",
@@ -10,26 +18,27 @@ export const metadata = pageMetadata({
 });
 
 export default function AboutPage() {
-  const toItem = (person: (typeof activePeople)[number]) => ({
-    key: person.slug,
-    label: person.name,
-    detail: person.role,
-  });
+  const index = [
+    { href: "#sobre-mc", label: "Sobre MC" },
+    ...peopleGroups.map((group) => ({ href: `#${group.id}`, label: group.title })),
+    { href: "#fotos", label: "Fotos del equipo" },
+  ];
   return (
     <>
-      <h1>Nosotros</h1>
-      <SkeletonList
-        title="Sobre nosotros"
-        items={aboutHighlights.map((text) => ({ key: text, label: text }))}
-      />
-      <SkeletonList
-        title="Equipo"
-        items={activePeople.filter((person) => person.group === "team").map(toItem)}
-      />
-      <SkeletonList
-        title="Consultores asociados"
-        items={activePeople.filter((person) => person.group === "associate").map(toItem)}
-      />
+      <PageHead
+        title="Nosotros"
+        lead={
+          <>
+            {aboutLead} <ReviewFlag>Borrador</ReviewFlag>
+          </>
+        }
+      >
+        <PageIndex label="Secciones de esta página" items={index} />
+      </PageHead>
+      <AboutMc />
+      <Roster />
+      <PhotoSheet />
+      <Contact />
     </>
   );
 }

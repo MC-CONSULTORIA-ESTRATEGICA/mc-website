@@ -5,16 +5,24 @@ import { peopleGroups, type Person } from "@/content/people";
 
 import "./PersonCard.css";
 
-export function PersonCard({ person }: { person: Person }) {
+/**
+ * `row`: retrato de 96 px a la izquierda (Inicio). `sheet`: ficha vertical con retrato de 144 px y
+ * ancla `#persona-<slug>` (Nosotros; las especialidades enlazan ahí).
+ */
+export function PersonCard({ person, variant = "row" }: { person: Person; variant?: "row" | "sheet" }) {
+  const sheet = variant === "sheet";
   return (
-    <li className="person">
+    <li className={sheet ? "person person-sheet" : "person"} id={sheet ? `persona-${person.slug}` : undefined}>
       <span className="portrait">
         {person.photo ? (
           <Image
             src={person.photo}
             alt=""
-            sizes="96px"
-            style={person.photoFocusY ? { objectPosition: `50% ${person.photoFocusY}` } : undefined}
+            sizes={sheet ? "144px" : "96px"}
+            style={{
+              objectPosition: person.photoFocusY ? `50% ${person.photoFocusY}` : undefined,
+              transform: person.photoScale ? `scale(${person.photoScale})` : undefined,
+            }}
           />
         ) : null}
       </span>

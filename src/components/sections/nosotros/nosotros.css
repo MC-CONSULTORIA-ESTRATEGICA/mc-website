@@ -1,0 +1,196 @@
+/* Nosotros: la nómina de un informe técnico (contrato en .impeccable/surfaces/). */
+
+/* ---------- Sobre MC ---------- */
+.about-mc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: calc(var(--cell) * 2.5);
+  align-items: start;
+}
+
+.about-mc-main {
+  display: grid;
+  align-content: start;
+}
+
+.about-mc-text {
+  max-width: 60ch;
+  margin: 0;
+  font-size: 1.1875rem;
+  line-height: 30px;
+}
+
+/* Leyenda a todo el ancho, debajo del texto y la ficha: los nombres caen en la columna de la ficha */
+.about-mc-legend {
+  grid-column: 1 / -1;
+}
+
+.specialties-title {
+  margin-bottom: 12px;
+}
+
+/* Leyenda de especialidades: regla de cabecera de 2 px y filas de 1 px */
+.specialties {
+  margin: 0;
+  border-top: 2px solid var(--navy);
+}
+
+.specialties > div {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 4px calc(var(--cell) * 2.5);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--grid-strong);
+}
+
+.specialties dt {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.specialties dd {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.specialties a {
+  color: inherit;
+  text-decoration: underline 1px var(--cyan);
+  text-underline-offset: 0.22em;
+}
+
+.specialties a:hover {
+  color: var(--navy);
+  text-decoration-color: var(--navy);
+}
+
+.about-mc-aside {
+  display: grid;
+  gap: var(--cell);
+}
+
+.about-mc-aside .origin-row {
+  grid-template-columns: 7rem minmax(0, 1fr);
+}
+
+.about-mc-codes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ---------- Personas ---------- */
+.roster-groups {
+  display: grid;
+  gap: calc(var(--cell) * 3);
+}
+
+.roster-group {
+  scroll-margin-top: var(--cell);
+}
+
+.roster-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: calc(var(--cell) * 1.5);
+  margin: 0;
+  padding: var(--cell) 0 0;
+  list-style: none;
+  border-top: 2px solid var(--navy);
+}
+
+.roster-group .pending {
+  margin-top: var(--cell);
+}
+
+/* ---------- Hoja de fotos ---------- */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.photo-grid li {
+  grid-column: span 2;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: var(--sheet);
+  border: 1px solid var(--grid-strong);
+}
+
+.photo-grid .is-big {
+  grid-column: span 4;
+}
+
+/* La foto vertical acompaña a la grande con su misma altura */
+.photo-grid .is-tall {
+  aspect-ratio: auto;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.03);
+}
+
+.photo-grid .is-tall img {
+  object-position: 50% 30%;
+}
+
+.photo-sheet .pending {
+  margin-top: var(--cell);
+}
+
+/* ---------- Adaptación ---------- */
+@media (max-width: 899.98px) {
+  .about-mc-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: calc(var(--cell) * 2);
+  }
+
+  .about-mc-text {
+    font-size: var(--fs-body);
+    line-height: var(--cell);
+  }
+
+  .roster-groups {
+    gap: calc(var(--cell) * 2.5);
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .photo-grid li,
+  .photo-grid .is-tall {
+    grid-column: span 1;
+    aspect-ratio: 1;
+  }
+
+  .photo-grid .is-big {
+    grid-column: span 2;
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (max-width: 899.98px) {
+  .specialties > div {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4px var(--cell);
+  }
+}
+
+@media (max-width: 599.98px) {
+  .specialties > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .roster-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--cell) 16px;
+  }
+}
