@@ -67,6 +67,12 @@
   max-width: 20ch;
 }
 
+/* Ícono de canal (Contacto): mismo color que el rótulo */
+.page-index-icon {
+  flex: none;
+  display: block;
+}
+
 /* Dato sobre el rótulo: la fecha de un evento, en blanco y con cifras tabulares */
 .page-index-text {
   display: grid;
@@ -89,6 +95,21 @@
 
 .page-index a:hover .page-index-node {
   background-color: var(--cyan-light);
+}
+
+/* Canales (Contacto): el dato va entero y el ícono en línea con el nombre del canal */
+.page-index--channels .page-index-label {
+  max-width: none;
+}
+
+.page-index--channels a {
+  grid-template-columns: 18px minmax(0, 1fr);
+  column-gap: 10px;
+  align-items: start;
+}
+
+.page-index--channels .page-index-icon {
+  margin-top: 1px;
 }
 
 /* Se traza al cargar y los destinos aparecen en escalera, como las cotas de la portada */
@@ -182,5 +203,28 @@
 @media (max-width: 899.98px) and (prefers-reduced-motion: no-preference) {
   .page-index ol::before {
     animation-name: page-index-draw-y;
+  }
+}
+
+/* Canales en móvil: cada fila es un blanco táctil de 44 px, con el mismo ritmo visual */
+@media (max-width: 899.98px) {
+  .page-index--channels ol {
+    gap: 0;
+  }
+
+  .page-index--channels ol::before {
+    top: 21px;
+  }
+
+  .page-index--channels a {
+    min-height: 44px;
+  }
+
+  .page-index--channels .page-index-node {
+    top: 18px;
+  }
+
+  .page-index--channels .page-index-icon {
+    margin-top: 0;
   }
 }

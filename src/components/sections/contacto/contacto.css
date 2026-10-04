@@ -1,0 +1,92 @@
+/* Contacto: la cartela de un plano (contrato en .impeccable/surfaces/). */
+
+.contact-body-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: calc(var(--cell) * 2.5);
+  align-items: start;
+}
+
+.contact-body-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px calc(var(--cell) * 1.5);
+  margin-bottom: calc(var(--cell) * 3);
+}
+
+/* Preguntas frecuentes: lista reglada */
+.faq {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--navy);
+}
+
+.faq li {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  padding-block: var(--cell);
+  border-bottom: 1px solid var(--grid-strong);
+}
+
+.faq h3 {
+  font-size: 1.4375rem;
+  line-height: 1.3;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+}
+
+.faq p {
+  max-width: 60ch;
+  margin: 0;
+  color: var(--ink-2);
+}
+
+/* Ficha de datos: más aire que la de los casos, porque aquí es la pieza principal */
+.contact-body-aside {
+  position: sticky;
+  top: calc(var(--cell) * 2);
+  display: grid;
+  gap: var(--cell);
+}
+
+.contact-data {
+  font-size: var(--fs-small);
+  line-height: 22px;
+}
+
+.contact-data .origin-row {
+  grid-template-columns: 6rem minmax(0, 1fr);
+  padding: 12px 16px;
+}
+
+.contact-data dd {
+  overflow-wrap: anywhere;
+}
+
+.contact-data-hours {
+  display: block;
+}
+
+.contact-data-hours .num {
+  white-space: nowrap;
+}
+
+@media (max-width: 899.98px) {
+  .contact-body-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: calc(var(--cell) * 2);
+  }
+
+  /* En móvil, horario y oficina antes que las preguntas */
+  .contact-body-aside {
+    position: static;
+    order: -1;
+  }
+
+  .contact-body-actions {
+    margin-bottom: calc(var(--cell) * 2);
+  }
+}
