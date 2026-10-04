@@ -18,6 +18,8 @@ pnpm images <archivo o carpeta> --destino src/assets/eventos   # optimiza fotos 
 pnpm images --revisar                                          # lista imágenes pesadas
 ```
 
+- Con un agente (Claude Code, Codex): sus instrucciones están en `AGENTS.md`; después de clonar,
+  `pnpm run setup` enlaza las skills de `.agents/skills`.
 - Se trabaja en `develop`. Cada push a `main` publica la web; `develop` y los PR solo compilan.
 - pnpm instala solo versiones con al menos 7 días publicadas y no ejecuta scripts de dependencias
   (`pnpm-workspace.yaml`), por seguridad.

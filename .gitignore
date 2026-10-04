@@ -28,3 +28,24 @@ dist-ssr
 /out/
 next-env.d.ts
 *.tsbuildinfo
+
+# Agentes: las skills se versionan en .agents/skills; .claude/ es local (enlaces que crea
+# `pnpm run setup` y ajustes de cada persona)
+/.claude/
+
+# impeccable: se versionan config.json, design.json, surfaces/, live/config.json y
+# critique/ignore.md. Lo demás es estado local, caché o evidencia generada.
+**/.impeccable/config.local.json
+**/.impeccable/hook.cache.json
+**/.impeccable/hook.pending.json
+**/.impeccable/mocks/
+**/.impeccable/questions/
+**/.impeccable/review/
+**/.impeccable/build/
+**/.impeccable/history/
+**/.impeccable/provider-smoke/
+**/.impeccable/critique/*
+!**/.impeccable/critique/ignore.md
+**/.impeccable/live/*
+!**/.impeccable/live/config.json
+**/src/__impeccable_provider_smoke_*.html
