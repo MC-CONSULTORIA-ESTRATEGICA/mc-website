@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  /* Identidad de marca MC Consultores: usar estos tokens (bg-brand-navy, text-brand-cyan…) en
+     vez de hex sueltos. El navy es inmutable; la paleta del Afiche se define en el paso 3. */
+  --color-brand-navy: #01395c;
+  --color-brand-navy-light: #02507f;
+  --color-brand-cyan: #3f9dc8;
+  --color-brand-cyan-light: #60d9ff;
+}
