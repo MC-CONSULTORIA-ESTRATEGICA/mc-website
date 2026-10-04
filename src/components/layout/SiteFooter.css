@@ -1,0 +1,78 @@
+/* El grano lo pone .grain: aquí solo el color, para no pisar la imagen */
+.site-footer {
+  background-color: var(--navy-deep);
+  color: var(--on-navy-2);
+  padding-top: calc(var(--cell) * 3);
+}
+
+.site-footer a {
+  color: var(--on-navy);
+  text-decoration: underline 1px rgb(255 255 255 / 0.6);
+  text-underline-offset: 0.22em;
+}
+
+.site-footer a:hover {
+  text-decoration-color: var(--on-navy);
+}
+
+.site-footer :focus-visible {
+  outline-color: var(--on-navy);
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) repeat(3, minmax(0, 2fr));
+  gap: calc(var(--cell) * 2);
+}
+
+.footer-brand {
+  display: grid;
+  gap: var(--cell);
+  align-content: start;
+}
+
+.footer-brand img {
+  width: 120px;
+  height: auto;
+}
+
+.footer-brand p {
+  max-width: 36ch;
+  font-size: var(--fs-small);
+}
+
+.footer-head {
+  color: var(--on-navy);
+  font-weight: 600;
+  font-variation-settings: "wdth" 110;
+  margin-bottom: 12px;
+}
+
+.footer-col ul {
+  display: grid;
+  gap: 8px;
+  font-size: var(--fs-small);
+}
+
+.footer-legal {
+  margin-top: calc(var(--cell) * 3);
+  padding-block: var(--cell);
+  border-top: 1px solid rgb(255 255 255 / 0.14);
+  font-size: var(--fs-label);
+}
+
+@media (max-width: 899.98px) {
+  .site-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .site-footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

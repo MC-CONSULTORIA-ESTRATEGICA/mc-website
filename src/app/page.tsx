@@ -1,11 +1,16 @@
-import Image from "next/image";
-
-import { SkeletonList } from "@/components/sections/Skeleton";
-import { clients } from "@/content/clients";
-import { newsItems } from "@/content/news";
-import { projects } from "@/content/projects";
+import { About } from "@/components/sections/inicio/About";
+import { Articles } from "@/components/sections/inicio/Articles";
+import { Clients } from "@/components/sections/inicio/Clients";
+import { Contact } from "@/components/sections/inicio/Contact";
+import { Events } from "@/components/sections/inicio/Events";
+import { Hero } from "@/components/sections/inicio/Hero";
+import { Presence } from "@/components/sections/inicio/Presence";
+import { Projects } from "@/components/sections/inicio/Projects";
+import { Services } from "@/components/sections/inicio/Services";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
+
+import "@/components/sections/inicio/inicio.css";
 
 export const metadata = {
   ...pageMetadata({
@@ -21,29 +26,15 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <h1>{site.tagline}</h1>
-      <SkeletonList
-        title="Proyectos"
-        items={projects
-          .filter((project) => project.featured)
-          .map((project) => ({ key: project.slug, label: project.title, detail: project.tag }))}
-      />
-      <section>
-        <h2>Clientes</h2>
-        <ul>
-          {clients.map((client) => (
-            <li key={client.id}>
-              <Image src={client.logo} alt={client.name} height={48} style={{ width: "auto" }} />
-            </li>
-          ))}
-        </ul>
-      </section>
-      <SkeletonList
-        title="Eventos"
-        items={newsItems
-          .slice(0, 3)
-          .map((item) => ({ key: String(item.id), label: item.title, detail: item.date }))}
-      />
+      <Hero />
+      <Services />
+      <Projects />
+      <About />
+      <Clients />
+      <Presence />
+      <Events />
+      <Articles />
+      <Contact />
     </>
   );
 }

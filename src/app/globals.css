@@ -1,10 +1,67 @@
 @import "tailwindcss";
 
+/*
+ * Tokens del Afiche (variante 4 de la propuesta v3; Figma 2WjOpYVypwycMiNaT4pbFt, frame 26:2).
+ * Navy #01395C es inmutable. El marrón tierra va solo en anillos, curvas y ondas.
+ *
+ * Contrastes: blanco sobre #002d50 14,0:1 · #c9d6df sobre navy 8,1:1 · #9fc9e0 sobre navy 6,8:1 ·
+ * #00263f sobre cyan 5,1:1 (botón) · #23709a sobre papel 4,9:1 · #4d4a45 sobre papel 8,0:1 ·
+ * #6b665f sobre papel 5,2:1.
+ */
+:root {
+  /* Marca */
+  --navy: #01395c;
+  --navy-deep: #00263f;
+  --navy-hero: #002d50;
+  --cyan: #3f9dc8;
+  --cyan-light: #9fc9e0;
+  --cyan-ink: #23709a;
+  --cyan-soft: #d9ebf4;
+
+  /* Papel y tinta */
+  --paper: #f5f3ef;
+  --sheet: #fcfbf9;
+  --grid: #e8e3db;
+  --grid-strong: #d8d1c6;
+  --ink: #22211f;
+  --ink-2: #4d4a45;
+  --ink-3: #6b665f;
+  --on-navy: #ffffff;
+  --on-navy-2: #c9d6df;
+
+  /* Tierra: solo anillos, curvas y ondas */
+  --earth-900: #6e4a2f;
+  --earth-700: #8b5e3c;
+  --earth-600: #9a6b47;
+  --earth-400: #b08462;
+
+  /* Retícula */
+  --cell: 24px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --rail-w: 56px;
+  --page-max: 1320px;
+
+  /* Tipografía: Archivo, angosta (wdth 68) en títulos */
+  --font: var(--font-archivo), "Archivo", system-ui, sans-serif;
+  --wdth-display: 68;
+  --wdth-body: 100;
+  --fs-display: clamp(3rem, 1.4rem + 5.6vw, 6.375rem);
+  --fs-h2: clamp(2.375rem, 1.6rem + 2.4vw, 3.4375rem);
+  --fs-h3: 1.0625rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9375rem;
+  --fs-label: 0.8125rem;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 160ms;
+  --dur: 280ms;
+}
+
 @theme {
-  /* Identidad de marca MC Consultores: usar estos tokens (bg-brand-navy, text-brand-cyan…) en
-     vez de hex sueltos. El navy es inmutable; la paleta del Afiche se define en el paso 3. */
   --color-brand-navy: #01395c;
-  --color-brand-navy-light: #02507f;
+  --color-brand-navy-deep: #00263f;
   --color-brand-cyan: #3f9dc8;
-  --color-brand-cyan-light: #60d9ff;
+  --color-brand-cyan-light: #9fc9e0;
+  --color-paper: #f5f3ef;
 }

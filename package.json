@@ -18,6 +18,7 @@
     "setup": "node scripts/link-skills.mjs",
     "dev": "next dev -p 5185",
     "build": "next build && node scripts/check-export.mjs",
+    "build:revision": "node scripts/build-revision.mjs",
     "lint": "eslint .",
     "preview": "python3 -m http.server 5186 -d out",
     "images": "node scripts/images.mjs"

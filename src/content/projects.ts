@@ -2,21 +2,32 @@ import type { StaticImageData } from "next/image";
 
 import sesionSala2 from "@/assets/fotos/sesion-sala-2.webp";
 import reunionSpm from "@/assets/fotos/reunion-spm.webp";
-import casoGeologiaEstructural from "@/assets/ia/caso-geologia-estructural.webp";
-import casoBdGeologica from "@/assets/ia/caso-bd-geologica.webp";
+import afloramiento from "@/assets/generadas/afloramiento-plegado.webp";
+import muestrasLaboratorio from "@/assets/generadas/muestras-laboratorio.webp";
 import type { ClientId } from "@/content/clients";
+
+export type ProjectImage = {
+  src: StaticImageData;
+  alt: string;
+  /** "referencial": generada, muestra el tipo de trabajo y no el lugar del cliente (con rótulo). */
+  kind: "foto" | "referencial";
+};
 
 export type Project = {
   slug: string;
   title: string;
   tag: string;
   client?: ClientId;
-  /** Las de `assets/ia/` son generadas con IA y salen en el paso 3 (regla de imágenes). */
-  image: StaticImageData;
+  /** Solo cuando el sitio actual lo dice; si no, la fila no se muestra. */
+  service?: string;
+  scope?: string;
+  image: ProjectImage;
   excerpt: string;
   description: string;
   /** Entre los 4 que se muestran en el inicio. */
   featured: boolean;
+  /** Falta confirmar que el proyecto es real: la marca solo se ve en modo revisión. */
+  toConfirm?: boolean;
 };
 
 // Los 4 casos del sitio actual. Sofía dice que son unos 13: la lista (cliente, servicio,
@@ -27,19 +38,31 @@ export const projects: Project[] = [
     title: "Curso de Código S-K 1300",
     tag: "capacitación",
     client: "southern",
-    image: sesionSala2,
+    service: "Capacitación",
+    scope: "Perú, Chile y Argentina",
+    image: {
+      src: sesionSala2,
+      alt: "Participantes del curso S-K 1300 reunidos en una sala de conferencias",
+      kind: "foto",
+    },
     excerpt:
-      "Capacitación especializada en el Código S-K 1300 para el equipo de Exploraciones, con alcance regional en Perú, Chile y Argentina.",
+      "Capacitación especializada en el Código S-K 1300 para el equipo de Exploraciones, con alcance regional en Perú, Chile y Argentina. La sesión fue conducida por nuestro Consultor Asociado, el Dr. Armando Simón, PhD, PGeo.",
     description:
       "Diseñamos y dictamos una capacitación especializada en el Código S-K 1300 para el equipo de Exploraciones de Southern Peru Copper Corporation. La sesión fue conducida por nuestro Consultor Asociado, el Dr. Armando Simón, PhD, PGeo, y reunió a los responsables de Exploraciones de sus proyectos en Perú, Chile y Argentina en un espacio de aprendizaje, análisis técnico y colaboración regional.",
     featured: true,
   },
   {
     slug: "reconciliacion-condestable",
-    title: "Servicio de Reconciliación Minera",
+    title: "Servicio de reconciliación minera",
     tag: "reconciliación",
     client: "condestable",
-    image: reunionSpm,
+    service: "Reconciliación minera",
+    scope: "Cadena mina-planta",
+    image: {
+      src: reunionSpm,
+      alt: "Dos personas junto al letrero de Southern Peaks Mining (SPM), dueña de Condestable",
+      kind: "foto",
+    },
     excerpt:
       "Análisis y validación de datos de producción y recursos para fortalecer la toma de decisiones estratégicas.",
     description:
@@ -48,10 +71,15 @@ export const projects: Project[] = [
   },
   {
     slug: "bd-geologica-titan",
-    title: "Automatización y Analítica en BD Geológica",
+    title: "Automatización y analítica en base de datos geológica",
+    // En el sitio actual la etiqueta es "analítica"; el servicio exacto no está confirmado.
     tag: "analítica",
     client: "titan",
-    image: casoBdGeologica,
+    image: {
+      src: muestrasLaboratorio,
+      alt: "Imagen referencial: sobres y bolsas de muestras de laboratorio en bandejas",
+      kind: "referencial",
+    },
     excerpt:
       "Automatización de la integración de datos geológicos para acelerar su carga en el software de modelamiento.",
     description:
@@ -59,15 +87,21 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    // PENDIENTE(Marcos): confirmar que es un proyecto real; no tiene cliente nombrado.
     slug: "geologia-estructural",
-    title: "Geología Estructural",
+    title: "Geología estructural",
     tag: "geología-estructural",
-    image: casoGeologiaEstructural,
+    image: {
+      src: afloramiento,
+      alt: "Imagen referencial: afloramiento de roca con estratos plegados y una falla",
+      kind: "referencial",
+    },
     excerpt:
       "Mapeo y modelamiento 3D de estructuras geológicas para optimizar la exploración y evaluación de yacimientos.",
     description:
       "Realizamos un análisis estructural detallado orientado a optimizar la exploración y evaluación de yacimientos. Aplicamos técnicas avanzadas de mapeo de campo y modelamiento 3D para caracterizar la arquitectura geológica de depósitos mineros, brindando una base técnica sólida para la planificación de futuras campañas de exploración.",
     featured: true,
+    // PENDIENTE(Sofía o Camila): confirmar que es un proyecto real; no tiene cliente nombrado.
+    // Se muestra por decisión de Salim (4 oct 2026).
+    toConfirm: true,
   },
 ];

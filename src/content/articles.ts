@@ -15,13 +15,15 @@ export type Article = {
   content: string[];
   image: StaticImageData;
   date: string;
+  /** Fecha para ordenar y para <time> (AAAA-MM). */
+  dateTime: string;
   readTime: string;
 };
 
 export const articles: Article[] = [
   {
     slug: "importancia-reconciliacion-minera",
-    category: "Reconciliación Minera",
+    category: "Reconciliación minera",
     tag: "reconciliacion",
     accent: "#3f9dc8",
     title: "La importancia de la reconciliación minera",
@@ -29,6 +31,7 @@ export const articles: Article[] = [
       "Comparar lo planificado con lo realmente producido es clave para detectar pérdidas, reducir la dilución y respaldar decisiones confiables en toda la cadena mina-planta-despacho.",
     image: servicioReconciliacion,
     date: "Mar 2026",
+    dateTime: "2026-03",
     readTime: "6 min de lectura",
     content: [
       "La reconciliación minera es el proceso mediante el cual se compara lo estimado en los modelos geológicos y planes de mina con lo efectivamente extraído, procesado y despachado. Esta comparación permite identificar brechas entre lo planificado y lo real en tonelaje, ley y recuperación.",
@@ -39,7 +42,7 @@ export const articles: Article[] = [
   },
   {
     slug: "buenas-practicas-qa-qc",
-    category: "QA/QC",
+    category: "QA-QC",
     tag: "qa-qc",
     accent: "#3f9dc8",
     title: "Buenas prácticas de QA/QC en bases de datos geológicas",
@@ -47,6 +50,7 @@ export const articles: Article[] = [
       "Un programa sólido de aseguramiento y control de calidad protege la confiabilidad de los datos que sustentan la estimación de recursos y las decisiones de inversión.",
     image: servicioQaqc,
     date: "Ene 2026",
+    dateTime: "2026-01",
     readTime: "5 min de lectura",
     content: [
       "El QA/QC (Quality Assurance / Quality Control) es el conjunto de procedimientos que garantizan que los datos geológicos, como leyes de ensayes, densidades, coordenadas de sondajes y litología, sean precisos, consistentes y trazables desde el campo hasta la base de datos final.",
@@ -57,7 +61,7 @@ export const articles: Article[] = [
   },
   {
     slug: "estimacion-recursos-ni-43-101",
-    category: "Recursos y Reservas",
+    category: "Recursos y reservas",
     tag: "ni-43-101",
     accent: "#3f9dc8",
     title: "Estimación de recursos bajo el estándar NI 43-101",
@@ -65,6 +69,7 @@ export const articles: Article[] = [
       "El código canadiense NI 43-101 establece los requisitos mínimos de transparencia y rigor técnico para reportar recursos y reservas minerales ante inversionistas.",
     image: servicioEstimacion,
     date: "Nov 2025",
+    dateTime: "2025-11",
     readTime: "7 min de lectura",
     content: [
       "El National Instrument 43-101 (NI 43-101) es el estándar canadiense que regula la divulgación pública de información técnica y científica sobre proyectos mineros, exigido a las compañías que cotizan en bolsas como la TSX o la TSX-V. Su objetivo es proteger a los inversionistas asegurando que la información publicada sea preparada y verificada por profesionales calificados.",
@@ -83,6 +88,7 @@ export const articles: Article[] = [
       "La gestión responsable de depósitos de relaves es hoy un pilar de la licencia social y ambiental, no solo un requisito técnico o normativo.",
     image: casoGeologiaEstructural,
     date: "Sep 2025",
+    dateTime: "2025-09",
     readTime: "6 min de lectura",
     content: [
       "Los relaves son los residuos generados tras la extracción del mineral de valor durante el procesamiento metalúrgico. Su almacenamiento a largo plazo en depósitos superficiales representa uno de los mayores riesgos ambientales, sociales y de reputación de la industria minera cuando no se gestiona adecuadamente.",
@@ -92,3 +98,8 @@ export const articles: Article[] = [
     ],
   },
 ];
+
+/** Artículos del más reciente al más antiguo. */
+export function recentArticles(count = articles.length): Article[] {
+  return [...articles].sort((a, b) => b.dateTime.localeCompare(a.dateTime)).slice(0, count);
+}

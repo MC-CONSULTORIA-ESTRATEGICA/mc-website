@@ -14,8 +14,11 @@ export const site = {
     whatsapp: {
       display: "+51 932 432 031",
       href: `https://wa.me/${phoneDigits}`,
-      /** Mensaje precargado que usaba la página de Contacto. */
-      greeting: "Hola, quiero más información",
+      /** Mensajes precargados (rótulos de enlace, no afirmaciones sobre MC). */
+      messages: {
+        quote: "Hola, quisiera solicitar una cotización.",
+        info: "Hola, quiero más información sobre sus servicios.",
+      },
     },
     email: "ventas@mc-consultoria.com",
     linkedin: "https://www.linkedin.com/company/mc-consultoria-estrategica/",
@@ -29,6 +32,9 @@ export const site = {
 } as const;
 
 /** Enlace de WhatsApp con un mensaje precargado. */
-export function whatsappLink(message: string = site.contact.whatsapp.greeting): string {
+export function whatsappLink(message: string = site.contact.whatsapp.messages.info): string {
   return `${site.contact.whatsapp.href}?text=${encodeURIComponent(message)}`;
 }
+
+/** Acción principal del sitio: pedir una cotización por WhatsApp. */
+export const WHATSAPP_QUOTE = whatsappLink(site.contact.whatsapp.messages.quote);

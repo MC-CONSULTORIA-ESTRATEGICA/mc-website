@@ -19,6 +19,8 @@ export type Client = {
   /** Razón social, como aparece en los casos. */
   legalName?: string;
   logo: StaticImageData;
+  /** Escala para igualar el tamaño visual: los archivos traen márgenes blancos distintos. */
+  optical?: number;
 };
 
 // En el orden del carrusel actual: Southern, Buenaventura y Minsur primero (Sofía y Marcos).
@@ -26,14 +28,14 @@ export type Client = {
 // titula como "empresas mineras". Los logos no tienen transparencia (Minsur va sobre cuadro azul).
 export const clients = [
   { id: "southern", name: "Southern Copper", legalName: "Southern Peru Copper Corporation", logo: southernCopper },
-  { id: "buenaventura", name: "Buenaventura", logo: buenaventura },
-  { id: "minsur", name: "Minsur", logo: minsur },
-  { id: "korimallko", name: "Korimallko", logo: korimallko },
+  { id: "buenaventura", name: "Buenaventura", optical: 1.55, logo: buenaventura },
+  { id: "minsur", name: "Minsur", optical: 0.78, logo: minsur },
+  { id: "korimallko", name: "Korimallko", optical: 0.86, logo: korimallko },
   { id: "ingemmet", name: "INGEMMET", logo: ingemmet },
-  { id: "yura", name: "Yura", logo: yura },
-  { id: "condestable", name: "Compañía Minera Condestable", legalName: "Compañía Minera Condestable S.A.", logo: condestable },
-  { id: "orex", name: "Minera OREX", logo: orex },
-  { id: "titan", name: "Minera Titán del Perú", legalName: "Minera Titán del Perú S.R.L.", logo: titanDelPeru },
+  { id: "yura", name: "Yura", optical: 1.3, logo: yura },
+  { id: "condestable", name: "Compañía Minera Condestable", optical: 1.08, legalName: "Compañía Minera Condestable S.A.", logo: condestable },
+  { id: "orex", name: "Minera OREX", optical: 1.1, logo: orex },
+  { id: "titan", name: "Minera Titán del Perú", optical: 1.25, legalName: "Minera Titán del Perú S.R.L.", logo: titanDelPeru },
   { id: "yanaquihua", name: "Yanaquihua", logo: yanaquihua },
   { id: "colorado", name: "Colorado Mining", logo: coloradoMining },
 ] as const satisfies readonly Client[];

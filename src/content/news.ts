@@ -28,12 +28,16 @@ export type NewsItem = {
   category: "Perumin" | "Universidades" | string;
   type: string;
   date: string;
+  /** Fecha para ordenar (AAAA-MM, o AAAA si falta el mes). */
+  dateTime: string;
   city: string;
   title: string;
   summary: string;
   attendees: number;
   images: StaticImageData[];
   image: StaticImageData;
+  /** La imagen es el afiche del evento, no una foto: se muestra entera. */
+  poster?: boolean;
   link?: string;
   highlight?: boolean;
   points?: string[];
@@ -45,6 +49,7 @@ export const newsItems: NewsItem[] = [
     category: "Perumin",
     type: "Feria / Networking",
     date: "Sep 2025",
+    dateTime: "2025-09",
     city: "Arequipa, PE",
     title: "Participación en PERUMIN 37",
     summary: "Participación activa en actividades técnicas y networking.",
@@ -64,6 +69,7 @@ export const newsItems: NewsItem[] = [
     category: "Universidades",
     type: "Ponencia",
     date: "Nov 2025",
+    dateTime: "2025-11",
     city: "Arequipa, PE",
     title: "Ponencia en universidad Continental: CONTIMIN",
     summary: "Exposición de casos y buenas prácticas en reconciliación minera.",
@@ -83,6 +89,7 @@ export const newsItems: NewsItem[] = [
     category: "Universidades",
     type: "Ponencia",
     date: "Dic 2025",
+    dateTime: "2025-12",
     city: "Arequipa, PE",
     title:
       "Asistencia LXXIX Aniversario de la Facultad de Geología, Geofísica y Minas - UNSA",
@@ -105,6 +112,7 @@ export const newsItems: NewsItem[] = [
     category: "Universidades",
     type: "Ponencia",
     date: "Feb 2026",
+    dateTime: "2026-02",
     city: "Lima, PE",
     title: "Ponencia en Centrum PUCP Business Consulting Club (CPBCC)",
     summary:
@@ -116,6 +124,7 @@ export const newsItems: NewsItem[] = [
     ],
     attendees: 60,
     image: centrumPucp,
+    poster: true,
     images: [centrumPucp],
     link: "",
     highlight: false,
@@ -125,6 +134,7 @@ export const newsItems: NewsItem[] = [
     category: "AusIMM",
     type: "Conferencia / Networking",
     date: "2026",
+    dateTime: "2026",
     city: "Perú",
     title: "Participación en AusIMM",
     summary:
@@ -145,6 +155,7 @@ export const newsItems: NewsItem[] = [
     category: "ProExplo",
     type: "Conferencia / Exposición",
     date: "2026",
+    dateTime: "2026",
     city: "Perú",
     title: "Participación en ProExplo",
     summary:
@@ -161,3 +172,14 @@ export const newsItems: NewsItem[] = [
     highlight: false,
   },
 ];
+
+// PENDIENTE(Camila): meses de AusIMM y ProExplo (2026). Mientras falten, un año sin mes se ordena
+// como el más reciente de ese año, y entre ellos por id: el orden del Inicio es provisional.
+const sortKey = (item: NewsItem) => (item.dateTime.length === 4 ? `${item.dateTime}-13` : item.dateTime);
+
+/** Eventos del más reciente al más antiguo. */
+export function recentNews(count = newsItems.length): NewsItem[] {
+  return [...newsItems]
+    .sort((a, b) => sortKey(b).localeCompare(sortKey(a)) || b.id - a.id)
+    .slice(0, count);
+}

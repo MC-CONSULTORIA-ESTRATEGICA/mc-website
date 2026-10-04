@@ -1,0 +1,157 @@
+/* Bloque 3D en la sección Servicios (fondo claro) */
+.block-figure {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.bf-stage {
+  position: relative;
+}
+
+.bf-canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.bf-leaders,
+.bf-labels {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.bf-leader {
+  stroke-width: 1.25;
+  transition: opacity var(--dur) var(--ease-out);
+}
+
+.bf-leader-service {
+  stroke: var(--cyan-ink);
+}
+
+.bf-leader-on-block {
+  stroke: var(--cyan-light);
+}
+
+.bf-leader-off-block {
+  stroke: var(--ink-3);
+}
+
+.bf-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  font-variation-settings: "wdth" 100;
+  transition: opacity var(--dur) var(--ease-out), background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+/* Rótulos técnicos del dibujo */
+/* Cada rótulo tapa el tramo de su guía: la guía nace detrás del texto */
+.bf-on-block {
+  padding: 0 4px;
+  background: rgb(0 38 63 / 0.78);
+  color: var(--cyan-light);
+}
+
+.bf-off-block {
+  padding: 0 4px;
+  background: var(--paper);
+  color: var(--ink-2);
+}
+
+/* Servicios con lugar físico en el dibujo */
+.bf-service {
+  padding: 3px 9px;
+  border: 1.5px solid var(--navy);
+  background: var(--cyan-soft);
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.bf-service.is-on {
+  background: var(--navy);
+  color: var(--on-navy);
+}
+
+.bf-label.is-off,
+.bf-leader.is-off {
+  opacity: 0.3;
+}
+
+/* Flujo de reconciliación */
+.bf-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--grid-strong);
+  background: var(--sheet);
+  font-size: var(--fs-small);
+  color: var(--navy);
+  transition: opacity var(--dur) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.bf-flow.is-off {
+  opacity: 0.4;
+}
+
+.bf-flow.is-on {
+  border-color: var(--navy);
+}
+
+.bf-flow-name {
+  padding: 2px 8px;
+  border: 1.5px solid var(--navy);
+  background: var(--cyan-soft);
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.bf-flow.is-on .bf-flow-name {
+  background: var(--navy);
+  color: var(--on-navy);
+}
+
+.bf-flow ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 0;
+}
+
+.bf-flow li + li::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 10px;
+  margin-inline: 6px;
+  vertical-align: middle;
+  background: no-repeat center / 22px 10px
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 10'%3E%3Cpath d='M0 5h20M16 1l4 4-4 4' fill='none' stroke='%2301395c' stroke-width='1.25'/%3E%3C/svg%3E");
+}
+
+.block-figure figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  font-size: var(--fs-label);
+  line-height: 20px;
+  color: var(--ink-3);
+}
+
+.block-figure .review-flag {
+  color: var(--cyan-ink);
+}

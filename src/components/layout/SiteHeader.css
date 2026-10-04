@@ -1,0 +1,111 @@
+.site-header {
+  background-color: var(--navy-hero);
+  color: var(--on-navy);
+  position: relative;
+  z-index: 20;
+}
+
+.site-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: calc(var(--cell) * 3);
+  gap: var(--cell);
+}
+
+.site-logo {
+  display: block;
+  flex-shrink: 0;
+  padding-block: 12px;
+}
+
+.site-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: calc(var(--cell) * 1.25);
+}
+
+.site-nav a {
+  display: block;
+  padding-block: 8px;
+  color: var(--on-navy-2);
+  text-decoration: none;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  font-variation-settings: "wdth" 106;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid transparent;
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.site-nav a:hover {
+  color: var(--on-navy);
+  border-bottom-color: var(--cyan-light);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--on-navy);
+  border-bottom-color: var(--on-navy);
+}
+
+.site-header :focus-visible {
+  outline-color: var(--on-navy);
+}
+
+.site-menu-btn {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid var(--cyan-light);
+  color: var(--on-navy);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media (max-width: 899.98px) {
+  .site-logo img {
+    height: 32px;
+  }
+
+  .site-menu-btn {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--navy-hero);
+    border-top: 1px solid rgb(255 255 255 / 0.14);
+    padding: 8px var(--gutter) var(--cell);
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .site-nav a {
+    padding-block: 12px;
+    font-size: var(--fs-body);
+    border-bottom: 1px solid rgb(255 255 255 / 0.1);
+  }
+
+  .site-nav a[aria-current="page"] {
+    border-bottom-color: rgb(255 255 255 / 0.1);
+    font-weight: 650;
+  }
+}

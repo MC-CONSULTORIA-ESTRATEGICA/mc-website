@@ -1,0 +1,191 @@
+/* Piezas compartidas: secciones, títulos, botones, enlaces y marcas de revisión. */
+
+/* ---------- Superficies ---------- */
+.sec {
+  position: relative;
+  padding-block: calc(var(--cell) * 4);
+}
+
+.sec-paper {
+  background-color: var(--paper);
+}
+
+.sec-sheet {
+  background-color: var(--sheet);
+  overflow: hidden;
+}
+
+.sec-navy {
+  overflow: hidden;
+  background-color: var(--navy-deep);
+  color: var(--on-navy);
+}
+
+.sec-navy :focus-visible {
+  outline-color: var(--on-navy);
+}
+
+/* ---------- Títulos ---------- */
+.display {
+  font-size: var(--fs-display);
+  line-height: 0.96;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.sec-head {
+  display: grid;
+  gap: 12px;
+  max-width: 46rem;
+  margin-bottom: calc(var(--cell) * 2);
+}
+
+.sec-title {
+  font-size: var(--fs-h2);
+  line-height: 1.05;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.on-navy .sec-title {
+  color: var(--on-navy);
+}
+
+.sec-lead {
+  max-width: 60ch;
+  color: var(--ink-2);
+}
+
+.on-navy .sec-lead {
+  color: var(--on-navy-2);
+}
+
+/* ---------- Botones ---------- */
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border-radius: 2px;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 22px;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+/* Acción principal: cyan con texto navy profundo */
+.c-btn-action {
+  background: var(--cyan);
+  color: var(--navy-deep);
+}
+
+.c-btn-action:hover {
+  background: var(--cyan-light);
+}
+
+/* Enlace secundario sobre navy: subrayado cyan */
+.c-btn-line {
+  padding-inline: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--cyan);
+  color: var(--on-navy);
+}
+
+.c-btn-line:hover {
+  border-bottom-color: var(--on-navy);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--cyan);
+}
+
+.link-arrow svg {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.link-arrow:hover {
+  text-decoration-color: var(--navy);
+}
+
+.link-arrow:hover svg {
+  transform: translateX(3px);
+}
+
+.on-navy .link-arrow {
+  color: var(--cyan-light);
+  text-decoration-color: currentColor;
+}
+
+.on-navy .link-arrow:hover {
+  color: var(--on-navy);
+}
+
+/* ---------- Rótulos de imagen ---------- */
+.img-label {
+  padding: 2px 8px;
+  background: rgb(0 38 63 / 0.85);
+  color: var(--on-navy);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  line-height: 20px;
+}
+
+/* ---------- Modo revisión (?revision): pendientes y borradores ---------- */
+.pending {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  padding: 10px 14px;
+  border: 1px dashed var(--cyan-ink);
+  background: var(--sheet);
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.pending-title {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.review-flag {
+  display: inline-block;
+  padding: 0 8px;
+  border: 1px dashed currentColor;
+  font-size: var(--fs-label);
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--cyan-ink);
+  vertical-align: 0.15em;
+}
+
+.on-navy .review-flag {
+  color: var(--cyan-light);
+}
+
+@media (max-width: 899.98px) {
+  .sec {
+    padding-block: calc(var(--cell) * 3);
+  }
+}
+
+@media (max-width: 599.98px) {
+  .c-btn-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
