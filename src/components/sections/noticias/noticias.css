@@ -5,48 +5,15 @@
   padding-top: calc(var(--cell) * 3);
 }
 
-.event-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-top: 2px solid var(--navy);
-}
-
-/* Ficha de evento: fecha y lugar · título y resumen · fotos */
+/* Ficha de evento (sobre el registro reglado de components.css): fecha y lugar · título y resumen · fotos */
 .event {
-  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 4fr) minmax(0, 6fr);
   gap: var(--cell) calc(var(--cell) * 1.5);
   align-items: start;
-  padding-block: calc(var(--cell) * 2);
-  border-bottom: 1px solid var(--grid-strong);
-  scroll-margin-top: var(--cell);
-}
-
-/* El nodo de la cota sobre la regla de cada ficha: el registro es la cota de la cabecera, abierta */
-.event::before {
-  content: "";
-  position: absolute;
-  top: -4px;
-  left: 0;
-  box-sizing: border-box;
-  width: 7px;
-  height: 7px;
-  border: 1px solid var(--navy);
-  background-color: var(--paper);
-}
-
-/* La primera ficha cuelga de la regla de 2 px */
-.event:first-child::before {
-  top: -4.5px;
 }
 
 /* Al llegar desde la cota o desde el Inicio, la ficha de destino queda marcada (sin movimiento) */
-.event:target::before {
-  background-color: var(--navy);
-}
-
 .event:target .event-title {
   text-decoration: underline 2px var(--cyan);
   text-underline-offset: 0.22em;

@@ -1,0 +1,73 @@
+/* Ficha en línea sobre navy: misma línea de 1 px que la cota-índice, celdas separadas por 1 px */
+.page-facts {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  border-top: 1px solid var(--cyan-light);
+}
+
+/* Nodos huecos de 7 px en los extremos de la línea, como en toda cota del sitio */
+.page-facts::before,
+.page-facts::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  box-sizing: border-box;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--cyan-light);
+  background-color: var(--navy-hero);
+}
+
+.page-facts::before {
+  left: 0;
+}
+
+.page-facts::after {
+  right: 0;
+}
+
+.page-facts > div {
+  display: grid;
+  gap: 2px;
+  padding: 12px calc(var(--cell) * 1.5) 0 0;
+  margin-right: calc(var(--cell) * 1.5);
+  border-right: 1px solid rgb(159 201 224 / 0.3);
+  font-size: var(--fs-label);
+  line-height: 20px;
+}
+
+.page-facts > div:last-child {
+  border-right: 0;
+}
+
+.page-facts dt {
+  color: var(--on-navy-2);
+}
+
+.page-facts dd {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--on-navy);
+}
+
+/* En móvil, filas de rótulo y dato, como las fichas de datos */
+@media (max-width: 599.98px) {
+  .page-facts {
+    display: grid;
+  }
+
+  .page-facts > div {
+    grid-template-columns: 6rem minmax(0, 1fr);
+    gap: 12px;
+    margin-right: 0;
+    padding: 8px 0;
+    border-right: 0;
+  }
+
+  .page-facts > div + div {
+    border-top: 1px solid rgb(159 201 224 / 0.3);
+  }
+}

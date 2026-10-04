@@ -5,7 +5,8 @@ import type { RoutePath } from "@/lib/routes";
 type PageMetadataInput = {
   title: string;
   description: string;
-  path: RoutePath;
+  /** Una ruta de routes.ts o la página de un artículo (/blog/<slug>/). */
+  path: RoutePath | `/blog/${string}/`;
 };
 
 /** Metadata por página con su URL canónica. El título usa la plantilla del layout. */

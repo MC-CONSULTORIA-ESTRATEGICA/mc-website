@@ -11,6 +11,14 @@ import { navRoutes } from "@/lib/routes";
 
 import "./SiteHeader.css";
 
+/** "page" en la página misma; "true" en una página interna de esa sección (un artículo del Blog). */
+function currentFor(pathname: string, routePath: string): "page" | "true" | undefined {
+  const path = pathname.endsWith("/") ? pathname : `${pathname}/`;
+  if (path === routePath) return "page";
+  if (routePath !== "/" && path.startsWith(routePath)) return "true";
+  return undefined;
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -45,7 +53,7 @@ export function SiteHeader() {
               <li key={route.path}>
                 <Link
                   href={route.path}
-                  aria-current={pathname === route.path ? "page" : undefined}
+                  aria-current={currentFor(pathname, route.path)}
                   onClick={() => setOpen(false)}
                 >
                   {route.label}

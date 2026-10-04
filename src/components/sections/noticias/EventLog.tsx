@@ -8,13 +8,13 @@ export function EventLog() {
   return (
     <section className="sec sec-paper grain event-log" aria-label="Eventos">
       <div className="page">
-        <ol className="event-list">
+        <ol className="log">
           {recentNews().map((event) => {
             // PENDIENTE(Camila): meses de AusIMM y ProExplo; mientras, solo el año.
             const noMonth = event.dateTime.length === 4;
             const [first, ...rest] = event.images;
             return (
-              <li key={event.id} id={`evento-${event.id}`} className="event">
+              <li key={event.id} id={`evento-${event.id}`} className="log-entry event">
                 <div className="event-when">
                   <time className="event-date num" dateTime={event.dateTime}>
                     {event.date}

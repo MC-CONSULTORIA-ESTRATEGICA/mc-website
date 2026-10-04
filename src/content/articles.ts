@@ -1,9 +1,5 @@
-import type { StaticImageData } from "next/image";
-
-import servicioReconciliacion from "@/assets/ia/servicio-reconciliacion.webp";
-import servicioQaqc from "@/assets/ia/servicio-qaqc.webp";
-import servicioEstimacion from "@/assets/ia/servicio-estimacion.webp";
-import casoGeologiaEstructural from "@/assets/ia/caso-geologia-estructural.webp";
+// Sin importaciones de imágenes: scripts/check-export.mjs importa este archivo con Node para validar
+// la página de cada artículo. Las imágenes de IA que usaba el sitio anterior no se muestran.
 
 export type Article = {
   slug: string;
@@ -13,7 +9,6 @@ export type Article = {
   title: string;
   excerpt: string;
   content: string[];
-  image: StaticImageData;
   date: string;
   /** Fecha para ordenar y para <time> (AAAA-MM). */
   dateTime: string;
@@ -29,7 +24,6 @@ export const articles: Article[] = [
     title: "La importancia de la reconciliación minera",
     excerpt:
       "Comparar lo planificado con lo realmente producido es clave para detectar pérdidas, reducir la dilución y respaldar decisiones confiables en toda la cadena mina-planta-despacho.",
-    image: servicioReconciliacion,
     date: "Mar 2026",
     dateTime: "2026-03",
     readTime: "6 min de lectura",
@@ -48,7 +42,6 @@ export const articles: Article[] = [
     title: "Buenas prácticas de QA/QC en bases de datos geológicas",
     excerpt:
       "Un programa sólido de aseguramiento y control de calidad protege la confiabilidad de los datos que sustentan la estimación de recursos y las decisiones de inversión.",
-    image: servicioQaqc,
     date: "Ene 2026",
     dateTime: "2026-01",
     readTime: "5 min de lectura",
@@ -67,7 +60,6 @@ export const articles: Article[] = [
     title: "Estimación de recursos bajo el estándar NI 43-101",
     excerpt:
       "El código canadiense NI 43-101 establece los requisitos mínimos de transparencia y rigor técnico para reportar recursos y reservas minerales ante inversionistas.",
-    image: servicioEstimacion,
     date: "Nov 2025",
     dateTime: "2025-11",
     readTime: "7 min de lectura",
@@ -86,7 +78,6 @@ export const articles: Article[] = [
     title: "Gestión de relaves y sostenibilidad en la operación minera",
     excerpt:
       "La gestión responsable de depósitos de relaves es hoy un pilar de la licencia social y ambiental, no solo un requisito técnico o normativo.",
-    image: casoGeologiaEstructural,
     date: "Sep 2025",
     dateTime: "2025-09",
     readTime: "6 min de lectura",
@@ -103,3 +94,12 @@ export const articles: Article[] = [
 export function recentArticles(count = articles.length): Article[] {
   return [...articles].sort((a, b) => b.dateTime.localeCompare(a.dateTime)).slice(0, count);
 }
+
+/** Ruta de la página de un artículo. */
+export function articleHref(slug: string): `/blog/${string}/` {
+  return `/blog/${slug}/`;
+}
+
+/** Bajada del Blog: nombra los temas de los artículos, sin afirmar más. */
+export const blogLead =
+  "Artículos técnicos sobre reconciliación minera, calidad de datos geológicos, estimación de recursos y gestión de relaves.";

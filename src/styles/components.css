@@ -131,6 +131,43 @@
   color: var(--cyan-ink);
 }
 
+/* ---------- Registro reglado: lista con regla de 2 px, filas de 1 px y un nodo de cota sobre cada
+   regla (Noticias, Blog). La entrada de destino (:target) rellena su nodo. ---------- */
+.log {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--navy);
+}
+
+.log-entry {
+  position: relative;
+  padding-block: calc(var(--cell) * 2);
+  border-bottom: 1px solid var(--grid-strong);
+  scroll-margin-top: var(--cell);
+}
+
+.log-entry::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  box-sizing: border-box;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--navy);
+  background-color: var(--paper);
+}
+
+/* La primera entrada cuelga de la regla de 2 px */
+.log-entry:first-child::before {
+  top: -4.5px;
+}
+
+.log-entry:target::before {
+  background-color: var(--navy);
+}
+
 /* ---------- Botones ---------- */
 .c-btn {
   display: inline-flex;

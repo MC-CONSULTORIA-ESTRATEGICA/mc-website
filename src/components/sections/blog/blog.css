@@ -1,0 +1,234 @@
+/* Blog: cuaderno técnico del Afiche (contrato en .impeccable/surfaces/). */
+
+/* ---------- Lista ---------- */
+/* Sin título propio: el registro sigue directo a la cabecera */
+.article-log {
+  padding-top: calc(var(--cell) * 3);
+}
+
+/* Entrada (sobre el registro reglado de components.css): fecha y lectura · artículo · enlace */
+.post {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 7fr) minmax(0, 3fr);
+  gap: var(--cell) calc(var(--cell) * 1.5);
+  align-items: start;
+}
+
+.post-when {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+}
+
+.post-date {
+  font-size: 2.25rem;
+  line-height: 1;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+  color: var(--navy);
+}
+
+.post-read {
+  font-size: var(--fs-label);
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--ink-3);
+}
+
+.post-body {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+
+.post-cat {
+  font-size: var(--fs-label);
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--cyan-ink);
+}
+
+.post-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  line-height: 1.12;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.post-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-title a:hover,
+.post:target .post-title a {
+  text-decoration: underline 2px var(--cyan);
+  text-underline-offset: 0.18em;
+}
+
+.post-excerpt {
+  max-width: 62ch;
+  margin: 4px 0 0;
+  color: var(--ink-2);
+}
+
+.post-link {
+  justify-self: end;
+  margin-top: 6px;
+}
+
+/* ---------- Artículo ---------- */
+.article-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: calc(var(--cell) * 2.5);
+  align-items: start;
+}
+
+.prose {
+  display: grid;
+  gap: var(--cell);
+}
+
+/* 50ch de Archivo a 19 px dan unos 62 caracteres reales por línea */
+.prose p {
+  max-width: 50ch;
+  margin: 0;
+  font-size: 1.1875rem;
+  line-height: 30px;
+  color: var(--ink);
+}
+
+.article-aside {
+  position: sticky;
+  top: calc(var(--cell) * 2);
+  display: grid;
+  gap: var(--cell);
+  justify-items: start;
+}
+
+.article-aside-title {
+  font-size: 1.4375rem;
+  line-height: 1.3;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+  color: var(--navy);
+}
+
+.article-others {
+  justify-self: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--navy);
+}
+
+.article-others li {
+  border-bottom: 1px solid var(--grid-strong);
+}
+
+.article-others a {
+  display: grid;
+  gap: 2px;
+  padding: 12px 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-other-cat {
+  font-weight: 600;
+  color: var(--cyan-ink);
+}
+
+.article-other-title {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.article-others a:hover .article-other-title {
+  text-decoration: underline 1px var(--cyan);
+  text-underline-offset: 0.22em;
+}
+
+.article-other-meta {
+  font-size: var(--fs-small);
+  line-height: 22px;
+  color: var(--ink-3);
+}
+
+/* ---------- Adaptación ---------- */
+@media (max-width: 1099.98px) {
+  .post {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 7fr);
+  }
+
+  .post-link {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 899.98px) {
+  .article-log {
+    padding-top: calc(var(--cell) * 2);
+  }
+
+  /* Fecha y lectura arriba; la categoría baja al pie del resumen (no queda suelta sobre el título) */
+  .post {
+    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-areas:
+      "date read"
+      "body body"
+      "cat cat"
+      "link link";
+    gap: 12px 16px;
+    align-items: baseline;
+  }
+
+  .post-when {
+    display: contents;
+  }
+
+  .post-date {
+    grid-area: date;
+  }
+
+  .post-read {
+    grid-area: read;
+  }
+
+  .post-body {
+    grid-area: body;
+  }
+
+  .post-cat {
+    grid-area: cat;
+  }
+
+  .post-link {
+    grid-area: link;
+    grid-column: auto;
+  }
+
+  .post-date {
+    font-size: 1.75rem;
+  }
+
+  .article-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: calc(var(--cell) * 2);
+  }
+
+  .article-aside {
+    position: static;
+  }
+
+  .prose p {
+    font-size: var(--fs-body);
+    line-height: var(--cell);
+  }
+}
