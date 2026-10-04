@@ -16,7 +16,7 @@ Next.js con exportación estática (`output: 'export'`), publicado en GitHub Pag
 `main` del repo `MC-CONSULTORIA-ESTRATEGICA/mc-website`, con el dominio
 `www.mc-consultoria.com`. Elegido por Salim y aprobado por Sofía el 3 oct 2026 para tener HTML
 por página (SEO). Sin servidor: nada que dependa de SSR, middleware, rutas de API ni
-optimización de imágenes en tiempo de ejecución. npm, como el repo actual. Pasar a Vercel es una
+optimización de imágenes en tiempo de ejecución. pnpm, como Lythia. Pasar a Vercel es una
 mejora posible que decide Marcos (costo y DNS).
 
 Se trabaja en `develop`; `main` publica en producción.
@@ -63,7 +63,7 @@ con el trabajo sobre los datos (bases de datos geológicas, QA-QC, reconciliaci�
 - MC Consultoría Estratégica SAC ("MC Consultores" en la web), consultora minera de Lima,
   fundada en 2024. Equipo fijo pequeño y consultores asociados senior por especialidad
   (geología, geofísica, metalurgia, geotecnia, planeamiento, relaves).
-- Servicios del sitio actual (`src/pages/landing/ServicesPage.tsx`):
+- Servicios del sitio actual (`src/content/services.ts`):
   1. Reconciliación minera (coherencia plan de mina y producción real, cadena mina-planta).
   2. Consultoría en el ciclo minero.
   3. Base de datos QA-QC. **QA-QC es control de calidad de ensayes de laboratorio y de datos
@@ -83,7 +83,7 @@ con el trabajo sobre los datos (bases de datos geológicas, QA-QC, reconciliaci�
   8:00–18:00, sábado 8:00–13:00. **Camila Algarate** pasa a ventas y debe figurar en contacto
   (Marcos, 30 sep); su dato de contacto está pendiente.
 - El asistente de MC es un menú de **preguntas fijas sin IA** que termina en WhatsApp
-  (`src/components/bot.tsx`).
+  (preguntas en `src/content/assistant.ts`).
 
 ## Capabilities and Constraints
 
@@ -120,8 +120,8 @@ con el trabajo sobre los datos (bases de datos geológicas, QA-QC, reconciliaci�
 
 ## Brand Commitments
 
-- **Inmutable**: los logos actuales (`src/assets/logo_mc.webp` horizontal,
-  `src/assets/logo_white.webp` vertical blanco, `public/logo.webp` vertical navy). Sin recolorear,
+- **Inmutable**: los logos actuales (`src/assets/marca/logo-horizontal.webp`,
+  `src/assets/marca/logo-vertical-blanco.webp`, `public/logo.webp` vertical navy). Sin recolorear,
   recortar, redibujar, separar símbolo y texto, aplicar filtros ni animarlos.
 - **Inmutable**: navy `#01395C`. "El azul es lo que nos identifica" (Marcos, 30 sep).
 - **Dirección aprobada**: la variante Afiche, que le gustó a Marcos; Sofía la aprobó como base el
@@ -145,32 +145,31 @@ con el trabajo sobre los datos (bases de datos geológicas, QA-QC, reconciliaci�
 
 Todo en este repo.
 
-- **Casos** (`src/pages/landing/HomePage.tsx`): curso S-K 1300 para Southern Peru Copper
+- **Casos** (`src/content/projects.ts`): curso S-K 1300 para Southern Peru Copper
   Corporation (Perú, Chile y Argentina); reconciliación minera para Compañía Minera Condestable;
   automatización y analítica de base de datos geológica para Minera Titán del Perú; geología
   estructural (mapeo y modelamiento 3D, sin cliente nombrado; **por confirmar** que sea un
   proyecto real).
-- **Personas** (`HomePage.tsx`, con nombre, cargo y LinkedIn):
+- **Personas** (`src/content/people.ts`, con nombre, cargo y LinkedIn):
   - Equipo: Marcos Calderon, Sofia Quispe, Salim Ramirez y Camila Algarate.
   - Asociados: Armando Simón, Adalberto Rivadeneira, Cecilia Ildefonso, Luis Maldonado y Juan
     Rondinel.
-  - Fotos: `mc1` Marcos, `mc2` Armando, `mc4` Cecilia, `team5` Adalberto, `team6` Luis, `team7`
-    Juan, `team9` Sofía, `team12` Salim, `team13` Camila. Retratos desparejos (tamaños desde
+  - Fotos en `src/assets/personas/`, una por persona con su nombre. Retratos desparejos (tamaños desde
     179 px, fondos y recortes distintos).
-- **Eventos** (`src/data/news.ts`): PERUMIN 37 (sep 2025); CONTIMIN en la Universidad
+- **Eventos** (`src/content/news.ts`): PERUMIN 37 (sep 2025); CONTIMIN en la Universidad
   Continental (nov 2025); aniversario de la Facultad de Geología, Geofísica y Minas de la UNSA
   (dic 2025); Centrum PUCP Business Consulting Club (feb 2026); AusIMM y ProExplo (2026, sin
   mes).
-- **Artículos técnicos** (`src/data/articles.ts`): reconciliación minera (mar 2026), QA/QC en
+- **Artículos técnicos** (`src/content/articles.ts`): reconciliación minera (mar 2026), QA/QC en
   bases de datos geológicas (ene 2026), estimación bajo NI 43-101 (nov 2025).
-- **Logos de clientes** (`src/assets/empresa1`–`11.webp`): 1 Southern Copper, 2 Compañía Minera
-  Condestable, 3 Minera Titán del Perú, 4 Korimallko, 5 INGEMMET, 6 Yura, 7 Buenaventura, 8 Minera
-  OREX, 9 Minsur, 10 Yanaquihua, 11 Colorado Mining. Sin transparencia (Minsur sobre cuadro azul).
+- **Logos de clientes** (`src/assets/clientes/`, datos en `src/content/clients.ts`): Southern
+  Copper, Compañía Minera Condestable, Minera Titán del Perú, Korimallko, INGEMMET, Yura,
+  Buenaventura, Minera OREX, Minsur, Yanaquihua y Colorado Mining. Sin transparencia (Minsur sobre cuadro azul).
   INGEMMET es un instituto del Estado y Yura no es minera: la sección no se titula como si todos
   fueran "empresas mineras".
 - **Fotos reales**: solo personas y eventos. **No hay foto real de trabajo técnico.** Lo que el
-  sitio actual muestra de eso es generado con IA (`video3.mp4` con marca de agua de Veo,
-  `section3`, `servicio1`–`5`, `service-1`–`3`, `project-3`, `geologia_estructural`) y sale.
+  sitio actual muestra de eso es generado con IA (todo `src/assets/ia/`, incluido el video de la
+  portada con marca de agua de Veo) y sale.
 - **Regla de imágenes** (Salim, 27 sep):
   - Personas, equipo, eventos o trabajo de MC: **solo fotos reales**.
   - IA solo para lo que no parezca foto de MC: texturas, fondos, materia (roca, testigos) o
