@@ -1,0 +1,48 @@
+/* Cabecera interior: continúa el navy de la cabecera del sitio, sin grano (como la portada). */
+.page-head {
+  padding-block: calc(var(--cell) * 3) calc(var(--cell) * 3);
+  background-color: var(--navy-hero);
+  color: var(--on-navy);
+}
+
+.page-head-title {
+  max-width: 14em;
+  margin: 0;
+  font-size: var(--fs-h1);
+  line-height: 1;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.page-head-lead {
+  max-width: 60ch;
+  margin: var(--cell) 0 0;
+  font-size: 1.1875rem;
+  line-height: 30px;
+  color: var(--on-navy-2);
+}
+
+.page-head-annex {
+  margin-top: calc(var(--cell) * 3);
+}
+
+@media (max-width: 899.98px) {
+  .page-head {
+    padding-block: calc(var(--cell) * 2) calc(var(--cell) * 2.5);
+  }
+
+  .page-head-lead {
+    font-size: var(--fs-body);
+    line-height: var(--cell);
+  }
+
+  .page-head-annex {
+    margin-top: calc(var(--cell) * 2);
+  }
+}
+
+.page-head :focus-visible {
+  outline-color: var(--on-navy);
+}

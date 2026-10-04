@@ -1,0 +1,311 @@
+/* Servicios: la leyenda completa de una carta geológica (contrato en .impeccable/surfaces/). */
+
+/* Trama en miniatura de la cota-índice */
+.index-swatch {
+  flex: none;
+  width: 36px;
+  height: 24px;
+  margin: 0;
+}
+
+/* ---------- Unidades de la leyenda ---------- */
+/* Sin título propio: la leyenda sigue directo a la cabecera, con menos aire arriba */
+.svc-units {
+  padding-top: calc(var(--cell) * 3);
+}
+
+.svc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--navy);
+}
+
+.svc-unit {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 7fr) minmax(0, 4fr);
+  gap: var(--cell) calc(var(--cell) * 1.5);
+  align-items: start;
+  padding-block: calc(var(--cell) * 2);
+  border-bottom: 1px solid var(--grid-strong);
+  scroll-margin-top: var(--cell);
+}
+
+.svc-swatch {
+  width: 96px;
+  height: 64px;
+  margin: 4px 0 0;
+}
+
+.svc-body {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.svc-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 1.4rem + 1vw, 2.25rem);
+  line-height: 1.1;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.svc-desc {
+  max-width: 60ch;
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.svc-sheet {
+  margin-top: 6px;
+}
+
+.svc-codes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.svc-case {
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: underline 1px var(--cyan);
+  text-underline-offset: 0.22em;
+}
+
+.svc-case:hover {
+  text-decoration-color: var(--navy);
+}
+
+.svc-case-client {
+  display: block;
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+/* Servicios que solo se nombran: alineados con el texto de las unidades */
+.svc-also {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px calc(var(--cell) * 1.5);
+  margin: calc(var(--cell) * 1.5) 0 0 calc(96px + var(--cell) * 1.5);
+}
+
+.svc-also p {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.svc-also-label {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.svc-units .pending {
+  margin-top: var(--cell);
+}
+
+.svc-units .page > .pending {
+  margin-left: calc(96px + var(--cell) * 1.5);
+}
+
+/* ---------- Proceso de trabajo ---------- */
+.flow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 calc(var(--cell) * 2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  view-timeline-name: --flow;
+}
+
+.flow::before,
+.flow::after {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.flow::before {
+  top: 3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--navy);
+  transform-origin: left center;
+}
+
+.flow::after {
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--navy);
+  background-color: var(--sheet);
+}
+
+.flow li {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding-top: calc(var(--cell) * 1.5);
+}
+
+.flow-node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--navy);
+  background-color: var(--sheet);
+}
+
+.flow h3 {
+  font-size: 1.4375rem;
+  line-height: 1.3;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+}
+
+.flow p {
+  max-width: 34ch;
+  margin: 0;
+  font-size: var(--fs-small);
+  line-height: 22px;
+  color: var(--ink-2);
+}
+
+/* ---------- Movimiento: el flujo se dibuja al entrar en pantalla (navegadores con animaciones por scroll) */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .flow::before {
+      animation: svc-draw-x linear both;
+      animation-timeline: --flow;
+      animation-range: entry 10% cover 45%;
+    }
+
+    .flow::after {
+      animation: svc-fade linear both;
+      animation-timeline: --flow;
+      animation-range: entry 40% cover 50%;
+    }
+
+    .flow li {
+      animation: svc-fade linear both;
+      animation-timeline: --flow;
+      animation-range: entry calc(10% + var(--i) * 8%) cover calc(25% + var(--i) * 6%);
+    }
+  }
+}
+
+@keyframes svc-draw-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes svc-draw-y {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes svc-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ---------- Adaptación ---------- */
+@media (max-width: 1099.98px) {
+  .svc-unit {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .svc-sheet {
+    grid-column: 2;
+    margin-top: 0;
+  }
+}
+
+/* Bajo 900 px el flujo pasa a vertical, con los pasos a la derecha */
+@media (max-width: 899.98px) {
+  .flow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--cell);
+  }
+
+  /* La línea empieza en el centro del primer nodo */
+  .flow::before {
+    top: 9px;
+    bottom: 0;
+    left: 3px;
+    right: auto;
+    width: 1px;
+    height: auto;
+    transform-origin: center top;
+  }
+
+  .flow::after {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: auto;
+  }
+
+  .flow li {
+    padding-top: 0;
+    padding-left: 28px;
+  }
+
+  .flow-node {
+    top: 6px;
+  }
+
+  .flow p {
+    max-width: 60ch;
+  }
+
+  .svc-also,
+  .svc-units .page > .pending {
+    margin-left: 0;
+  }
+
+  .svc-units {
+    padding-top: calc(var(--cell) * 2);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (max-width: 899.98px) and (prefers-reduced-motion: no-preference) {
+    .flow::before {
+      animation-name: svc-draw-y;
+    }
+  }
+}
+
+@media (max-width: 599.98px) {
+  .svc-unit {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  /* 3/4 del dibujo de 96 × 64: la línea de la trama no baja de 0,7 px */
+  .svc-swatch {
+    width: 72px;
+    height: 48px;
+  }
+
+  .svc-sheet {
+    grid-column: 1;
+  }
+}

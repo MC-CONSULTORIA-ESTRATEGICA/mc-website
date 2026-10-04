@@ -1,0 +1,168 @@
+/* Cota-índice de la cabecera interior: una línea de lado a lado con un nodo por destino. */
+.page-index ol {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  gap: 0 calc(var(--cell) * 1.5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* La línea de la cota y su nodo final */
+.page-index ol::before,
+.page-index ol::after {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.page-index ol::before {
+  top: 3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--cyan-light);
+  transform-origin: left center;
+}
+
+.page-index ol::after {
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--cyan-light);
+  background-color: var(--navy-hero);
+}
+
+.page-index li {
+  position: relative;
+  padding-top: var(--cell);
+}
+
+.page-index a {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  font-size: var(--fs-label);
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--on-navy-2);
+  text-decoration: none;
+}
+
+.page-index-node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--cyan-light);
+  background-color: var(--navy-hero);
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.page-index-label {
+  max-width: 20ch;
+}
+
+.page-index a:hover {
+  color: var(--on-navy);
+}
+
+.page-index a:hover .page-index-label {
+  text-decoration: underline 1px var(--cyan-light);
+  text-underline-offset: 0.22em;
+}
+
+.page-index a:hover .page-index-node {
+  background-color: var(--cyan-light);
+}
+
+/* Se traza al cargar y los destinos aparecen en escalera, como las cotas de la portada */
+@media (prefers-reduced-motion: no-preference) {
+  .page-index ol::before {
+    animation: page-index-draw-x 1.1s var(--ease-out) 0.2s both;
+  }
+
+  .page-index ol::after {
+    animation: page-index-fade 0.5s var(--ease-out) 1.2s both;
+  }
+
+  .page-index li {
+    animation: page-index-fade 0.5s var(--ease-out) both;
+    animation-delay: calc(0.3s + var(--i) * 0.16s);
+  }
+}
+
+@keyframes page-index-draw-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes page-index-draw-y {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes page-index-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Bajo 900 px la cota pasa a vertical, con los rótulos a la derecha */
+@media (max-width: 899.98px) {
+  /* Aire al final: el nodo de cierre no se pega al último destino */
+  .page-index ol {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+
+  /* La línea empieza en el centro del primer nodo */
+  .page-index ol::before {
+    top: 11px;
+    bottom: 0;
+    left: 3px;
+    right: auto;
+    width: 1px;
+    height: auto;
+    transform-origin: center top;
+  }
+
+  .page-index ol::after {
+    top: auto;
+    bottom: 0;
+    left: 0;
+  }
+
+  .page-index li {
+    padding-top: 0;
+    padding-left: 28px;
+  }
+
+  /* Fila de 24 px: el nodo queda centrado con el rótulo y con la muestra, si la hay */
+  .page-index a {
+    display: flex;
+    align-items: center;
+    min-height: 24px;
+  }
+
+  .page-index-label {
+    max-width: none;
+  }
+
+  .page-index-node {
+    top: 8px;
+  }
+}
+
+@media (max-width: 899.98px) and (prefers-reduced-motion: no-preference) {
+  .page-index ol::before {
+    animation-name: page-index-draw-y;
+  }
+}

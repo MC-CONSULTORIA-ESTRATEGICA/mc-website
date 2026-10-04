@@ -20,6 +20,8 @@ export type Project = {
   client?: ClientId;
   /** Solo cuando el sitio actual lo dice; si no, la fila no se muestra. */
   service?: string;
+  /** Slug del servicio de `services.ts` al que pertenece el caso (la página de Servicios lo enlaza). */
+  serviceSlug?: string;
   scope?: string;
   image: ProjectImage;
   excerpt: string;
@@ -39,6 +41,7 @@ export const projects: Project[] = [
     tag: "capacitación",
     client: "southern",
     service: "Capacitación",
+    serviceSlug: "capacitacion",
     scope: "Perú, Chile y Argentina",
     image: {
       src: sesionSala2,
@@ -57,6 +60,7 @@ export const projects: Project[] = [
     tag: "reconciliación",
     client: "condestable",
     service: "Reconciliación minera",
+    serviceSlug: "reconciliacion-minera",
     scope: "Cadena mina-planta",
     image: {
       src: reunionSpm,
@@ -105,3 +109,8 @@ export const projects: Project[] = [
     toConfirm: true,
   },
 ];
+
+/** Enlace a un caso. Hasta que exista la página de Proyectos, los casos están en el Inicio. */
+export function caseHref(slug: string): string {
+  return `/#caso-${slug}`;
+}

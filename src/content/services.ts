@@ -88,22 +88,25 @@ export const courses: { title: string; code?: string }[] = [];
 
 export const activeServices = services.filter((service) => service.active && service.description);
 
-/** "Nuestro Proceso de Trabajo" de la página Nosotros actual; Sofía lo quiere en Servicios. */
+/** Servicios que Marcos pidió reforzar y aún no tienen texto: solo se nombran. */
+export const namedOnlyServices = services.filter((service) => !service.active);
+
+/** "Nuestro Proceso de Trabajo" de la página Nosotros actual (en caja de oración); Sofía lo quiere en Servicios. */
 export const workProcess = [
   {
-    title: "Identificamos la Necesidad",
+    title: "Identificamos la necesidad",
     text: "Escuchamos a nuestros clientes y analizamos su contexto para entender sus desafíos reales.",
   },
   {
-    title: "Diseñamos la Estrategia",
+    title: "Diseñamos la estrategia",
     text: "Creamos soluciones a medida con base en estudios técnicos, económicos y regulatorios.",
   },
   {
-    title: "Implementamos la Solución",
+    title: "Implementamos la solución",
     text: "Nuestro equipo acompaña cada fase del proyecto, asegurando calidad y cumplimiento normativo.",
   },
   {
-    title: "Medimos y Optimizamos",
+    title: "Medimos y optimizamos",
     text: "Monitoreamos resultados y ajustamos procesos para maximizar el impacto positivo.",
   },
 ];

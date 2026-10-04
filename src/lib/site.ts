@@ -18,6 +18,7 @@ export const site = {
       messages: {
         quote: "Hola, quisiera solicitar una cotización.",
         info: "Hola, quiero más información sobre sus servicios.",
+        tailings: "Hola, quisiera información sobre manejo de relaves, relleno para mina o tratamiento de agua.",
       },
     },
     email: "ventas@mc-consultoria.com",

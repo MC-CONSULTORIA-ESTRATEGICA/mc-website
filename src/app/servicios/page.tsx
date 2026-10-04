@@ -1,6 +1,13 @@
-import { SkeletonList } from "@/components/sections/Skeleton";
-import { activeServices, workProcess } from "@/content/services";
+import { Contact } from "@/components/sections/Contact";
+import { ServiceUnits } from "@/components/sections/servicios/ServiceUnits";
+import { WorkFlow } from "@/components/sections/servicios/WorkFlow";
+import { PageHead } from "@/components/ui/PageHead";
+import { PageIndex } from "@/components/ui/PageIndex";
+import { Swatch } from "@/components/ui/Swatch";
+import { activeServices, servicesLead } from "@/content/services";
 import { pageMetadata } from "@/lib/metadata";
+
+import "@/components/sections/servicios/servicios.css";
 
 export const metadata = pageMetadata({
   title: "Servicios",
@@ -12,15 +19,21 @@ export const metadata = pageMetadata({
 export default function ServicesPage() {
   return (
     <>
-      <h1>Servicios</h1>
-      <SkeletonList
-        title="Servicios"
-        items={activeServices.map((service) => ({ key: service.slug, label: service.title }))}
-      />
-      <SkeletonList
-        title="Proceso de trabajo"
-        items={workProcess.map((step) => ({ key: step.title, label: step.title, detail: step.text }))}
-      />
+      <PageHead title="Servicios" lead={servicesLead}>
+        <PageIndex
+          label="Servicios en esta página"
+          items={activeServices.map((service) => ({
+            href: `#servicio-${service.slug}`,
+            label: service.title,
+            icon: service.pattern ? (
+              <Swatch pattern={service.pattern} width={36} height={24} idPrefix="indice" className="swatch index-swatch" />
+            ) : undefined,
+          }))}
+        />
+      </PageHead>
+      <ServiceUnits />
+      <WorkFlow />
+      <Contact />
     </>
   );
 }
