@@ -18,8 +18,10 @@ pnpm images <archivo o carpeta> --destino src/assets/eventos   # optimiza fotos 
 pnpm images --revisar                                          # lista imágenes pesadas
 ```
 
-- Con un agente (Claude Code, Codex): sus instrucciones están en `AGENTS.md`; después de clonar,
-  `pnpm run setup` enlaza las skills de `.agents/skills`.
+- Con un agente (Claude Code, Codex): sus instrucciones están en `AGENTS.md`. Después de clonar,
+  una vez: `pnpm run setup` (enlaza las skills de `.agents/skills`, con versión fijada en
+  `skills-lock.json`) y `pnpm dlx impeccable@4.1.0 install --providers=claude --scope=project`
+  (instala Impeccable 4.5.0 con sus subagentes y su hook en `.claude/`, que no se versiona).
 - Se trabaja en `develop`. Cada push a `main` publica la web; `develop` y los PR solo compilan.
 - pnpm instala solo versiones con al menos 7 días publicadas y no ejecuta scripts de dependencias
   (`pnpm-workspace.yaml`), por seguridad.
@@ -44,6 +46,18 @@ public/          archivos servidos tal cual desde el dominio
 - **Una página nueva**: su carpeta en `src/app/` y su línea en `src/lib/routes.ts`.
 - Lo que falta (textos, fotos, datos) no se muestra: queda `active: false` o un comentario
   `// PENDIENTE(…)`.
+
+## Modo revisión
+
+Lo que falta (textos por definir, cifras por confirmar, borradores, revisiones técnicas) no sale en
+la web publicada. Para verlo marcado en la página:
+
+- En desarrollo: `pnpm dev` y abrir `http://localhost:5185/?revision`.
+- Para mostrarlo sin servidor de desarrollo: `pnpm build:revision`, `pnpm preview` y abrir
+  `http://localhost:5186/?revision`. Ese `out/` no se publica; el build normal (`pnpm build`) falla
+  si encuentra un pendiente.
+- En el código, lo pendiente va con `Pending`, `ReviewFlag` o `ReviewOnly`
+  (`src/components/ui/Review.tsx`) y un comentario `// PENDIENTE(quién): …`.
 
 ## No mover
 

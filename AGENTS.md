@@ -10,7 +10,11 @@ Web de MC Consultores (www.mc-consultoria.com): Next.js con exportación estáti
 ## Antes de empezar
 
 - Después de clonar: `pnpm install` y `pnpm run setup` (enlaza las skills de `.agents/skills`
-  en `.claude/skills`, donde las busca Claude Code).
+  en `.claude/skills`, donde las busca Claude Code; versiones en `skills-lock.json`).
+- Impeccable no se versiona: cada persona la instala una vez con
+  `pnpm dlx impeccable@4.1.0 install --providers=claude --scope=project` (Impeccable 4.5.0, con sus
+  subagentes de revisión y documentación y su hook, en `.claude/`). Para actualizarla,
+  `pnpm dlx impeccable@4.1.0 update`, y anotar la versión nueva aquí.
 - Usar solo pnpm: npm queda bloqueado por `devEngines`. Las reglas de seguridad de
   `pnpm-workspace.yaml` (antigüedad mínima de 7 días, sin scripts de dependencias) no se relajan
   para salir de un apuro: si una versión no se instala, esperar o elegir una anterior.
@@ -45,6 +49,10 @@ opcional y descripción en español. Ej.: `feat(inicio): agrega la portada`.
 
 - No inventar afirmaciones sobre MC, cifras, clientes, testimonios ni textos de servicios. Lo que
   falta no se muestra: se marca `active: false` o con `// PENDIENTE(quién): qué falta`.
+- Lo que falta y conviene ver marcado en la página va con `Pending`, `ReviewFlag` o `ReviewOnly`
+  (`src/components/ui/Review.tsx`): solo existe en `pnpm dev` y en `pnpm build:revision`, y se ve
+  con `?revision` (detalle en el README). Son componentes de servidor: si un componente de cliente
+  necesita uno, lo recibe ya armado como prop.
 - No promocionar software (Lythia, XPro Safe, MinXData): Marcos pidió no difundirlos todavía.
 
 ## Imágenes
@@ -65,10 +73,12 @@ borran.
 
 ## Diseño con Impeccable
 
-- La skill está en `.agents/skills/impeccable`. Las decisiones visuales van en `DESIGN.md`, que se
-  escribe al final desde lo construido; antes de diseñar una página, su contrato de dirección con
-  `impeccable surface-brief write` (queda en `.impeccable/surfaces/`).
-- El hook de diseño está activado para el proyecto (`.impeccable/config.json`). Cada persona lo
-  instala en su agente una vez con `/impeccable hooks on`.
+- Las decisiones visuales van en `DESIGN.md`, que se escribe al final desde lo construido. Antes
+  de diseñar una página, su contrato de dirección con `impeccable surface-brief write` (queda en
+  `.impeccable/surfaces/`).
+- El hook de diseño está activado para el proyecto (`.impeccable/config.json`); el instalador lo
+  deja registrado en `.claude/settings.local.json`.
+- Al cerrar una página, la revisión de acabado y `DESIGN.md` los hacen los subagentes
+  `impeccable-finish-reviewer` e `impeccable-documenter` que trae el instalador.
 - `animate` (`.agents/skills/animate`) para decidir y construir el movimiento; respetar siempre
   `prefers-reduced-motion`.

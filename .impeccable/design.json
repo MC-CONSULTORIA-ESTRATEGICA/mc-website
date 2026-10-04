@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-04T16:35:41+00:00",
+  "title": "Design System: MC Consultores",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "primary",
+        "displayName": "Navy MC",
+        "canonical": "oklch(33.2% 0.081 244.0)",
+        "tonalRamp": [
+          "#010c19",
+          "#04263e",
+          "#0f4367",
+          "#316288",
+          "#5183aa",
+          "#72a4cd",
+          "#97cbf5",
+          "#e1f1ff"
+        ]
+      },
+      "navy-deep": {
+        "role": "primary",
+        "displayName": "Navy Profundo",
+        "canonical": "oklch(25.8% 0.062 243.1)",
+        "tonalRamp": [
+          "#000c19",
+          "#002640",
+          "#1f435e",
+          "#3d627e",
+          "#5c82a0",
+          "#7da4c3",
+          "#a2caea",
+          "#e1f1fe"
+        ]
+      },
+      "navy-hero": {
+        "role": "primary",
+        "displayName": "Navy Portada",
+        "canonical": "oklch(29.0% 0.078 248.1)",
+        "tonalRamp": [
+          "#000c1c",
+          "#002544",
+          "#184267",
+          "#376188",
+          "#5781aa",
+          "#77a3cd",
+          "#9cc9f5",
+          "#e2f0ff"
+        ]
+      },
+      "cyan": {
+        "role": "secondary",
+        "displayName": "Cyan Acción",
+        "canonical": "oklch(65.8% 0.108 231.6)",
+        "tonalRamp": [
+          "#000d16",
+          "#012838",
+          "#08465e",
+          "#01668a",
+          "#2488b2",
+          "#4daad6",
+          "#75d1fe",
+          "#ddf2fe"
+        ]
+      },
+      "cyan-light": {
+        "role": "secondary",
+        "displayName": "Cyan Trazo",
+        "canonical": "oklch(81.4% 0.055 232.3)",
+        "tonalRamp": [
+          "#000d15",
+          "#042838",
+          "#1e4558",
+          "#3c6378",
+          "#5c8399",
+          "#7ca5bb",
+          "#a1cbe2",
+          "#def2fd"
+        ]
+      },
+      "cyan-ink": {
+        "role": "secondary",
+        "displayName": "Cyan Tinta",
+        "canonical": "oklch(51.9% 0.098 237.4)",
+        "tonalRamp": [
+          "#010d16",
+          "#04273a",
+          "#034564",
+          "#13658e",
+          "#3b85b1",
+          "#5ea7d4",
+          "#84cefc",
+          "#e0f1fe"
+        ]
+      },
+      "cyan-soft": {
+        "role": "secondary",
+        "displayName": "Cyan Velo",
+        "canonical": "oklch(92.9% 0.023 229.1)",
+        "tonalRamp": [
+          "#020d13",
+          "#18262d",
+          "#334249",
+          "#516068",
+          "#708088",
+          "#91a1aa",
+          "#b6c7d0",
+          "#e0f2fb"
+        ]
+      },
+      "earth-900": {
+        "role": "tertiary",
+        "displayName": "Tierra Maestra",
+        "canonical": "oklch(44.3% 0.064 57.1)",
+        "tonalRamp": [
+          "#170700",
+          "#381c04",
+          "#59361c",
+          "#795439",
+          "#9b7458",
+          "#bd9578",
+          "#e5ba9c",
+          "#feeadd"
+        ]
+      },
+      "earth-700": {
+        "role": "tertiary",
+        "displayName": "Tierra Media",
+        "canonical": "oklch(52.2% 0.076 57.2)",
+        "tonalRamp": [
+          "#160700",
+          "#3a1b01",
+          "#5d3410",
+          "#7e5230",
+          "#a0724f",
+          "#c3936f",
+          "#ebb894",
+          "#ffeadc"
+        ]
+      },
+      "earth-600": {
+        "role": "tertiary",
+        "displayName": "Tierra Curva",
+        "canonical": "oklch(56.8% 0.079 57.8)",
+        "tonalRamp": [
+          "#150700",
+          "#381c03",
+          "#5e340d",
+          "#7f522e",
+          "#a1714d",
+          "#c4926d",
+          "#ecb892",
+          "#fdeadd"
+        ]
+      },
+      "earth-400": {
+        "role": "tertiary",
+        "displayName": "Tierra Clara",
+        "canonical": "oklch(64.8% 0.072 58.7)",
+        "tonalRamp": [
+          "#160700",
+          "#381c02",
+          "#5b3513",
+          "#7c5332",
+          "#9e7351",
+          "#c19471",
+          "#e8b996",
+          "#feeadc"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "oklch(96.5% 0.006 84.6)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252421",
+          "#413f3c",
+          "#5f5d5a",
+          "#7f7d79",
+          "#a09e9a",
+          "#c6c4c0",
+          "#f0eeea"
+        ]
+      },
+      "sheet": {
+        "role": "neutral",
+        "displayName": "Hoja",
+        "canonical": "oklch(98.8% 0.003 84.6)",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#252422",
+          "#40403e",
+          "#5e5d5c",
+          "#7e7d7b",
+          "#9f9e9c",
+          "#c5c4c2",
+          "#efeeec"
+        ]
+      },
+      "grid": {
+        "role": "neutral",
+        "displayName": "Retícula",
+        "canonical": "oklch(91.8% 0.012 79.8)",
+        "tonalRamp": [
+          "#0e0b06",
+          "#27231e",
+          "#433f39",
+          "#615d56",
+          "#817d75",
+          "#a29e96",
+          "#c8c3bc",
+          "#f3eee6"
+        ]
+      },
+      "grid-strong": {
+        "role": "neutral",
+        "displayName": "Retícula Marcada",
+        "canonical": "oklch(86.3% 0.017 79.3)",
+        "tonalRamp": [
+          "#0f0a04",
+          "#28231b",
+          "#453f36",
+          "#635d53",
+          "#837c72",
+          "#a49d93",
+          "#cac3b8",
+          "#f5ede2"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "oklch(24.8% 0.004 84.6)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252422",
+          "#41403d",
+          "#5f5d5b",
+          "#7e7d7b",
+          "#9f9e9c",
+          "#c5c4c1",
+          "#f0eeeb"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Tinta Media",
+        "canonical": "oklch(41.0% 0.009 80.7)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#26241f",
+          "#423f3a",
+          "#605d58",
+          "#807d77",
+          "#a19e98",
+          "#c7c4be",
+          "#f2eee8"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Tinta Tenue",
+        "canonical": "oklch(51.3% 0.013 76.5)",
+        "tonalRamp": [
+          "#0e0a06",
+          "#28231d",
+          "#443f38",
+          "#625d56",
+          "#827c75",
+          "#a39e96",
+          "#c9c3bb",
+          "#f3eee5"
+        ]
+      },
+      "on-navy": {
+        "role": "neutral",
+        "displayName": "Blanco sobre navy",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#7d7d7d",
+          "#9e9e9e",
+          "#c4c4c4",
+          "#eeeeee"
+        ]
+      },
+      "on-navy-2": {
+        "role": "neutral",
+        "displayName": "Niebla",
+        "canonical": "oklch(86.9% 0.019 237.8)",
+        "tonalRamp": [
+          "#040c12",
+          "#1c252c",
+          "#374149",
+          "#545f67",
+          "#737f87",
+          "#94a0a9",
+          "#b9c6cf",
+          "#e3f1fa"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Solo el h1 de la portada; Archivo angosta (wdth 68)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de sección (h2), sin antetítulo."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de caso y de grupo de personas; los de artículo suben a 27 px."
+      },
+      "title-sm": {
+        "displayName": "Title Small",
+        "purpose": "h3 de lista (leyenda de Servicios)."
+      },
+      "body-lg": {
+        "displayName": "Body Large",
+        "purpose": "Bajada de la portada y texto de Quiénes somos."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto corrido; interlínea = celda de 24 px."
+      },
+      "body-sm": {
+        "displayName": "Body Small",
+        "purpose": "Descripciones, metadatos, cartela y pie."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Rótulos de imagen, fichas, ejes y leyendas, en caja normal."
+      },
+      "annotation": {
+        "displayName": "Annotation",
+        "purpose": "Mayúscula espaciada solo para anotar un dibujo (crédito de la portada, nombres del mapa)."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Menú principal; el cromo se ensancha (wdth 106–112)."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Curva de salida para todo estado y todo trazado."
+      },
+      {
+        "name": "dur-fast",
+        "value": "160ms",
+        "purpose": "Hover y foco: color, borde, subrayado, flecha que avanza 3 px, etiqueta del riel."
+      },
+      {
+        "name": "dur",
+        "value": "280ms",
+        "purpose": "Atenuar y resaltar rótulos y guías del bloque 3D."
+      },
+      {
+        "name": "assistant-in",
+        "value": "240ms ease-out, translateY(8px) y opacidad",
+        "purpose": "Entrada del panel del asistente."
+      },
+      {
+        "name": "cota-draw",
+        "value": "1.1s ease-out, stroke-dashoffset 1→0, inicio 0.35s, 0.22s entre cotas; nodos 0.5s",
+        "purpose": "Trazado de las cotas de la portada al cargar."
+      },
+      {
+        "name": "map-draw",
+        "value": "animation-timeline: view(); contorno entry 10%–cover 45%, trama y oficina entry 35%–cover 50%",
+        "purpose": "Contorno de Perú y Ecuador dibujado al entrar en pantalla, bajo @supports."
+      },
+      {
+        "name": "block-sway",
+        "value": "yaw 17° ± 6° (sin(t/9000)) + puntero ±5°",
+        "purpose": "Giro lento del bloque 3D; quieto con movimiento reducido, bajo 900 px o puntero táctil, y pausado fuera de pantalla."
+      },
+      {
+        "name": "strata-drift",
+        "value": "translateY(-3px → 4px), 16s / 19s / 23s ease-in-out infinite alternate",
+        "purpose": "Estratos de la banda de Contacto que se mecen."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Apaga todo lo anterior y el scroll suave; la página queda completa."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "footer-1col",
+        "value": "480px"
+      },
+      {
+        "name": "sm",
+        "value": "600px"
+      },
+      {
+        "name": "md",
+        "value": "900px"
+      },
+      {
+        "name": "rail",
+        "value": "1024px"
+      },
+      {
+        "name": "clients-6col",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Acción principal",
+      "kind": "button",
+      "refersTo": "button-action",
+      "description": "Única acción de relleno: Solicitar una cotización por WhatsApp.",
+      "html": "<a class=\"ds-btn-action\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z\"/></svg>Solicitar una cotización</a>",
+      "css": ".ds-btn-action { font-family: var(--font); display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px; border-radius: 2px; background: var(--cyan); color: var(--navy-deep); font-size: 1.0625rem; font-weight: 600; line-height: 22px; text-decoration: none; transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-action:hover { background: var(--cyan-light); } .ds-btn-action:focus-visible { outline: 2px solid var(--cyan-ink); outline-offset: 3px; }"
+    },
+    {
+      "name": "Enlace de línea sobre navy",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Acción secundaria sobre navy: texto blanco con subrayado cyan de 1 px.",
+      "html": "<div class=\"ds-navy-plate\"><a class=\"ds-btn-line\" href=\"#\">Ver servicios</a></div>",
+      "css": ".ds-navy-plate { padding: 24px; background: var(--navy-hero); } .ds-btn-line { font-family: var(--font); display: inline-flex; padding: 15px 0; border-bottom: 1px solid var(--cyan); color: var(--on-navy); font-size: 1.0625rem; font-weight: 600; line-height: 22px; text-decoration: none; transition: border-color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-line:hover { border-bottom-color: var(--on-navy); } .ds-btn-line:focus-visible { outline: 2px solid var(--on-navy); outline-offset: 3px; }"
+    },
+    {
+      "name": "Enlace con flecha",
+      "kind": "button",
+      "refersTo": "link-arrow",
+      "description": "Enlace a otra página sobre papel; la flecha avanza 3 px en hover.",
+      "html": "<a class=\"ds-link-arrow\" href=\"#\">Ver todos los proyectos<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4.75 12h14.5\"/><path d=\"m13.75 6.5 5.5 5.5-5.5 5.5\"/></svg></a>",
+      "css": ".ds-link-arrow { font-family: var(--font); display: inline-flex; align-items: center; gap: 8px; color: var(--navy); font-weight: 600; text-decoration: underline; text-decoration-color: var(--cyan); text-decoration-thickness: 1px; text-underline-offset: 0.22em; } .ds-link-arrow svg { transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-link-arrow:hover { text-decoration-color: var(--navy); } .ds-link-arrow:hover svg { transform: translateX(3px); } .ds-link-arrow:focus-visible { outline: 2px solid var(--cyan-ink); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Menú principal",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Cabecera navy con enlaces en Niebla; la página actual en blanco con raya.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Inicio</a><a href=\"#\">Nosotros</a><a href=\"#\">Servicios</a><a href=\"#\">Proyectos</a><a href=\"#\">Contacto</a></nav>",
+      "css": ".ds-nav { font-family: var(--font); display: flex; gap: 30px; padding: 0 24px; min-height: 72px; align-items: center; background: var(--navy-hero); } .ds-nav a { padding: 8px 0; color: var(--on-navy-2); font-size: 0.9375rem; font-weight: 500; font-variation-settings: 'wdth' 106; letter-spacing: 0.01em; text-decoration: none; border-bottom: 1px solid transparent; transition: color 160ms cubic-bezier(0.16, 1, 0.3, 1), border-color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav a:hover { color: var(--on-navy); border-bottom-color: var(--cyan-light); } .ds-nav a[aria-current='page'] { color: var(--on-navy); border-bottom-color: var(--on-navy); } .ds-nav a:focus-visible { outline: 2px solid var(--on-navy); outline-offset: 3px; }"
+    },
+    {
+      "name": "Código de norma",
+      "kind": "chip",
+      "refersTo": "code-tag",
+      "description": "Código de reporte junto al título de un servicio.",
+      "html": "<span class=\"ds-code\">JORC</span> <span class=\"ds-code\">NI 43-101</span>",
+      "css": ".ds-code { font-family: var(--font); display: inline-block; padding: 0 6px; border: 1px solid var(--navy); background: var(--sheet); color: var(--cyan-ink); font-size: 0.75rem; font-weight: 600; line-height: 18px; }"
+    },
+    {
+      "name": "Ficha de caso",
+      "kind": "card",
+      "refersTo": "data-sheet",
+      "description": "Tabla Cliente / Servicio / Alcance bajo cada caso; no hay tarjetas con caja.",
+      "html": "<dl class=\"ds-sheet\"><div><dt>Cliente</dt><dd>Compañía Minera Condestable S.A.</dd></div><div><dt>Servicio</dt><dd>Reconciliación minera</dd></div><div><dt>Alcance</dt><dd>Cadena mina-planta</dd></div></dl>",
+      "css": ".ds-sheet { font-family: var(--font); display: grid; margin: 0; max-width: 420px; border: 1px solid var(--grid-strong); background: var(--sheet); font-size: 0.8125rem; line-height: 20px; } .ds-sheet > div { display: grid; grid-template-columns: 5.25rem 1fr; gap: 12px; padding: 6px 12px; } .ds-sheet > div + div { border-top: 1px solid var(--grid); } .ds-sheet dt { color: var(--ink-3); } .ds-sheet dd { margin: 0; color: var(--ink); font-weight: 500; }"
+    },
+    {
+      "name": "Lista con regla de cabecera",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Patrón de lista del Afiche: regla navy de 2 px arriba, filas separadas por 1 px.",
+      "html": "<ol class=\"ds-rule-list\"><li><span class=\"ds-t\">Reconciliación minera</span><span class=\"ds-d\">Coherencia entre el plan de mina y la producción real.</span></li><li><span class=\"ds-t\">Base de datos QA-QC</span><span class=\"ds-d\">Control de calidad de ensayes y datos geológicos.</span></li></ol>",
+      "css": ".ds-rule-list { font-family: var(--font); margin: 0; padding: 0; list-style: none; max-width: 520px; border-top: 2px solid var(--navy); background: var(--paper); } .ds-rule-list li { display: grid; gap: 4px; padding: 14px 8px 14px 0; border-bottom: 1px solid var(--grid-strong); transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-rule-list li:hover { background: rgb(252 251 249 / 0.8); } .ds-t { color: var(--navy); font-size: 1.0625rem; font-weight: 600; line-height: 1.35; } .ds-d { color: var(--ink-2); font-size: 0.9375rem; line-height: 22px; }"
+    },
+    {
+      "name": "Cartela de contacto",
+      "kind": "card",
+      "refersTo": "contact-sheet",
+      "description": "Datos de contacto como cartela de plano sobre navy.",
+      "html": "<dl class=\"ds-cartela\"><div><dt>Correo</dt><dd><a href=\"#\">ventas@mc-consultoria.com</a></dd></div><div><dt>Teléfono</dt><dd><a href=\"#\">+51 932 432 031</a></dd></div><div><dt>Oficina</dt><dd>Lima, Perú</dd></div></dl>",
+      "css": ".ds-cartela { font-family: var(--font); margin: 0; max-width: 420px; border: 1px solid var(--cyan-light); background: var(--navy-deep); color: var(--on-navy); font-size: 0.9375rem; } .ds-cartela > div { display: grid; grid-template-columns: 6rem 1fr; gap: 12px; padding: 10px 16px; } .ds-cartela > div + div { border-top: 1px solid rgb(159 201 224 / 0.3); } .ds-cartela dt { color: var(--on-navy-2); } .ds-cartela dd { margin: 0; font-weight: 600; } .ds-cartela a { color: var(--on-navy); text-decoration: underline 1px var(--cyan); text-underline-offset: 0.22em; } .ds-cartela a:hover { text-decoration-color: var(--on-navy); } .ds-cartela a:focus-visible { outline: 2px solid var(--on-navy); outline-offset: 3px; }"
+    },
+    {
+      "name": "Riel de contacto",
+      "kind": "custom",
+      "refersTo": "rail",
+      "description": "Banda fija del borde derecho: WhatsApp en cyan, llamada, LinkedIn y asistente.",
+      "html": "<div class=\"ds-rail\"><a class=\"ds-rail-btn ds-rail-primary\" href=\"#\" aria-label=\"WhatsApp\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z\"/></svg></a><a class=\"ds-rail-btn\" href=\"#\" aria-label=\"Llamar\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5.5 3.75h3l1.5 4-2 1.25a11 11 0 0 0 7 7L16.25 14l4 1.5v3a1.75 1.75 0 0 1-1.75 1.75A15.75 15.75 0 0 1 3.75 5.5 1.75 1.75 0 0 1 5.5 3.75Z\"/></svg></a></div>",
+      "css": ".ds-rail { display: inline-grid; gap: 4px; width: 56px; padding: 24px 4px; justify-items: center; background: var(--navy); border-left: 1px solid rgb(255 255 255 / 0.12); } .ds-rail-btn { display: grid; place-items: center; width: 48px; height: 48px; color: var(--on-navy); transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-rail-btn:hover { background: var(--cyan-ink); } .ds-rail-primary { background: var(--cyan); color: var(--navy-deep); } .ds-rail-primary:hover { background: var(--cyan-light); } .ds-rail-btn:focus-visible { outline: 2px solid var(--on-navy); outline-offset: -4px; }"
+    },
+    {
+      "name": "Cota con nodos",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Firma de la portada: línea de 1 px Cyan Trazo con nodos cuadrados huecos de 7 px que se traza al cargar.",
+      "html": "<div class=\"ds-cota-plate\"><svg class=\"ds-cota\" viewBox=\"0 0 120 200\" aria-hidden=\"true\"><path class=\"ds-cota-line\" pathLength=\"1\" d=\"M40 20V180\"/><path class=\"ds-cota-line ds-cota-tick\" pathLength=\"1\" d=\"M40 20h60\"/><rect class=\"ds-cota-node\" x=\"36.5\" y=\"16.5\" width=\"7\" height=\"7\"/><rect class=\"ds-cota-node\" x=\"36.5\" y=\"176.5\" width=\"7\" height=\"7\"/></svg></div>",
+      "css": ".ds-cota-plate { width: 160px; padding: 16px; background: var(--navy-hero); } .ds-cota { width: 120px; height: 200px; } .ds-cota-line, .ds-cota-node { fill: none; stroke: var(--cyan-light); stroke-width: 1; vector-effect: non-scaling-stroke; } @media (prefers-reduced-motion: no-preference) { .ds-cota-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: ds-cota-draw 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards; } .ds-cota-tick { animation-delay: 0.95s; animation-duration: 0.6s; } } @keyframes ds-cota-draw { to { stroke-dashoffset: 0; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Afiche de Campo",
+    "overview": "El sitio se comporta como un afiche técnico impreso de una consultora geológica: roca real recortada sobre navy, papel cálido con grano y todo anotado como un plano de campo. La tecnología aparece como rigor dibujado (cotas, curvas de nivel, estratos, un bloque diagrama, un mapa con retícula), nunca como pantalla: ni neón, ni hologramas, ni paneles de datos de adorno. La seriedad viene del dibujo preciso; la cercanía, de las personas reales y del contacto a un paso.\n\nLa página alterna superficies como pliegos de un mismo impreso: navy a sangre en la portada, Eventos, Contacto y pie; papel con grano donde se lee (Servicios, Quiénes somos, Clientes, Artículos); hoja limpia donde se dibuja (Proyectos, el mapa). La densidad es la de una lámina técnica: retícula de 24 px, líneas de 1 px, tablas de ficha y rótulos cortos, con aire generoso entre bloques (96 px por sección). Bordes rectos, sin sombras, sin degradados de adorno.\n\nEl movimiento es trazado: las líneas se dibujan, no rebotan. Las cotas de la portada se trazan al cargar, el contorno de Perú y Ecuador se dibuja al entrar en pantalla, el bloque 3D gira apenas y los estratos de Contacto se mecen muy despacio. Todo se apaga con `prefers-reduced-motion` y la página queda completa y legible sin él.",
+    "keyCharacteristics": [
+      "Navy de marca (#01395C, inmutable) como campo; cyan solo para actuar y para la línea técnica sobre navy.",
+      "Archivo variable: títulos angostos (eje `wdth` 68), texto en ancho normal.",
+      "Líneas de 1 px que no escalan, nodos cuadrados huecos, retícula y coordenadas como en un plano.",
+      "Grano monocromo sobre papel y navy; la hoja limpia queda para el dibujo.",
+      "Marrón tierra únicamente en curvas de nivel, nunca en interfaz ni texto.",
+      "Dibujos técnicos en código (SVG y WebGL2), con rótulo \"Imagen ilustrativa/referencial\" en toda imagen que no sea foto de MC."
+    ],
+    "rules": [
+      {
+        "name": "The One Action Rule",
+        "body": "El cyan relleno (#3F9DC8) es solo para la acción de contacto: el botón de cotización y el botón de WhatsApp del riel. Ningún otro elemento lleva fondo cyan saturado; los demás cyan son trazo o tinta.",
+        "section": "colors"
+      },
+      {
+        "name": "The Earth-Only-in-Contours Rule",
+        "body": "El marrón tierra va únicamente en curvas de nivel generadas en código (y en el haz de reglas cortas de Eventos que las acompaña). Nunca en texto, rellenos, botones, íconos, bordes de interfaz ni fondos. Sobre papel se usan 900/700/600; sobre navy, solo 400 con opacidad baja (0,3 a 0,7).",
+        "section": "colors"
+      },
+      {
+        "name": "The Navy Is Not Negotiable Rule",
+        "body": "#01395C no se recolorea, aclara ni sustituye. Los dos navy más profundos son tonos de superficie del mismo campo, no marcas alternativas.",
+        "section": "colors"
+      },
+      {
+        "name": "The Narrow-for-Titles Rule",
+        "body": "El ancho 68 es para títulos (display, h2, títulos de caso, de grupo y de artículo). El texto de lectura no se angosta nunca; los rótulos de interfaz pueden ensancharse (106 a 112), no angostarse.",
+        "section": "typography"
+      },
+      {
+        "name": "The Uppercase-Is-Annotation Rule",
+        "body": "La mayúscula espaciada se reserva a lo que anota un dibujo (crédito sobre la roca, nombres del mapa). Los rótulos de interfaz y los encabezados van en caja normal; no hay antetítulos sobre los h2.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "Fechas, teléfonos, horarios y cifras llevan cifras tabulares y de caja alta (`tabular-nums lining-nums`).",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Plate Rule",
+        "body": "Las superficies son planas en reposo y en hover. El estado se muestra con color, borde o subrayado, nunca levantando un elemento.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Grain Rule",
+        "body": "El grano (mosaico monocromo de 256 px, 7 % de opacidad, `src/assets/texturas/grano.png`, generado por `scripts/build-grain.mjs`) se superpone al color de la superficie con la clase de grano: va en papel y en navy (Servicios, Quiénes somos, Clientes, Artículos, Eventos, Contacto, pie). No va en la hoja limpia (Proyectos, mapa), ni en la portada (ya es roca), ni en la cabecera, ni dentro de tarjetas, fichas o celdas. El color lo pone la superficie; el grano nunca se tiñe ni se sube de opacidad.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** usar Navy MC (#01395C) tal cual en tinta de títulos y en las superficies de marca; los navy de portada (#002D50) y profundo (#00263F) son solo superficies.",
+      "**Do** reservar el fondo Cyan Acción (#3F9DC8) para la acción de contacto, con texto Navy Profundo (5,1:1).",
+      "**Do** dibujar lo técnico en código, con líneas de 1 px que no escalan, nodos cuadrados huecos y rótulos cortos con guía.",
+      "**Do** abrir cada lista con una regla de 2 px navy y separar sus filas con 1 px Retícula Marcada.",
+      "**Do** poner el grano en papel y navy, y dejar la Hoja limpia para dibujos, fichas y casos.",
+      "**Do** escribir el movimiento como trazado (dibujar una línea, aparecer un nodo) con la curva de salida (`cubic-bezier(0.16, 1, 0.3, 1)`), y apagarlo entero con `prefers-reduced-motion`.",
+      "**Do** rotular toda imagen que no sea foto de MC como \"Imagen ilustrativa\" o \"Imagen referencial\".",
+      "**Do** medir el espacio en celdas de 24 px."
+    ],
+    "donts": [
+      "**Don't** usar el marrón tierra fuera de las curvas de nivel: ni texto, ni botones, ni bordes, ni fondos, ni íconos.",
+      "**Don't** usar sombras, elevación en hover ni degradados de adorno; un degradado solo funde una imagen o una trama en su superficie.",
+      "**Don't** redondear más de 2 px ni usar tarjetas con caja y sombra.",
+      "**Don't** poner antetítulos ni rótulos en mayúscula sobre los títulos; la mayúscula espaciada es solo para anotar un dibujo.",
+      "**Don't** angostar el texto de lectura ni usar una segunda familia tipográfica.",
+      "**Don't** usar hologramas, neón, brillos, gráficos o cifras animadas de adorno, grillas de íconos, cascos, maquinaria amarilla ni dorado.",
+      "**Don't** recolorear, recortar, filtrar ni animar los logos de MC ni los de clientes.",
+      "**Don't** usar imágenes generadas que parezcan foto de MC, con personas, logos, texto, maquinaria, tajo o instalaciones."
+    ]
+  }
+}
