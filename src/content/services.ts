@@ -7,7 +7,7 @@ import servicioEstimacion from "@/assets/ia/servicio-estimacion.webp";
 import servicioCapacitacion from "@/assets/ia/servicio-capacitacion.webp";
 
 /** Trama del servicio en la leyenda del Inicio (como las unidades de una carta geológica). */
-export type ServicePattern = "lineas" | "cruces" | "puntos" | "diagonales" | "uves";
+export type ServicePattern = "lines" | "crosses" | "dots" | "diagonals" | "chevrons";
 
 export type Service = {
   slug: string;
@@ -22,12 +22,16 @@ export type Service = {
   active: boolean;
 };
 
+/** Intro de la página de Servicios del sitio actual, pasada a "usted". */
+export const servicesLead =
+  "Soluciones técnicas y estratégicas diseñadas para optimizar sus proyectos mineros y generar un impacto positivo.";
+
 // QA-QC es control de calidad de ensayes de laboratorio y de datos geológicos, no de software.
 export const services: Service[] = [
   {
     slug: "reconciliacion-minera",
     title: "Reconciliación minera",
-    pattern: "lineas",
+    pattern: "lines",
     description:
       "Aseguramos la coherencia entre el plan de mina y la producción real. Con nuestras metodologías ayudamos a reducir pérdidas y mejorar la eficiencia operativa.",
     image: servicioReconciliacion,
@@ -36,7 +40,7 @@ export const services: Service[] = [
   {
     slug: "consultoria",
     title: "Consultoría en el ciclo minero",
-    pattern: "cruces",
+    pattern: "crosses",
     description:
       "Ofrecemos asesoría integral en todas las etapas del proyecto minero: desde exploración, estudios de factibilidad, permisos ambientales hasta cierre de mina.",
     image: servicioConsultoria,
@@ -45,7 +49,7 @@ export const services: Service[] = [
   {
     slug: "base-de-datos-qa-qc",
     title: "Base de datos QA-QC",
-    pattern: "puntos",
+    pattern: "dots",
     description:
       "Diseñamos y auditamos bases de datos geológicas, asegurando integridad y confiabilidad para respaldar decisiones estratégicas.",
     image: servicioQaqc,
@@ -54,7 +58,7 @@ export const services: Service[] = [
   {
     slug: "estimacion-de-recursos-y-reservas",
     title: "Estimación de recursos y reservas",
-    pattern: "diagonales",
+    pattern: "diagonals",
     codes: ["JORC", "NI 43-101"],
     description:
       "Creamos modelos geológicos precisos y realizamos estimaciones bajo estándares internacionales (JORC, NI 43-101).",
@@ -64,7 +68,7 @@ export const services: Service[] = [
   {
     slug: "capacitacion",
     title: "Capacitación en códigos mineros y control de calidad",
-    pattern: "uves",
+    pattern: "chevrons",
     // S-K 1300 solo se nombra aquí, por el caso de Southern.
     codes: ["JORC", "NI 43-101", "S-K 1300"],
     description:

@@ -1,0 +1,63 @@
+/* Ficha de caso: imagen 3:2, título, texto y tabla Cliente / Servicio / Alcance. */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(var(--cell) * 2);
+  margin-bottom: calc(var(--cell) * 2);
+}
+
+.case {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  justify-items: start;
+  scroll-margin-top: var(--cell);
+}
+
+.case > * {
+  justify-self: stretch;
+}
+
+.case > .review-flag {
+  justify-self: start;
+}
+
+.case h3 {
+  font-size: 1.4375rem;
+  line-height: 1.3;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+}
+
+.case p {
+  max-width: 62ch;
+  color: var(--ink-2);
+}
+
+.case-media {
+  position: relative;
+  margin: 0 0 4px;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--grid-strong);
+}
+
+.case-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.03);
+}
+
+.case-ref {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+
+@media (max-width: 899.98px) {
+  .case-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,7 +1,7 @@
 import { About } from "@/components/sections/inicio/About";
 import { Articles } from "@/components/sections/inicio/Articles";
 import { Clients } from "@/components/sections/inicio/Clients";
-import { Contact } from "@/components/sections/inicio/Contact";
+import { Contact } from "@/components/sections/Contact";
 import { Events } from "@/components/sections/inicio/Events";
 import { Hero } from "@/components/sections/inicio/Hero";
 import { Presence } from "@/components/sections/inicio/Presence";

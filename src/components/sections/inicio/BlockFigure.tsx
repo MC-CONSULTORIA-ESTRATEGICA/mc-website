@@ -12,7 +12,7 @@ import { mountBlockDiagram, type AnchorKey, type Anchors, type BlockApi } from "
 import "./BlockFigure.css";
 
 // Qué resalta el bloque con cada servicio de la leyenda
-const FOCUS: Record<ServicePattern, number> = { lineas: 0, cruces: 4, puntos: 1, diagonales: 2, uves: 3 };
+const FOCUS: Record<ServicePattern, number> = { lines: 0, crosses: 4, dots: 1, diagonals: 2, chevrons: 3 };
 const FLOW = ["Modelo", "Plan", "Mina", "Planta", "Despacho"];
 
 type Label = {
@@ -32,8 +32,8 @@ const LABELS: Label[] = [
   { id: "ddh3", text: "DDH-03", at: "ddh3", offset: [-50, -38], kind: "off-block", leader: true },
   { id: "roca", text: "Roca caja", at: "rocaCaja", offset: [0, 0], kind: "on-block" },
   { id: "envolvente", text: "Envolvente de ley", at: "envolvente", offset: [104, -30], kind: "on-block", leader: true },
-  { id: "qaqc", text: "QA-QC", at: "qaqc", offset: [-110, -40], kind: "service", leader: true, service: "puntos" },
-  { id: "recursos", text: "Recursos y reservas", at: "recursos", offset: [-120, 60], kind: "service", leader: true, service: "diagonales" },
+  { id: "qaqc", text: "QA-QC", at: "qaqc", offset: [-110, -40], kind: "service", leader: true, service: "dots" },
+  { id: "recursos", text: "Recursos y reservas", at: "recursos", offset: [-120, 60], kind: "service", leader: true, service: "diagonals" },
 ];
 
 export function BlockFigure({ active, reviewFlag }: { active: ServicePattern | null; reviewFlag?: ReactNode }) {
@@ -92,7 +92,7 @@ export function BlockFigure({ active, reviewFlag }: { active: ServicePattern | n
 
   const state = (pattern?: ServicePattern) => {
     if (!pattern || active === null) return "";
-    const on = active === pattern || (active === "uves" && (pattern === "puntos" || pattern === "diagonales"));
+    const on = active === pattern || (active === "chevrons" && (pattern === "dots" || pattern === "diagonals"));
     return on ? " is-on" : " is-off";
   };
 
@@ -136,7 +136,7 @@ export function BlockFigure({ active, reviewFlag }: { active: ServicePattern | n
           </>
         )}
       </div>
-      <div className={`bf-flow${state("lineas")}`}>
+      <div className={`bf-flow${state("lines")}`}>
         <span className="bf-flow-name">Reconciliación</span>
         <ol aria-label="Del modelo al despacho">
           {FLOW.map((step) => (

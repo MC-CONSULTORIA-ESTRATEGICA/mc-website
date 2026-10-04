@@ -1,8 +1,7 @@
 import { Contours } from "@/components/ui/Contours";
 import { ReviewFlag, ReviewOnly } from "@/components/ui/Review";
 import { SectionHead } from "@/components/ui/SectionHead";
-import { inicio } from "@/content/inicio";
-import { activeServices, courses } from "@/content/services";
+import { activeServices, courses, servicesLead } from "@/content/services";
 
 import { ServicesLegend } from "./ServicesLegend";
 
@@ -27,7 +26,7 @@ export function Services() {
         indexEvery={3}
       />
       <div className="page">
-        <SectionHead id="servicios-title" title="Servicios" lead={<p>{inicio.services.lead}</p>} />
+        <SectionHead id="servicios-title" title="Servicios" lead={<p>{servicesLead}</p>} />
         <ServicesLegend
           services={legend}
           coursesPending={

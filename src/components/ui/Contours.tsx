@@ -1,6 +1,8 @@
 // Curvas de nivel en líneas finas, generadas en código (determinísticas, sin imágenes).
 // Son el único lugar del marrón tierra junto con las ondas.
 
+import "./Contours.css";
+
 type ContoursProps = {
   className?: string;
   /** Cantidad de anillos. */

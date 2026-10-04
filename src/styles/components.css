@@ -25,7 +25,31 @@
   outline-color: var(--on-navy);
 }
 
+/* Retícula que se desvanece a la derecha de una hoja (Proyectos) */
+.sec-gridband {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 34%;
+  background-image:
+    repeating-linear-gradient(90deg, transparent 0 47px, var(--grid) 47px 48px),
+    repeating-linear-gradient(0deg, transparent 0 47px, var(--grid) 47px 48px);
+  mask-image: linear-gradient(90deg, transparent, #000 40%);
+  pointer-events: none;
+}
+
+.sec-sheet .page {
+  position: relative;
+}
+
 /* ---------- Títulos ---------- */
+.sec h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--navy);
+  text-wrap: balance;
+}
+
 .display {
   font-size: var(--fs-display);
   line-height: 0.96;
@@ -63,6 +87,48 @@
 
 .on-navy .sec-lead {
   color: var(--on-navy-2);
+}
+
+/* ---------- Fichas de datos: tabla rótulo / dato sobre hoja ---------- */
+.origin {
+  display: grid;
+  margin: 0;
+  border: 1px solid var(--grid-strong);
+  background: var(--sheet);
+  font-size: var(--fs-label);
+  line-height: 20px;
+}
+
+.origin-row {
+  display: grid;
+  grid-template-columns: 5.25rem minmax(0, 1fr);
+  gap: 12px;
+  padding: 6px 12px;
+}
+
+.origin-row + .origin-row {
+  border-top: 1px solid var(--grid);
+}
+
+.origin dt {
+  color: var(--ink-3);
+}
+
+.origin dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Código de norma (JORC, NI 43-101, S-K 1300) */
+.code-tag {
+  padding: 0 6px;
+  border: 1px solid var(--navy);
+  background: var(--sheet);
+  font-size: 0.75rem;
+  line-height: 18px;
+  font-weight: 600;
+  color: var(--cyan-ink);
 }
 
 /* ---------- Botones ---------- */
@@ -180,6 +246,10 @@
 @media (max-width: 899.98px) {
   .sec {
     padding-block: calc(var(--cell) * 3);
+  }
+
+  .sec-gridband {
+    width: 60%;
   }
 }
 

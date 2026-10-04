@@ -1,0 +1,76 @@
+/* Cierre de Contacto (navy), al pie de cada página. */
+.sec-contact {
+  padding-bottom: 170px;
+  background-color: var(--navy);
+}
+
+.contact-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: calc(var(--cell) * 2);
+  align-items: start;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+}
+
+.contact-cartela {
+  margin: 0;
+  border: 1px solid var(--cyan-light);
+  background: var(--navy-deep);
+  font-size: var(--fs-small);
+}
+
+.contact-cartela > div {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 16px;
+}
+
+.contact-cartela > div + div {
+  border-top: 1px solid rgb(159 201 224 / 0.3);
+}
+
+.contact-cartela dt {
+  color: var(--on-navy-2);
+}
+
+.contact-cartela dd {
+  margin: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.contact-cartela a {
+  color: var(--on-navy);
+  text-decoration: underline 1px var(--cyan);
+  text-underline-offset: 0.22em;
+}
+
+.hours {
+  display: block;
+}
+
+.hours .num {
+  white-space: nowrap;
+}
+
+@media (max-width: 899.98px) {
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 599.98px) {
+  .contact-cartela > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+}

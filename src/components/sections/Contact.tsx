@@ -1,9 +1,12 @@
 import { Icon } from "@/components/ui/Icon";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { StrataLines } from "@/components/ui/StrataLines";
-import { inicio } from "@/content/inicio";
+import { contactClosing } from "@/content/contact";
 import { site, WHATSAPP_QUOTE } from "@/lib/site";
 
+import "./Contact.css";
+
+/** Cierre de Contacto: va al pie de cada página, antes del pie del sitio. */
 export function Contact() {
   const { contact } = site;
   return (
@@ -11,7 +14,7 @@ export function Contact() {
       <StrataLines variant="band" animate />
       <div className="page contact-grid">
         <div className="contact-main">
-          <SectionHead id="contacto-title" title={inicio.contact.title} lead={<p>{inicio.contact.lead}</p>} />
+          <SectionHead id="contacto-title" title={contactClosing.title} lead={<p>{contactClosing.lead}</p>} />
           <div className="contact-actions">
             <a className="c-btn c-btn-action" href={WHATSAPP_QUOTE} target="_blank" rel="noopener noreferrer">
               <Icon name="whatsapp" size={20} />

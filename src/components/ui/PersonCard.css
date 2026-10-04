@@ -1,0 +1,88 @@
+/* Personas: grupos con regla de cabecera y retrato 4:5. */
+.people {
+  display: grid;
+  gap: calc(var(--cell) * 2);
+  margin-top: calc(var(--cell) * 2.5);
+}
+
+.people-group {
+  display: grid;
+  gap: 16px;
+}
+
+.people-group h3 {
+  font-size: 1.4375rem;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+}
+
+.people-group > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: calc(var(--cell) * 1.25) calc(var(--cell) * 1.5);
+  padding-top: var(--cell);
+  border-top: 2px solid var(--navy);
+}
+
+.person {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+/* Retratos con el mismo recorte y un ajuste suave para emparejarlos */
+.portrait {
+  display: block;
+  width: 96px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--grid-strong);
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.04) brightness(1.02);
+}
+
+.person-text {
+  display: grid;
+  gap: 3px;
+  font-size: var(--fs-small);
+  line-height: 21px;
+}
+
+.person-name {
+  font-weight: 650;
+  color: var(--navy);
+}
+
+.person-role {
+  color: var(--ink-2);
+}
+
+.person-in {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-left: -7px;
+  color: var(--cyan-ink);
+}
+
+.person-in:hover {
+  color: var(--navy);
+}
+
+@media (max-width: 599.98px) {
+  .person {
+    grid-template-columns: 80px minmax(0, 1fr);
+  }
+
+  .portrait {
+    width: 80px;
+  }
+}

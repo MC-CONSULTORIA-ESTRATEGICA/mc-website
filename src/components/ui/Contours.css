@@ -1,0 +1,17 @@
+/* Curvas de nivel: trazo base en tierra. Cada uso fija su posición y tamaño. */
+.earth-rings {
+  position: absolute;
+  pointer-events: none;
+}
+
+.earth-rings .contour {
+  fill: none;
+  stroke: var(--earth-600);
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+}
+
+.earth-rings .contour-index {
+  stroke: var(--earth-900);
+  stroke-width: 2.24;
+}

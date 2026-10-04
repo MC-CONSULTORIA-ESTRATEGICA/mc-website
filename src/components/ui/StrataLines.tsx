@@ -3,6 +3,8 @@
 // "panel": recuadro, respaldo del bloque 3D cuando no hay WebGL2.
 import type { CSSProperties } from "react";
 
+import "./StrataLines.css";
+
 type Variant = "band" | "panel";
 
 const CONFIG = {

@@ -1,0 +1,26 @@
+/* Muestra de trama de un servicio, como las unidades de una carta geológica. */
+.swatch {
+  width: 48px;
+  height: 32px;
+  margin-top: 2px;
+}
+
+.swatch-bg {
+  fill: var(--cyan-soft);
+}
+
+.swatch-frame {
+  stroke: var(--navy);
+  stroke-width: 1;
+}
+
+.swatch-ink path,
+.swatch-ink circle {
+  stroke: var(--navy);
+  stroke-width: 0.9;
+  fill: var(--navy);
+}
+
+.swatch-ink path {
+  fill: none;
+}

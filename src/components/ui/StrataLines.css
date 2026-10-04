@@ -1,0 +1,73 @@
+/* Estratos: banda al pie de Contacto y panel de respaldo del bloque 3D. */
+.strata {
+  display: block;
+}
+
+.strata-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+}
+
+.strata-panel {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+}
+
+.strata-line {
+  fill: none;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.strata-minor {
+  stroke: var(--cyan);
+  stroke-opacity: 0.45;
+}
+
+.strata-major {
+  stroke: var(--cyan-light);
+  stroke-opacity: 0.8;
+  stroke-width: 1.25;
+}
+
+.strata-contact {
+  stroke: var(--cyan-light);
+  stroke-opacity: 0.85;
+  stroke-dasharray: 6 5;
+}
+
+/* Las capas se mecen despacio, cada grupo a su ritmo */
+@media (prefers-reduced-motion: no-preference) {
+  .strata.is-animated .strata-g {
+    animation: strata-drift 16s ease-in-out infinite alternate;
+  }
+
+  .strata.is-animated .strata-g1 {
+    animation-duration: 19s;
+    animation-delay: -4s;
+  }
+
+  .strata.is-animated .strata-g2 {
+    animation-duration: 23s;
+    animation-delay: -9s;
+  }
+}
+
+@keyframes strata-drift {
+  from {
+    transform: translateY(-3px);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+
+@media (max-width: 599.98px) {
+  .strata-band {
+    height: 100px;
+  }
+}

@@ -17,7 +17,7 @@ export type Person = {
   slug: string;
   name: string;
   role: string;
-  group: "equipo" | "asociado";
+  group: "team" | "associate";
   photo?: StaticImageData;
   /** Posición vertical del recorte de la foto (object-position Y); los retratos son desparejos. */
   photoFocusY?: string;
@@ -37,7 +37,7 @@ export const people: Person[] = [
     slug: "marcos-calderon",
     name: "Marcos Calderon",
     role: "CEO & Founder",
-    group: "equipo",
+    group: "team",
     photo: marcos,
     photoFocusY: "4%",
     linkedin: "https://www.linkedin.com/in/marcos-s-calder%C3%B3n-aran%C3%ADbar-a07283140/",
@@ -48,7 +48,7 @@ export const people: Person[] = [
     slug: "claudio-moncada",
     name: "Claudio Moncada",
     role: "Ing. Geológica - Consultor de Geología",
-    group: "equipo",
+    group: "team",
     photo: claudio,
     photoFocusY: "54%",
     linkedin: "https://www.linkedin.com/in/claudio-moncada-romani-003150168/",
@@ -59,7 +59,7 @@ export const people: Person[] = [
     slug: "edu-andia",
     name: "Edu Andia",
     role: "Consultor Senior Procesos Metalúrgicos",
-    group: "equipo",
+    group: "team",
     linkedin: "https://www.linkedin.com/in/edu-andia-carpio-19b19a255/",
     active: false,
   },
@@ -68,7 +68,7 @@ export const people: Person[] = [
     slug: "sofia-quispe",
     name: "Sofia Quispe",
     role: "Ing. de Sistemas, Análitica de Datos y Automatización de Procesos",
-    group: "equipo",
+    group: "team",
     photo: sofia,
     photoFocusY: "31%",
     linkedin: "https://www.linkedin.com/in/sofia-quispe-salas/",
@@ -78,7 +78,7 @@ export const people: Person[] = [
     slug: "salim-ramirez",
     name: "Salim Ramirez",
     role: "Ing. Software - Consultor de Software",
-    group: "equipo",
+    group: "team",
     photo: salim,
     photoFocusY: "55%",
     linkedin: "https://www.linkedin.com/in/salimramirezm/",
@@ -89,7 +89,7 @@ export const people: Person[] = [
     slug: "camila-algarate",
     name: "Camila Algarate",
     role: "Administración & Marketing",
-    group: "equipo",
+    group: "team",
     photo: camila,
     photoFocusY: "35%",
     linkedin: "https://www.linkedin.com/in/camila-algarate-espino-33b948308/",
@@ -101,7 +101,7 @@ export const people: Person[] = [
     slug: "armando-simon",
     name: "Armando Simón",
     role: "Ph.D. Ing. Geólogo y Geofísico",
-    group: "asociado",
+    group: "associate",
     photo: armando,
     photoFocusY: "50%",
     linkedin: "https://www.linkedin.com/in/armando-sim%C3%B3n-phd-pgeo-5781513b/",
@@ -111,7 +111,7 @@ export const people: Person[] = [
     slug: "adalberto-rivadeneira",
     name: "Adalberto Rivadeneira",
     role: "Consultor Senior Procesos Metalúrgicos",
-    group: "asociado",
+    group: "associate",
     photo: adalberto,
     photoFocusY: "64%",
     linkedin: "https://www.linkedin.com/in/adalberto-rivadeneira-48ab24b8/",
@@ -122,7 +122,7 @@ export const people: Person[] = [
     slug: "astrid-flores",
     name: "Astrid Flores",
     role: "Ing. Geóloga Mina QAQC y Desarrollo Corporativo",
-    group: "asociado",
+    group: "associate",
     photo: astrid,
     photoFocusY: "52%",
     linkedin: "https://www.linkedin.com/in/carmen-astrid-flores-ramirez-87086339/",
@@ -132,7 +132,7 @@ export const people: Person[] = [
     slug: "cecilia-ildefonso",
     name: "Cecilia Ildefonso",
     role: "Ing. Geóloga, Consultora en Modelamiento Geológico",
-    group: "asociado",
+    group: "associate",
     photo: cecilia,
     photoFocusY: "47%",
     linkedin: "https://pe.linkedin.com/in/cecilia-i-40a36355",
@@ -142,7 +142,7 @@ export const people: Person[] = [
     slug: "luis-maldonado",
     name: "Luis Maldonado",
     role: "Ing. Geólogo, Consultor Senior de Geotecnia",
-    group: "asociado",
+    group: "associate",
     photo: luis,
     photoFocusY: "71%",
     linkedin: "https://www.linkedin.com/in/luis-maldonado-zorrilla-a7b34322/",
@@ -152,7 +152,7 @@ export const people: Person[] = [
     slug: "juan-rondinel",
     name: "Juan Rondinel",
     role: "Ing. de Minas, Consultor Senior de Planeamiento, CP MAusIMM 3000013",
-    group: "asociado",
+    group: "associate",
     photo: juan,
     photoFocusY: "58%",
     linkedin: "https://www.linkedin.com/in/juandavidrondinel/",
@@ -163,7 +163,7 @@ export const people: Person[] = [
     slug: "arnold-chavez",
     name: "Arnold Chávez",
     role: "Ing. de Minas, Consultor Senior de Planeamiento",
-    group: "asociado",
+    group: "associate",
     photo: arnold,
     photoFocusY: "53%",
     linkedin: "https://www.linkedin.com/in/arnold-chavez-atalaya-928302121/",
@@ -172,3 +172,16 @@ export const people: Person[] = [
 ];
 
 export const activePeople = people.filter((person) => person.active);
+
+/**
+ * Grupos en el orden en que se muestran: equipo arriba y asociados abajo (Sofía).
+ * PENDIENTE(Marcos): orden de los grupos.
+ */
+export const peopleGroups = [
+  { id: "equipo", title: "Equipo", people: activePeople.filter((person) => person.group === "team") },
+  {
+    id: "asociados",
+    title: "Consultores asociados",
+    people: activePeople.filter((person) => person.group === "associate"),
+  },
+];

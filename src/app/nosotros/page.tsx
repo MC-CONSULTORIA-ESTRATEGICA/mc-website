@@ -24,11 +24,11 @@ export default function AboutPage() {
       />
       <SkeletonList
         title="Equipo"
-        items={activePeople.filter((person) => person.group === "equipo").map(toItem)}
+        items={activePeople.filter((person) => person.group === "team").map(toItem)}
       />
       <SkeletonList
         title="Consultores asociados"
-        items={activePeople.filter((person) => person.group === "asociado").map(toItem)}
+        items={activePeople.filter((person) => person.group === "associate").map(toItem)}
       />
     </>
   );
