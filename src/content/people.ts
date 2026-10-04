@@ -67,7 +67,7 @@ export const people: Person[] = [
   {
     slug: "sofia-quispe",
     name: "Sofia Quispe",
-    role: "Ing. de Sistemas, Análitica de Datos y Automatización de Procesos",
+    role: "Ing. de Sistemas, Analítica de Datos y Automatización de Procesos",
     group: "team",
     photo: sofia,
     photoFocusY: "31%",

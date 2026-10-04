@@ -7,7 +7,7 @@ import "./Swatch.css";
 
 const PATTERNS: Record<ServicePattern, ReactNode> = {
   lines: <path d="M0 3h12M0 9h12" />,
-  crosses: <path d="M3 1v4M1 3h4M9 7v4M7 9h4" />,
+  crosses: <path d="M3 0v6M0 3h6M9 6v6M6 9h6" />,
   dots: (
     <>
       <circle cx="3" cy="3" r="0.9" />
