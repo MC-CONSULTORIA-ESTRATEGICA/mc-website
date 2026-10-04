@@ -42,6 +42,12 @@ opcional y descripción en español. Ej.: `feat(inicio): agrega la portada`.
 - Componentes de servidor por defecto; `"use client"` solo en piezas interactivas. Nada de
   `window` durante el render: la exportación prerenderiza todo.
 - Importar con el alias `@/` (`@/content/projects`), no con rutas relativas largas.
+- Componentes: `layout/` (cabecera, pie, riel), `ui/` (piezas que usan varias páginas, cada una
+  con su CSS al lado) y `sections/` (cierres compartidos como `Contact`, y una carpeta por página
+  con el nombre de su ruta: `sections/servicios/`).
+- Nombres: el código va en inglés (componentes, tipos, funciones, archivos, clases CSS y valores
+  internos como `pattern: "lines"`); en español va lo atado a la URL o al contenido (rutas, carpetas
+  de sección por página, slugs, textos, comentarios y las carpetas de `src/assets/`).
 - La exportación estática no admite redirects, rewrites, headers, rutas de API, Server Actions
   ni el optimizador de imágenes de Next.
 
