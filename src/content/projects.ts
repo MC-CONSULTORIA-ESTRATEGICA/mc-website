@@ -16,6 +16,8 @@ export type ProjectImage = {
 export type Project = {
   slug: string;
   title: string;
+  /** Rótulo corto para la cota-índice de Proyectos. */
+  shortTitle: string;
   tag: string;
   client?: ClientId;
   /** Solo cuando el sitio actual lo dice; si no, la fila no se muestra. */
@@ -33,11 +35,12 @@ export type Project = {
 };
 
 // Los 4 casos del sitio actual. Sofía dice que son unos 13: la lista (cliente, servicio,
-// alcance) se pide a Sofía o a Camila y entra aquí.
+// alcance) se pide a Sofía o a Camila y entra aquí. Un caso confidencial va sin `client`.
 export const projects: Project[] = [
   {
     slug: "curso-sk-1300-southern",
     title: "Curso de Código S-K 1300",
+    shortTitle: "Curso S-K 1300",
     tag: "capacitación",
     client: "southern",
     service: "Capacitación",
@@ -57,6 +60,7 @@ export const projects: Project[] = [
   {
     slug: "reconciliacion-condestable",
     title: "Servicio de reconciliación minera",
+    shortTitle: "Reconciliación minera",
     tag: "reconciliación",
     client: "condestable",
     service: "Reconciliación minera",
@@ -76,6 +80,7 @@ export const projects: Project[] = [
   {
     slug: "bd-geologica-titan",
     title: "Automatización y analítica en base de datos geológica",
+    shortTitle: "Base de datos geológica",
     // En el sitio actual la etiqueta es "analítica"; el servicio exacto no está confirmado.
     tag: "analítica",
     client: "titan",
@@ -93,6 +98,7 @@ export const projects: Project[] = [
   {
     slug: "geologia-estructural",
     title: "Geología estructural",
+    shortTitle: "Geología estructural",
     tag: "geología-estructural",
     image: {
       src: afloramiento,
@@ -110,7 +116,10 @@ export const projects: Project[] = [
   },
 ];
 
-/** Enlace a un caso. Hasta que exista la página de Proyectos, los casos están en el Inicio. */
+/** Enlace a un caso en la página de Proyectos. */
 export function caseHref(slug: string): string {
-  return `/#caso-${slug}`;
+  return `/proyectos/#caso-${slug}`;
 }
+
+/** Bajada de la página de Proyectos: describe la lista, sin afirmar más. */
+export const projectsLead = "Casos de MC Consultores y el trabajo realizado en cada uno.";

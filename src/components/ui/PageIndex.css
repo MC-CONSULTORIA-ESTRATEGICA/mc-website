@@ -84,6 +84,11 @@
   color: var(--on-navy);
 }
 
+/* Fila de dato reservada: el rótulo queda a la altura de los demás */
+.page-index-meta.is-empty {
+  min-height: 20px;
+}
+
 .page-index a:hover {
   color: var(--on-navy);
 }
@@ -193,6 +198,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0 12px;
+  }
+
+  .page-index-meta.is-empty {
+    display: none;
   }
 
   .page-index-node {

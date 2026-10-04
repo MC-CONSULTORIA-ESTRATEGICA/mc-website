@@ -1,0 +1,89 @@
+/* Proyectos: el archivo de láminas del Afiche (contrato en .impeccable/surfaces/). */
+
+/* Sobre la hoja: el hueco del nodo es del color de la hoja */
+.case-log {
+  --log-ground: var(--sheet);
+  padding-top: calc(var(--cell) * 3);
+}
+
+/* Lámina de caso: imagen (5) · título, memoria, ficha y enlace (7) */
+.case-sheet {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--cell) calc(var(--cell) * 2);
+  align-items: start;
+}
+
+.case-sheet-media {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: var(--paper);
+  border: 1px solid var(--grid-strong);
+}
+
+.case-sheet-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.03);
+}
+
+.case-sheet-ref {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+
+.case-sheet-body {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+
+.case-sheet-body > .origin {
+  justify-self: stretch;
+}
+
+.case-sheet-title {
+  margin: 0;
+  font-size: clamp(1.625rem, 1.3rem + 1vw, 2.125rem);
+  line-height: 1.12;
+  font-weight: 560;
+  font-variation-settings: "wdth" var(--wdth-display);
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.case-sheet-text {
+  max-width: 60ch;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* Al llegar desde la cota, Servicios o el Inicio, el caso de destino queda marcado */
+.case-sheet:target .case-sheet-title {
+  text-decoration: underline 2px var(--cyan);
+  text-underline-offset: 0.18em;
+}
+
+.case-sheet:target .case-sheet-media {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
+
+.case-log .pending {
+  margin-top: var(--cell);
+}
+
+@media (max-width: 899.98px) {
+  .case-log {
+    padding-top: calc(var(--cell) * 2);
+  }
+
+  .case-sheet {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}

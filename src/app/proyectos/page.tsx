@@ -1,7 +1,12 @@
-import { SkeletonList } from "@/components/sections/Skeleton";
+import { Contact } from "@/components/sections/Contact";
+import { CaseLog } from "@/components/sections/proyectos/CaseLog";
+import { PageHead } from "@/components/ui/PageHead";
+import { PageIndex } from "@/components/ui/PageIndex";
 import { getClient } from "@/content/clients";
-import { projects } from "@/content/projects";
+import { projects, projectsLead } from "@/content/projects";
 import { pageMetadata } from "@/lib/metadata";
+
+import "@/components/sections/proyectos/proyectos.css";
 
 export const metadata = pageMetadata({
   title: "Proyectos",
@@ -13,17 +18,19 @@ export const metadata = pageMetadata({
 export default function ProjectsPage() {
   return (
     <>
-      <h1>Proyectos</h1>
-      <SkeletonList
-        title="Casos"
-        items={projects.map((project) => ({
-          key: project.slug,
-          label: project.title,
-          detail: project.client
-            ? (getClient(project.client).legalName ?? getClient(project.client).name)
-            : undefined,
-        }))}
-      />
+      <PageHead title="Proyectos" lead={projectsLead}>
+        <PageIndex
+          label="Casos en esta página"
+          items={projects.map((project) => ({
+            href: `#caso-${project.slug}`,
+            label: project.shortTitle,
+            // Sin cliente nombrado (o confidencial): la fila del cliente queda vacía.
+            meta: project.client ? getClient(project.client).name : null,
+          }))}
+        />
+      </PageHead>
+      <CaseLog />
+      <Contact />
     </>
   );
 }

@@ -6,8 +6,11 @@ export type PageIndexItem = {
   href: string;
   label: ReactNode;
   icon?: ReactNode;
-  /** Dato corto sobre el rótulo (en Noticias, la fecha). */
-  meta?: ReactNode;
+  /**
+   * Dato corto sobre el rótulo (en Noticias, la fecha). `null` reserva la fila vacía, para que el
+   * rótulo quede alineado con los demás (en Proyectos, un caso sin cliente nombrado).
+   */
+  meta?: ReactNode | null;
   /** Abre en otra pestaña (WhatsApp, LinkedIn). */
   external?: boolean;
 };
@@ -35,9 +38,13 @@ export function PageIndex({
             <a href={item.href} {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
               <span className="page-index-node" aria-hidden="true" />
               {item.icon}
-              {item.meta ? (
+              {item.meta !== undefined ? (
                 <span className="page-index-text">
-                  <span className="page-index-meta">{item.meta}</span>
+                  {item.meta === null ? (
+                    <span className="page-index-meta is-empty" aria-hidden="true" />
+                  ) : (
+                    <span className="page-index-meta">{item.meta}</span>
+                  )}
                   <span className="page-index-label">{item.label}</span>
                 </span>
               ) : (

@@ -41,6 +41,17 @@
   position: relative;
 }
 
+/* Variante: la retícula solo acompaña el comienzo de la sección y se desvanece hacia abajo
+   (Proyectos, donde la sección es larga) */
+.sec-gridband--top {
+  bottom: auto;
+  height: calc(var(--cell) * 24);
+  mask-image:
+    linear-gradient(90deg, transparent, #000 40%),
+    linear-gradient(180deg, #000 30%, transparent);
+  mask-composite: intersect;
+}
+
 /* ---------- Títulos ---------- */
 .sec h3 {
   font-size: var(--fs-h3);
@@ -156,7 +167,8 @@
   width: 7px;
   height: 7px;
   border: 1px solid var(--navy);
-  background-color: var(--paper);
+  /* El hueco del nodo toma el color de la superficie: papel por defecto, hoja con --log-ground */
+  background-color: var(--log-ground, var(--paper));
 }
 
 /* La primera entrada cuelga de la regla de 2 px */
