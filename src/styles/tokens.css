@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 /*
  * Tokens del Afiche (variante 4 de la propuesta v3; Figma 2WjOpYVypwycMiNaT4pbFt, frame 26:2).
  * Navy #01395C es inmutable. El marrón tierra va solo en anillos, curvas y ondas.
@@ -58,12 +56,4 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-fast: 160ms;
   --dur: 280ms;
-}
-
-@theme {
-  --color-brand-navy: #01395c;
-  --color-brand-navy-deep: #00263f;
-  --color-brand-cyan: #3f9dc8;
-  --color-brand-cyan-light: #9fc9e0;
-  --color-paper: #f5f3ef;
 }

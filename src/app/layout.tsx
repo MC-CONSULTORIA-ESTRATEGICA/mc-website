@@ -6,7 +6,8 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { site } from "@/lib/site";
 
-import "./globals.css";
+import "@/styles/tokens.css";
+import "@/styles/reset.css";
 import "@/styles/base.css";
 import "@/styles/components.css";
 
