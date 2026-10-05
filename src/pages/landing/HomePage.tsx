@@ -1030,6 +1030,75 @@ export default function HomePage() {
         </div>
       </section>
 
+
+      {/* Service Start */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-center">
+            {/* Columna izquierda: lista de servicios */}
+            <div>
+              <p className="uppercase font-semibold mb-2" style={{ color: "#3f9dc8" }}>
+                Nuestros Servicios
+              </p>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                Priorizamos un Servicio Cercano y con Innovación
+              </h2>
+              <p className="text-gray-600">
+                Soluciones técnicas y estratégicas diseñadas para optimizar sus proyectos
+                mineros y generar un impacto positivo.
+              </p>
+
+              <div className="mt-8 border-t border-gray-200">
+                {homeServices.map((s, i) => (
+                  <div key={i} className="flex gap-4 py-6 border-b border-gray-200">
+                    <div
+                      className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center text-lg text-white"
+                      style={{ backgroundColor: "#01395c" }}
+                    >
+                      {s.icon}
+                    </div>
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                        <h3 className="text-lg font-bold text-gray-900">{s.title}</h3>
+                        {s.tags?.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-[11px] font-semibold border border-gray-300 text-gray-500 rounded px-1.5 py-0.5"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed">{s.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <Link
+                to="/servicios"
+                className="inline-flex items-center gap-2 mt-8 font-semibold hover:gap-3 transition-all"
+                style={{ color: "#01395c" }}
+              >
+                Ver la página de Servicios
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+
+            {/* Columna derecha: diagrama */}
+            <div>
+              <img
+                src={serviceDiagram}
+                alt="Diagrama ilustrativo de reconciliación minera y QA-QC"
+                className="w-full rounded-2xl shadow-lg border border-gray-200"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Noticias - preview compacto */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -1210,73 +1279,7 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Service Start */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-center">
-            {/* Columna izquierda: lista de servicios */}
-            <div>
-              <p className="uppercase font-semibold mb-2" style={{ color: "#3f9dc8" }}>
-                Nuestros Servicios
-              </p>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Priorizamos un Servicio Cercano y con Innovación
-              </h2>
-              <p className="text-gray-600">
-                Soluciones técnicas y estratégicas diseñadas para optimizar sus proyectos
-                mineros y generar un impacto positivo.
-              </p>
-
-              <div className="mt-8 border-t border-gray-200">
-                {homeServices.map((s, i) => (
-                  <div key={i} className="flex gap-4 py-6 border-b border-gray-200">
-                    <div
-                      className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center text-lg text-white"
-                      style={{ backgroundColor: "#01395c" }}
-                    >
-                      {s.icon}
-                    </div>
-                    <div>
-                      <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                        <h3 className="text-lg font-bold text-gray-900">{s.title}</h3>
-                        {s.tags?.map((tag) => (
-                          <span
-                            key={tag}
-                            className="text-[11px] font-semibold border border-gray-300 text-gray-500 rounded px-1.5 py-0.5"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <p className="text-gray-600 text-sm leading-relaxed">{s.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <Link
-                to="/servicios"
-                className="inline-flex items-center gap-2 mt-8 font-semibold hover:gap-3 transition-all"
-                style={{ color: "#01395c" }}
-              >
-                Ver la página de Servicios
-                <ArrowRight size={18} />
-              </Link>
-            </div>
-
-            {/* Columna derecha: diagrama */}
-            <div>
-              <img
-                src={serviceDiagram}
-                alt="Diagrama ilustrativo de reconciliación minera y QA-QC"
-                className="w-full rounded-2xl shadow-lg border border-gray-200"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
       {/* Blog Técnico - Artículos Técnicos */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
