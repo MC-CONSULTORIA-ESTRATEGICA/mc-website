@@ -24,9 +24,7 @@ import { newsItems } from "../../data/news";
 import about1 from "../../assets/team2.webp";
 import about2 from "../../assets/about-team.webp";
 import section3 from "../../assets/section3.webp";
-import service1 from "../../assets/service-1.webp";
-import service2 from "../../assets/service-2.webp";
-import service3 from "../../assets/service-3.webp";
+import serviceDiagram from "../../assets/service.webp";
 
 import project1 from "../../assets/project-1.webp";
 import project2 from "../../assets/project-2.webp";
@@ -58,7 +56,15 @@ import empresa9 from "../../assets/empresa9.webp";
 import empresa10 from "../../assets/empresa10.webp";
 import empresa11 from "../../assets/empresa11.webp";
 
-import { FaLinkedinIn, FaEnvelope } from "react-icons/fa";
+import {
+  FaLinkedinIn,
+  FaEnvelope,
+  FaHammer,
+  FaChartBar,
+  FaDatabase,
+  FaProjectDiagram,
+  FaIndustry,
+} from "react-icons/fa";
 
 /** ✅ TIPOS (evita "never", "implicit any" y fallos en build) */
 type FactItem = {
@@ -842,6 +848,41 @@ function TeamSection2() {
 }
 
 
+const homeServices = [
+  {
+    title: "Reconciliación Minera",
+    description:
+      "Aseguramos la coherencia entre el plan de mina y la producción real. Con nuestras metodologías ayudamos a reducir pérdidas y mejorar la eficiencia operativa.",
+    icon: <FaHammer />,
+  },
+  {
+    title: "Consultoría",
+    description:
+      "Ofrecemos asesoría integral en todas las etapas del proyecto minero: desde exploración, estudios de factibilidad, permisos ambientales hasta cierre de mina.",
+    icon: <FaChartBar />,
+  },
+  {
+    title: "Base de datos QA-QC",
+    description:
+      "Diseñamos y auditamos bases de datos geológicas, asegurando integridad y confiabilidad para respaldar decisiones estratégicas.",
+    icon: <FaDatabase />,
+  },
+  {
+    title: "Estimación de Recursos y Reservas",
+    description:
+      "Creamos modelos geológicos precisos y realizamos estimaciones bajo estándares internacionales.",
+    icon: <FaProjectDiagram />,
+    tags: ["JORC", "NI 43-101"],
+  },
+  {
+    title: "Capacitación en Códigos Mineros y Control de Calidad",
+    description:
+      "Brindamos formación especializada en códigos mineros y sistemas de control de calidad, asegurando el cumplimiento normativo y la mejora continua de los procesos operativos.",
+    icon: <FaIndustry />,
+    tags: ["JORC", "NI 43-101", "S-K 1300"],
+  },
+];
+
 export default function HomePage() {
   const facts: FactItem[] = [
     { icon: Award, value: 10, label: "Especialidades" },
@@ -1172,96 +1213,66 @@ export default function HomePage() {
       {/* Service Start */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mx-auto pb-12 max-w-2xl">
-            <p className="uppercase font-semibold mb-2" style={{ color: "#3f9dc8" }}>
-              Nuestros Servicios
-            </p>
-            <h2 className="text-4xl font-bold text-gray-900">
-              Priorizamos un Servicio Cercano y con Innovación
-            </h2>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-center">
+            {/* Columna izquierda: lista de servicios */}
+            <div>
+              <p className="uppercase font-semibold mb-2" style={{ color: "#3f9dc8" }}>
+                Nuestros Servicios
+              </p>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                Priorizamos un Servicio Cercano y con Innovación
+              </h2>
+              <p className="text-gray-600">
+                Soluciones técnicas y estratégicas diseñadas para optimizar sus proyectos
+                mineros y generar un impacto positivo.
+              </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="relative group overflow-hidden shadow-lg border border-gray-300 rounded-2xl md:rounded-none">
-              <img
-                src={service1}
-                alt="Reconciliación Minera"
-                className="w-full h-56 sm:h-72 md:h-[480px] object-cover transform transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div
-                className="absolute inset-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500
-                flex flex-col justify-end items-center text-center p-5 sm:p-8"
-                style={{
-                  background: "rgba(1, 57, 92, 0.7)",
-                  clipPath: "polygon(0 12%, 100% 0, 100% 100%, 0% 100%)",
-                }}
-              >
-                <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 sm:mb-4">Reconciliación Minera</h3>
-                <p className="text-white text-xs sm:text-sm mb-2 sm:mb-6">
-                  Integra mina, planta y despacho con reconciliación de tonelaje, ley y recuperación desde
-                  planificación hasta embarque.
-                </p>
+              <div className="mt-8 border-t border-gray-200">
+                {homeServices.map((s, i) => (
+                  <div key={i} className="flex gap-4 py-6 border-b border-gray-200">
+                    <div
+                      className="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center text-lg text-white"
+                      style={{ backgroundColor: "#01395c" }}
+                    >
+                      {s.icon}
+                    </div>
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                        <h3 className="text-lg font-bold text-gray-900">{s.title}</h3>
+                        {s.tags?.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-[11px] font-semibold border border-gray-300 text-gray-500 rounded px-1.5 py-0.5"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed">{s.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            </div>
 
-            <div className="relative group overflow-hidden shadow-lg border border-gray-300 rounded-2xl md:rounded-none">
-              <img
-                src={service2}
-                alt="Estimación de Recursos y Reservas"
-                className="w-full h-56 sm:h-72 md:h-[480px] object-cover transform transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div
-                className="absolute inset-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500
-                flex flex-col justify-end items-center text-center p-5 sm:p-8"
-                style={{
-                  background: "rgba(1, 57, 92, 0.7)",
-                  clipPath: "polygon(0 12%, 100% 0, 100% 100%, 0% 100%)",
-                }}
+              <Link
+                to="/servicios"
+                className="inline-flex items-center gap-2 mt-8 font-semibold hover:gap-3 transition-all"
+                style={{ color: "#01395c" }}
               >
-                <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 sm:mb-4">Estimación de Recursos y Reservas</h3>
-                <p className="text-white text-xs sm:text-sm mb-2 sm:mb-6">
-                  Desarrolla modelos geológicos y de ley combinando geoestadística para mejorar la precisión. Los modelos
-                  quedan versionados y documentados para su revisión técnica.
-                </p>
-              </div>
-            </div>
-
-            <div className="relative group overflow-hidden shadow-lg border border-gray-300 rounded-2xl md:rounded-none">
-              <img
-                src={service3}
-                alt="Analítica y BD QAQC"
-                className="w-full h-56 sm:h-72 md:h-[480px] object-cover transform transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div
-                className="absolute inset-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500
-                flex flex-col justify-end items-center text-center p-5 sm:p-8"
-                style={{
-                  background: "rgba(1, 57, 92, 0.7)",
-                  clipPath: "polygon(0 12%, 100% 0, 100% 100%, 0% 100%)",
-                }}
-              >
-                <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 sm:mb-4">Analítica y BD QAQC</h3>
-                <p className="text-white text-xs sm:text-sm mb-2 sm:mb-6">
-                  Centraliza y asegura la calidad de datos de exploración y operación. Implementa reglas automáticas para
-                  ensayes, duplicados, blancos y estándares; generando alertas ante anomalías.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center mt-10">
-            <Link to="/servicios">
-              <button
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-white transition-colors"
-                style={{ backgroundColor: "#01395c" }}
-              >
-                Ver todos los servicios
+                Ver la página de Servicios
                 <ArrowRight size={18} />
-              </button>
-            </Link>
+              </Link>
+            </div>
+
+            {/* Columna derecha: diagrama */}
+            <div>
+              <img
+                src={serviceDiagram}
+                alt="Diagrama ilustrativo de reconciliación minera y QA-QC"
+                className="w-full rounded-2xl shadow-lg border border-gray-200"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
