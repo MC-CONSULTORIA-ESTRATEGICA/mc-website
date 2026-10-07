@@ -9,7 +9,7 @@ import { site, whatsappLink } from "@/lib/site";
 import "@/components/sections/contacto/contacto.css";
 
 export const metadata = pageMetadata({
-  title: "Contacto",
+  title: "Contacto y cotizaciones",
   description: "Contacto de MC Consultores por WhatsApp, teléfono o correo. Lima, Perú.",
   path: "/contacto/",
 });

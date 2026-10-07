@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/metadata";
 import "@/components/sections/blog/blog.css";
 
 export const metadata = pageMetadata({
-  title: "Blog",
+  title: "Artículos técnicos",
   description:
     "Artículos técnicos de MC Consultores sobre reconciliación minera, QA/QC en bases de datos geológicas, estimación de recursos y gestión de relaves.",
   path: "/blog/",

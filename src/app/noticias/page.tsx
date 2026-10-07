@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/metadata";
 import "@/components/sections/noticias/noticias.css";
 
 export const metadata = pageMetadata({
-  title: "Noticias",
+  title: "Noticias y eventos",
   description:
     "Participación de MC Consultores en PERUMIN, universidades y eventos del sector minero.",
   path: "/noticias/",

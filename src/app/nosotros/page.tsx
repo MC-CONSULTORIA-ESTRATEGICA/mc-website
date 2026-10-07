@@ -12,7 +12,7 @@ import { pageMetadata } from "@/lib/metadata";
 import "@/components/sections/nosotros/nosotros.css";
 
 export const metadata = pageMetadata({
-  title: "Nosotros",
+  title: "Equipo y consultores asociados",
   description: "Equipo y consultores asociados de MC Consultores, consultora minera en Lima, Perú.",
   path: "/nosotros/",
 });

@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 import "@/components/sections/servicios/servicios.css";
 
 export const metadata = pageMetadata({
-  title: "Servicios",
+  title: "Servicios de consultoría minera",
   description:
     "Reconciliación minera, consultoría en el ciclo minero, bases de datos QA-QC, estimación de recursos y reservas (JORC, NI 43-101) y capacitación.",
   path: "/servicios/",

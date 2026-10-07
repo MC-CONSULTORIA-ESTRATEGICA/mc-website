@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/metadata";
 import "@/components/sections/proyectos/proyectos.css";
 
 export const metadata = pageMetadata({
-  title: "Proyectos",
+  title: "Proyectos y casos",
   description:
     "Casos de MC Consultores con Southern Peru Copper Corporation, Compañía Minera Condestable y Minera Titán del Perú.",
   path: "/proyectos/",
