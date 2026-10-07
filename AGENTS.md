@@ -24,7 +24,8 @@ Web de MC Consultores (www.mc-consultoria.com): Next.js con exportación estáti
 - Se trabaja en `develop`. Cada push a `main` publica la web en producción; no se commitea directo
   a `main`.
 - Antes de dar algo por terminado: `pnpm lint` y `pnpm build` sin errores. El build incluye
-  `scripts/check-export.mjs`, que valida rutas, 404 y la firma de correo.
+  `scripts/check-export.mjs`, que valida rutas, 404, la firma de correo y el SEO (sitemap, robots,
+  títulos, canonical, Open Graph y JSON-LD).
 
 ## Commits
 

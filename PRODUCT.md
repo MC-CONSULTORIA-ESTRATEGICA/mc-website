@@ -161,7 +161,8 @@ Todo en este repo.
   (dic 2025); Centrum PUCP Business Consulting Club (feb 2026); AusIMM y ProExplo (2026, sin
   mes).
 - **Artículos técnicos** (`src/content/articles.ts`): reconciliación minera (mar 2026), QA/QC en
-  bases de datos geológicas (ene 2026), estimación bajo NI 43-101 (nov 2025).
+  bases de datos geológicas (ene 2026), estimación bajo NI 43-101 (nov 2025) y gestión de relaves y
+  sostenibilidad (sep 2025). Solo tienen mes y año, y no tienen autor con nombre.
 - **Logos de clientes** (`src/assets/clientes/`, datos en `src/content/clients.ts`): Southern
   Copper, Compañía Minera Condestable, Minera Titán del Perú, Korimallko, INGEMMET, Yura,
   Buenaventura, Minera OREX, Minsur, Yanaquihua y Colorado Mining. Sin transparencia (Minsur sobre cuadro azul).

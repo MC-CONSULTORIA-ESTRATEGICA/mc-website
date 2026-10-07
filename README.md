@@ -12,7 +12,7 @@ versión de pnpm que fija `package.json`.
 pnpm install
 pnpm dev        # http://localhost:5185
 pnpm lint
-pnpm build      # genera out/ y valida rutas, 404 e imágenes de la firma de correo
+pnpm build      # genera out/ y valida rutas, 404, firma de correo y SEO
 pnpm preview    # sirve out/ en http://localhost:5186
 pnpm images <archivo o carpeta> --destino src/assets/eventos   # optimiza fotos nuevas
 pnpm images --revisar                                          # lista imágenes pesadas
@@ -43,7 +43,16 @@ public/          archivos servidos tal cual desde el dominio
   a 2000 px como máximo, con nombre en kebab-case y sin metadatos (incluido el GPS). Opciones al
   inicio de `scripts/images.mjs`.
 - **Contacto** (teléfono, WhatsApp, correo, horario): solo en `src/lib/site.ts`.
-- **Una página nueva**: su carpeta en `src/app/` y su línea en `src/lib/routes.ts`.
+- **Una página nueva**: su carpeta en `src/app/` y su línea en `src/lib/routes.ts` (con
+  `inSitemap: true` entra sola al `sitemap.xml`; los artículos entran desde `src/content/articles.ts`).
+- **SEO**: título y descripción de cada página con `pageMetadata()` (`src/lib/metadata.ts`), datos
+  estructurados en `src/lib/structuredData.ts`, `sitemap.xml` y `robots.txt` en `src/app/`. El build
+  valida que estén completos.
+- **Imagen para compartir** (`public/compartir.png`, la que se ve al pegar un enlace): se rehace con
+  `node scripts/build-og.mjs` (usa Chrome y red para la fuente) si cambian el lema o el logo.
+- **Search Console**: se verifica por prefijo de URL (`https://www.mc-consultoria.com/`) con la
+  etiqueta meta. El código va en `searchConsole` de `src/lib/site.ts` y la etiqueta aparece sola;
+  la verificación funciona cuando ese cambio ya está publicado desde `main`.
 - Lo que falta (textos, fotos, datos) no se muestra: queda `active: false` o un comentario
   `// PENDIENTE(…)`.
 
