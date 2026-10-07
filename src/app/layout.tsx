@@ -26,6 +26,8 @@ export const metadata: Metadata = {
   description: `${site.name}: consultoría minera en Lima, Perú.`,
   icons: { icon: "/logo.webp" },
   openGraph: baseOpenGraph,
+  // Search Console: la etiqueta solo sale cuando Marcos pase el código (site.ts).
+  ...(site.searchConsole ? { verification: { google: site.searchConsole } } : {}),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

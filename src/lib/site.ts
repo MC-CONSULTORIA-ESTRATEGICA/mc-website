@@ -24,12 +24,21 @@ export const site = {
     email: "ventas@mc-consultoria.com",
     linkedin: "https://www.linkedin.com/company/mc-consultoria-estrategica/",
     city: "Lima, Perú",
+    /** dayOfWeek: los mismos días en schema.org, para los datos estructurados. */
     hours: [
-      { days: "Lunes a viernes", time: "8:00–18:00" },
-      { days: "Sábado", time: "8:00–13:00" },
+      {
+        days: "Lunes a viernes",
+        time: "8:00–18:00",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      },
+      { days: "Sábado", time: "8:00–13:00", dayOfWeek: ["Saturday"] },
     ],
     // PENDIENTE(Marcos): dato de contacto de Camila Algarate, que pasa a ventas (30 sep).
   },
+  /** Código de la etiqueta meta de Google Search Console (google-site-verification). */
+  // PENDIENTE(Marcos): crear la propiedad por prefijo de URL https://www.mc-consultoria.com/ y
+  // pasar el código. Sin código no se agrega la etiqueta.
+  searchConsole: null as string | null,
 } as const;
 
 /** Enlace de WhatsApp con un mensaje precargado. */

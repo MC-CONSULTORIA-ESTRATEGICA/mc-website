@@ -7,8 +7,10 @@ import { Hero } from "@/components/sections/inicio/Hero";
 import { Presence } from "@/components/sections/inicio/Presence";
 import { Projects } from "@/components/sections/inicio/Projects";
 import { Services } from "@/components/sections/inicio/Services";
+import { JsonLd } from "@/components/ui/JsonLd";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/structuredData";
 
 import "@/components/sections/inicio/inicio.css";
 
@@ -26,6 +28,8 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={organizationJsonLd()} />
+      <JsonLd data={websiteJsonLd()} />
       <Hero />
       <Services />
       <Projects />

@@ -2,10 +2,12 @@ import { notFound } from "next/navigation";
 
 import { Contact } from "@/components/sections/Contact";
 import { ArticleBody } from "@/components/sections/blog/ArticleBody";
+import { JsonLd } from "@/components/ui/JsonLd";
 import { PageFacts } from "@/components/ui/PageFacts";
 import { PageHead } from "@/components/ui/PageHead";
 import { articleHref, articles } from "@/content/articles";
 import { pageMetadata } from "@/lib/metadata";
+import { articleJsonLd } from "@/lib/structuredData";
 
 import "@/components/sections/blog/blog.css";
 
@@ -36,6 +38,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   if (!article) notFound();
   return (
     <>
+      <JsonLd data={articleJsonLd(article)} />
       <PageHead title={article.title} lead={article.excerpt}>
         <PageFacts
           facts={[
