@@ -1,4 +1,4 @@
-// Lista única de páginas: alimenta el menú, el pie, el chequeo de out/ y, en el paso 4, el sitemap.
+// Lista única de páginas: alimenta el menú, el pie, el chequeo de out/ y el sitemap (src/app/sitemap.ts).
 
 export type Route = {
   path: `/${string}`;
