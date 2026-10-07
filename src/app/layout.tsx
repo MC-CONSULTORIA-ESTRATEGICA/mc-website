@@ -4,6 +4,7 @@ import { Archivo } from "next/font/google";
 import { ContactRail } from "@/components/layout/ContactRail";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { baseOpenGraph } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
 import "@/styles/tokens.css";
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   title: { default: site.name, template: `%s | ${site.name}` },
   description: `${site.name}: consultoría minera en Lima, Perú.`,
   icons: { icon: "/logo.webp" },
-  openGraph: { siteName: site.name, locale: "es_PE", type: "website" },
+  openGraph: baseOpenGraph,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

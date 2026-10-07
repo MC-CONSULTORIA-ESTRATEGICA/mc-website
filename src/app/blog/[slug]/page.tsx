@@ -22,7 +22,12 @@ export async function generateMetadata({ params }: ArticlePageProps) {
   const { slug } = await params;
   const article = articles.find((item) => item.slug === slug);
   if (!article) return {};
-  return pageMetadata({ title: article.title, description: article.excerpt, path: articleHref(article.slug) });
+  return pageMetadata({
+    title: article.title,
+    description: article.excerpt,
+    path: articleHref(article.slug),
+    publishedTime: article.dateTime,
+  });
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
